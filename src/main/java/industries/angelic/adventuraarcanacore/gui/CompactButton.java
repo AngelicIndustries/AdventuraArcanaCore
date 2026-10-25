@@ -1,10 +1,10 @@
-package industries.angelic.adventuraarcanacore.compartment.client;
+package industries.angelic.adventuraarcanacore.gui;
 
 import net.minecraft.client.gui.GuiButton;
 
-final class CompactButton extends GuiButton {
+public final class CompactButton extends GuiButton {
 
-    CompactButton(int id, int x, int y, int width, String label) {
+    public CompactButton(int id, int x, int y, int width, String label) {
         super(id, x, y, width, 16, label);
     }
 

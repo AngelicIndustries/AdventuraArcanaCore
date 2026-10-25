@@ -20,6 +20,7 @@ import industries.angelic.adventuraarcanacore.compartment.CompartmentSearch;
 import industries.angelic.adventuraarcanacore.compartment.CompartmentTab;
 import industries.angelic.adventuraarcanacore.compartment.ContainerCompartment;
 import industries.angelic.adventuraarcanacore.compartment.TileCompartment;
+import industries.angelic.adventuraarcanacore.gui.CompactButton;
 
 public class GuiCompartment extends GuiContainer {
 

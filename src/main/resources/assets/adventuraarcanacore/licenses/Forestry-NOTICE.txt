@@ -1,0 +1,12 @@
+Forestry worktable port
+
+Source: https://github.com/GTNewHorizons/ForestryMC
+Revision: 4b310d407f9881b64567b405ef2cabebc46c4b44
+Copyright (c) 2011-2014 SirSengir and Forestry contributors, including
+CovertJaguar, Player, Binnie, MysteriousAges, and the GTNH team.
+NEI recipe overlay by bdew.
+License: GNU Lesser General Public License v3 (Forestry-LGPL-3.0.txt).
+
+The worktable crafting, ingredient selection and recipe memory code has been
+adapted to standalone Forge inventories and networking. The block faces,
+worktable GUI and recipe lock textures are copied unchanged from Forestry.

@@ -9,6 +9,7 @@ public final class Config {
     private static Configuration configuration;
     public static boolean debugMode;
     public static boolean enableCompartments = true;
+    public static boolean enableWorktable = true;
 
     private Config() {}
 
@@ -40,6 +41,15 @@ public final class Config {
                 true,
                 "Enable compartment blocks and recipes. Requires a restart; use the same setting on client and server.")
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config.enableCompartments")
+            .setRequiresMcRestart(true)
+            .getBoolean();
+        enableWorktable = configuration
+            .get(
+                Categories.GENERAL,
+                "enableWorktable",
+                true,
+                "Enable the worktable and its recipe. Requires a restart; use the same setting on client and server.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.enableWorktable")
             .setRequiresMcRestart(true)
             .getBoolean();
         if (configuration.hasChanged()) {

@@ -36,6 +36,7 @@ VERSION=version ./gradlew build
 ## Credits
 
 * [Binnie](https://github.com/GTNewHorizons/Binnie), for the compartments.
+* [Forestry](https://github.com/GTNewHorizons/ForestryMC), for the worktable.
 
 * [GTNH buildscript and ExampleMod](https://github.com/GTNewHorizons/ExampleMod1.7.10).
 

@@ -13,6 +13,8 @@ import industries.angelic.adventuraarcanacore.compartment.Compartments;
 import industries.angelic.adventuraarcanacore.compartment.TileCompartment;
 import industries.angelic.adventuraarcanacore.compartment.client.CompartmentRenderer;
 import industries.angelic.adventuraarcanacore.compartment.client.GuiCompartment;
+import industries.angelic.adventuraarcanacore.worktable.TileWorktable;
+import industries.angelic.adventuraarcanacore.worktable.client.GuiWorktable;
 
 public class ClientProxy extends CommonProxy {
 
@@ -32,6 +34,11 @@ public class ClientProxy extends CommonProxy {
     @Override
     public Object createCompartmentGui(EntityPlayer player, TileCompartment tile) {
         return new GuiCompartment(player, tile);
+    }
+
+    @Override
+    public Object createWorktableGui(EntityPlayer player, TileWorktable tile) {
+        return new GuiWorktable(player, tile);
     }
 
     @SubscribeEvent
