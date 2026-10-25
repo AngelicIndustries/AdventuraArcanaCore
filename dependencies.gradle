@@ -5,4 +5,7 @@ dependencies {
     // Optional worktable recipe transfer; NEI is only installed automatically in the dev runtime.
     compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.8.167-GTNH:dev")
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:NotEnoughItems:2.8.167-GTNH:dev")
+    // Optional Biomic integration (compat/biomic). Biomic's API is not published yet: run
+    // `VERSION=0.0.1-debloat ./gradlew publishToMavenLocal` in Biomic before building.
+    compileOnly("org.fentanylsolutions.biomic:Biomic:0.0.1-debloat:dev")
 }

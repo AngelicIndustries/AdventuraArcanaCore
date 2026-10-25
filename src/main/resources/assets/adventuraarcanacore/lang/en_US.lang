@@ -39,3 +39,5 @@ adventuraarcanacore.config.patches=Patches
 adventuraarcanacore.config.growthcraftWithoutForestry=Growthcraft without Forestry
 adventuraarcanacore.config.noNaturaClouds=No Natura clouds
 adventuraarcanacore.config.saltyModDedicatedServer=SaltyMod on a dedicated server
+adventuraarcanacore.config.biomic=Biomic
+adventuraarcanacore.config.pmpIvyForVines=PMP ivy for vines

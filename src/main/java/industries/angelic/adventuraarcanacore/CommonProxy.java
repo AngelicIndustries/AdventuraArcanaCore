@@ -2,6 +2,7 @@ package industries.angelic.adventuraarcanacore;
 
 import net.minecraft.entity.player.EntityPlayer;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -9,6 +10,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import industries.angelic.adventuraarcanacore.compartment.Compartments;
 import industries.angelic.adventuraarcanacore.compartment.TileCompartment;
+import industries.angelic.adventuraarcanacore.compat.biomic.BiomicIntegration;
 import industries.angelic.adventuraarcanacore.gui.GuiHandler;
 import industries.angelic.adventuraarcanacore.worktable.TileWorktable;
 import industries.angelic.adventuraarcanacore.worktable.Worktables;
@@ -27,6 +29,7 @@ public class CommonProxy {
     public void postInit(FMLPostInitializationEvent event) {
         if (Config.enableCompartments) Compartments.registerRecipes();
         if (Config.enableWorktable) Worktables.registerRecipes();
+        if (Loader.isModLoaded("biomic")) BiomicIntegration.postInit();
     }
 
     public void serverStarting(FMLServerStartingEvent event) {}
