@@ -106,6 +106,9 @@ wild: natural ground for HarvestCraft's, nether ground for Harvest the Nether's.
 nests (they came from one clock-seeded random). In Biomic's overworld it places none while `beeNestsInBiomic` is on.
 Switch: `saltyModBeeNests`.
 
+`natura.MixinNaturaBerryOwnership` keeps Natura's wild berry bushes out of Biomic's overworld while `wildFoodInBiomic`
+is on, so HarvestCraft's berries are the only wild ones there. Switch: `naturaBerriesStandDown`.
+
 These moved here from Biomic, which keeps only what a player with Biomic and that mod alone would expect.
 
 Keep future integration helpers in `compat/`, event handlers in `handlers/client/` or

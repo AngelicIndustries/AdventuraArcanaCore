@@ -42,6 +42,9 @@ final class FoodPlants {
         for (String generator : new String[] { "PamGardenGenerator", "PamTreeGenerator", "PamBeeGenerator",
             "WorldGenPamSalt" })
             ForeignGenerators.standDown("com.pam.harvestcraft." + generator, ForeignGenerators.Scope.EVERY_DIMENSION);
+        // Natura's overworld pass (wild barley, cotton and berry bushes): HarvestCraft's grow there instead. The Nether
+        // keeps Natura's generator.
+        ForeignGenerators.standDown("mods.natura.worldgen.BaseCropWorldgen", ForeignGenerators.Scope.OVERWORLD);
     }
 
     /** At postInit, once the food blocks exist: what the names grow as. */

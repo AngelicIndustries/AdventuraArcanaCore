@@ -34,7 +34,12 @@ public enum Mixins implements IMixins {
     SALTYMOD_BEE_NESTS(new MixinBuilder("Seed SaltyMod's bee nests per chunk").setPhase(Phase.LATE)
         .addRequiredMod(TargetMod.SALTYMOD)
         .setApplyIf(() -> PatchSwitches.enabled("saltyModBeeNests"))
-        .addCommonMixins("saltymod.MixinSaltyBeeNestSeed"));
+        .addCommonMixins("saltymod.MixinSaltyBeeNestSeed")),
+    NATURA_BERRIES_STAND_DOWN(
+        new MixinBuilder("Keep Natura's wild berries out of Biomic's overworld").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.NATURA)
+            .setApplyIf(() -> PatchSwitches.enabled("naturaBerriesStandDown"))
+            .addCommonMixins("natura.MixinNaturaBerryOwnership"));
 
     private final MixinBuilder builder;
 

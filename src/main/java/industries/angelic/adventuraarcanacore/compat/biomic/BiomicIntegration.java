@@ -14,6 +14,7 @@ public final class BiomicIntegration {
     public static void preInit() {
         if (Config.wildFoodInBiomic) FoodPlants.preInit();
         Bamboo.preInit();
+        Flora.preInit();
     }
 
     /** At postInit, once every mod's blocks exist. */

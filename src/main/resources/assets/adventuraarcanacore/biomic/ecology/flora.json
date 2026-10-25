@@ -1,0 +1,1524 @@
+{
+ "format": 1,
+ "habitats": {
+  "minecraft:forest": {
+   "signature": [
+    "BiomesOPlenty:flowers2:5",
+    "plantmegapack:forestSpringVetchling"
+   ],
+   "common": [
+    "plantmegapack:fernHayScented",
+    "plantmegapack:groundcoverLeavesBRN"
+   ],
+   "uncommon": [
+    "plantmegapack:forestDeadnettle",
+    "plantmegapack:flowerWildDaffodil",
+    "plantmegapack:shrubHolly"
+   ],
+   "rare": [
+    "plantmegapack:fungusDeathCap"
+   ]
+  },
+  "regions_unexplored:maple_forest": {
+   "signature": [
+    "plantmegapack:forestBloodroot",
+    "plantmegapack:forestMerrybells"
+   ],
+   "common": [
+    "plantmegapack:fernHayScented"
+   ],
+   "uncommon": [
+    "plantmegapack:forestWildColumbine",
+    "plantmegapack:shrubLindera",
+    "plantmegapack:berrybushBlack"
+   ],
+   "rare": [
+    "plantmegapack:forestYellowLadySlipper",
+    "plantmegapack:fungusWeepingMilkCap"
+   ]
+  },
+  "regions_unexplored:autumnal_maple_forest": {
+   "signature": [
+    "plantmegapack:shrubWinterberry",
+    "plantmegapack:fungusWoodBlewit"
+   ],
+   "uncommon": [
+    "BiomesOPlenty:flowers2:4",
+    "plantmegapack:flowerHawkweed:1",
+    "plantmegapack:flowerAzalea:3"
+   ],
+   "rare": [
+    "plantmegapack:fungusStinkhorn"
+   ]
+  },
+  "regions_unexplored:windswept_maple_forest": {
+   "signature": [
+    "plantmegapack:shrubNinebark"
+   ],
+   "common": [
+    "plantmegapack:grassSilverMoor"
+   ],
+   "uncommon": [
+    "plantmegapack:mountainHouseleek",
+    "plantmegapack:fernMaidenhairSpleenwort"
+   ],
+   "rare": [
+    "plantmegapack:flowerHawkweed:2"
+   ]
+  },
+  "regions_unexplored:silver_birch_forest": {
+   "signature": [
+    "plantmegapack:berrybushBlue",
+    "plantmegapack:fungusChanterelle"
+   ],
+   "uncommon": [
+    "BiomesOPlenty:flowers:9"
+   ],
+   "rare": [
+    "plantmegapack:berrybushGoose"
+   ]
+  },
+  "regions_unexplored:old_growth_forest": {
+   "signature": [
+    "plantmegapack:forestRedHelleborine"
+   ],
+   "common": [
+    "plantmegapack:fernOstrich",
+    "BiomesOPlenty:foliage:12",
+    "plantmegapack:groundcoverTwig"
+   ],
+   "uncommon": [
+    "plantmegapack:forestWoodlandKnotweed",
+    "plantmegapack:fungusGiantClub"
+   ],
+   "rare": [
+    "plantmegapack:forestYellowLadySlipper"
+   ]
+  },
+  "regions_unexplored:orchard": {
+   "signature": [
+    "plantmegapack:berrybushStraw"
+   ],
+   "common": [
+    "plantmegapack:grassMeadow",
+    "plantmegapack:flowerAchillea:8"
+   ],
+   "uncommon": [
+    "BiomesOPlenty:flowers:15",
+    "plantmegapack:flowerWildCarrot"
+   ],
+   "rare": [
+    "plantmegapack:shrubDwarfElder",
+    "plantmegapack:leafyStingingNettle"
+   ]
+  },
+  "origen:FLOWERING_FOREST": {
+   "signature": [
+    "plantmegapack:flowerColumbine:3",
+    "plantmegapack:flowerColumbine:4"
+   ],
+   "uncommon": [
+    "plantmegapack:flowerJacobsLadder",
+    "plantmegapack:fernHayScented"
+   ],
+   "rare": [
+    "plantmegapack:flowerFoamFlower"
+   ]
+  },
+  "origen:ROCKY_REFUGE": {
+   "signature": [
+    "plantmegapack:leafyStonecrop"
+   ],
+   "common": [
+    "plantmegapack:grassSilverMoor"
+   ],
+   "uncommon": [
+    "plantmegapack:mountainHouseleek",
+    "plantmegapack:fernMaidenhairSpleenwort"
+   ],
+   "rare": [
+    "BiomesOPlenty:flowers:9"
+   ]
+  },
+  "origen:SINKHOLE_FOREST": {
+   "signature": [
+    "plantmegapack:flowerColumbine:0"
+   ],
+   "common": [
+    "plantmegapack:fernHayScented",
+    "BiomesOPlenty:moss:0"
+   ],
+   "uncommon": [
+    "plantmegapack:fungusWeepingMilkCap",
+    "plantmegapack:fernMaidenhairSpleenwort"
+   ],
+   "rare": [
+    "plantmegapack:forestPinesap"
+   ]
+  },
+  "origen:FOLIAGE_FORTRESS": {
+   "signature": [
+    "plantmegapack:savannaTexasTickseed",
+    "plantmegapack:savannaButterflyWeed"
+   ],
+   "common": [
+    "plantmegapack:grassMeadow"
+   ],
+   "uncommon": [
+    "plantmegapack:savannaMarcela",
+    "plantmegapack:forestHorseweed"
+   ],
+   "rare": [
+    "BiomesOPlenty:flowers:5"
+   ]
+  },
+  "origen:SCARLET_SANCTUARY": {
+   "signature": [
+    "plantmegapack:leafyColeus"
+   ],
+   "uncommon": [
+    "BiomesOPlenty:flowers2:4"
+   ],
+   "rare": [
+    "plantmegapack:fungusStinkhorn"
+   ]
+  },
+  "origen:SAKURA_STREAMS": {
+   "signature": [
+    "plantmegapack:forestGiantAngelica",
+    "plantmegapack:shrubKerria"
+   ],
+   "common": [
+    "plantmegapack:grassMaiden"
+   ],
+   "uncommon": [
+    "plantmegapack:bambooFargesiaRobusta",
+    "plantmegapack:shrubMeadowsweet",
+    "plantmegapack:flowerAzalea:1"
+   ],
+   "rare": [
+    "plantmegapack:flowerHydrangea:1",
+    "plantmegapack:flowerHydrangea:2"
+   ]
+  },
+  "regions_unexplored:wisteria_grove": {
+   "signature": [
+    "plantmegapack:shrubCapeJasmine",
+    "plantmegapack:shrubWeepingForsythia"
+   ],
+   "uncommon": [
+    "plantmegapack:shrubSargentViburnum",
+    "plantmegapack:grassMaiden",
+    "plantmegapack:flowerHydrangea:4"
+   ]
+  },
+  "regions_unexplored:magnolia_woodland": {
+   "signature": [
+    "plantmegapack:forestDeceivingTrillium",
+    "plantmegapack:berrybushBeauty"
+   ],
+   "common": [
+    "plantmegapack:groundcoverLeavesGRN"
+   ],
+   "uncommon": [
+    "plantmegapack:flowerWoodlandPinkroot",
+    "plantmegapack:flowerAzalea:10"
+   ]
+  },
+  "origen:SECLUDED_VALLEY": {
+   "signature": [
+    "plantmegapack:flowerStreamsideBluebells",
+    "plantmegapack:flowerBlueStar"
+   ],
+   "uncommon": [
+    "plantmegapack:flowerHydrangea:5"
+   ]
+  },
+  "origen:WHITE_WALLOWS": {
+   "signature": [
+    "plantmegapack:flowerAzalea:12",
+    "plantmegapack:flowerAzalea:11"
+   ],
+   "uncommon": [
+    "BiomesOPlenty:flowers:9",
+    "plantmegapack:fernHayScented"
+   ],
+   "rare": [
+    "plantmegapack:shrubSargentViburnum"
+   ]
+  },
+  "origen:CANOPY_CASCADES": {
+   "signature": [
+    "plantmegapack:fernCretanBrake",
+    "plantmegapack:jungleLobsterClaws"
+   ],
+   "common": [
+    "plantmegapack:flowerNewGuineaImpatiens"
+   ],
+   "uncommon": [
+    "plantmegapack:jungleSilverVase",
+    "plantmegapack:flowerBegonia:1"
+   ]
+  },
+  "minecraft:taiga": {
+   "signature": [
+    "plantmegapack:forestWolfsFootClubmoss"
+   ],
+   "uncommon": [
+    "plantmegapack:berrybushGoose"
+   ],
+   "rare": [
+    "plantmegapack:fungusWoollyGomphus"
+   ]
+  },
+  "regions_unexplored:pine_taiga": {
+   "signature": [
+    "plantmegapack:berrybushSnow"
+   ],
+   "uncommon": [
+    "plantmegapack:fungusWoollyGomphus"
+   ]
+  },
+  "regions_unexplored:boreal_taiga": {
+   "signature": [
+    "plantmegapack:forestFairySlipper"
+   ],
+   "uncommon": [
+    "plantmegapack:berrybushGoose"
+   ]
+  },
+  "regions_unexplored:old_growth_boreal_taiga": {
+   "signature": [
+    "BiomesOPlenty:treeMoss:0"
+   ],
+   "uncommon": [
+    "plantmegapack:fungusWoollyGomphus"
+   ],
+   "rare": [
+    "plantmegapack:forestPinesap"
+   ]
+  },
+  "regions_unexplored:old_growth_golden_boreal_taiga": {
+   "signature": [
+    "plantmegapack:flowerBurningLove"
+   ],
+   "uncommon": [
+    "plantmegapack:berrybushGoose"
+   ]
+  },
+  "regions_unexplored:blackwood_taiga": {
+   "rare": [
+    "plantmegapack:forestPinesap"
+   ]
+  },
+  "regions_unexplored:redwoods": {
+   "signature": [
+    "plantmegapack:forestSalal",
+    "plantmegapack:fernSword"
+   ],
+   "uncommon": [
+    "plantmegapack:berrybushHuckle",
+    "plantmegapack:forestKneelingAngelica"
+   ],
+   "rare": [
+    "plantmegapack:fungusWoollyGomphus"
+   ]
+  },
+  "regions_unexplored:sparse_redwoods": {
+   "signature": [
+    "plantmegapack:forestVanillaLeaf"
+   ],
+   "uncommon": [
+    "plantmegapack:berrybushHuckle"
+   ]
+  },
+  "origen:BLACK_FOREST": {
+   "signature": [
+    "plantmegapack:flowerMezereon"
+   ],
+   "uncommon": [
+    "plantmegapack:berrybushBlack"
+   ],
+   "rare": [
+    "plantmegapack:flowerAzalea:4"
+   ]
+  },
+  "origen:TALL_TIMBERLAND": {
+   "uncommon": [
+    "plantmegapack:berrybushHuckle"
+   ],
+   "rare": [
+    "plantmegapack:fungusWoollyGomphus"
+   ]
+  },
+  "regions_unexplored:willow_forest": {
+   "signature": [
+    "plantmegapack:jungleLazarusBell"
+   ],
+   "common": [
+    "plantmegapack:fernOstrich"
+   ],
+   "uncommon": [
+    "plantmegapack:forestWildMint",
+    "plantmegapack:flowerLily:2"
+   ],
+   "rare": [
+    "plantmegapack:plainsReedCanaryGrass"
+   ]
+  },
+  "origen:GLOOMY_GORGE": {
+   "signature": [
+    "plantmegapack:groundcoverIvy"
+   ],
+   "common": [
+    "BiomesOPlenty:ivy:0"
+   ],
+   "uncommon": [
+    "plantmegapack:flowerAzalea:9"
+   ],
+   "rare": [
+    "plantmegapack:forestPinesap"
+   ]
+  },
+  "regions_unexplored:cold_boreal_taiga": {
+   "signature": [
+    "plantmegapack:mountainNorthernWillowherb"
+   ]
+  },
+  "regions_unexplored:frozen_pine_taiga": {
+   "signature": [
+    "BiomesOPlenty:flowers2:7"
+   ],
+   "rare": [
+    "plantmegapack:forestPinesap"
+   ]
+  },
+  "regions_unexplored:tundra": {
+   "signature": [
+    "plantmegapack:forestArcticGentian",
+    "plantmegapack:fernWoodsia"
+   ],
+   "uncommon": [
+    "plantmegapack:grassBlueWheatgrass"
+   ]
+  },
+  "origen:SNOWY_MEADOW": {
+   "signature": [
+    "plantmegapack:plainsSmallPasqueFlower"
+   ]
+  },
+  "origen:SNOWY_MOUNTAINS": {
+   "signature": [
+    "plantmegapack:flowerAlpineThistle"
+   ]
+  },
+  "origen:TUNDRA_TRACKS": {
+   "signature": [
+    "plantmegapack:shrubWolfWillow"
+   ],
+   "uncommon": [
+    "plantmegapack:grassBlueWheatgrass"
+   ]
+  },
+  "origen:COLD_STEPPE": {
+   "signature": [
+    "plantmegapack:plainsPrairieSage"
+   ],
+   "common": [
+    "plantmegapack:grassBlueWheatgrass"
+   ],
+   "uncommon": [
+    "plantmegapack:flowerTulip:3"
+   ],
+   "rare": [
+    "plantmegapack:plainsThreeFloweredAvens"
+   ]
+  },
+  "origen:FROZEN_FUNGI": {
+   "signature": [
+    "BiomesOPlenty:mushrooms:2",
+    "Natura:Glowshroom:2"
+   ],
+   "uncommon": [
+    "BiomesOPlenty:mushrooms:0"
+   ],
+   "rare": [
+    "Natura:Glowshroom:1"
+   ]
+  },
+  "origen:MOUNTAIN_MIRRORS": {
+   "signature": [
+    "plantmegapack:wetlandsWaterHorsetail"
+   ],
+   "uncommon": [
+    "plantmegapack:shrubAlpineCurrant",
+    "plantmegapack:plainsShortrayFleabane"
+   ]
+  },
+  "origen:ALPINE_ASCENDANCY": {
+   "signature": [
+    "plantmegapack:mountainEdelweiss",
+    "plantmegapack:mountainYellowBellflower"
+   ],
+   "common": [
+    "plantmegapack:grassSilverMoor",
+    "plantmegapack:mountainAlpineBellflower"
+   ],
+   "uncommon": [
+    "plantmegapack:mountainIris",
+    "plantmegapack:mountainHouseleek",
+    "plantmegapack:flowerDelphinium:0",
+    "plantmegapack:flowerDelphinium:1"
+   ],
+   "rare": [
+    "plantmegapack:shrubAlpineCurrant"
+   ]
+  },
+  "origen:BARE_BOULDERFIELDS": {
+   "signature": [
+    "plantmegapack:flowerElephantEars"
+   ],
+   "common": [
+    "BiomesOPlenty:moss:0"
+   ],
+   "uncommon": [
+    "plantmegapack:mountainHouseleek"
+   ]
+  },
+  "origen:VERTICAL_VISTAS": {
+   "signature": [
+    "plantmegapack:mountainScarletTrumpet",
+    "plantmegapack:forestWesternWallflower"
+   ],
+   "common": [
+    "plantmegapack:grassMeadow"
+   ],
+   "uncommon": [
+    "plantmegapack:mountainAlpineBellflower",
+    "plantmegapack:flowerBell:6"
+   ],
+   "rare": [
+    "plantmegapack:mountainHouseleek"
+   ]
+  },
+  "regions_unexplored:pine_slopes": {
+   "signature": [
+    "plantmegapack:shrubJuniperSavin"
+   ],
+   "uncommon": [
+    "plantmegapack:berrybushHuckle",
+    "plantmegapack:mountainAlpineBellflower"
+   ]
+  },
+  "regions_unexplored:highland_fields": {
+   "signature": [
+    "plantmegapack:mountainBistort"
+   ],
+   "common": [
+    "plantmegapack:savannaNorthernBedstraw"
+   ],
+   "uncommon": [
+    "BiomesOPlenty:foliage:3",
+    "plantmegapack:flowerBell:6",
+    "plantmegapack:flowerBell:7"
+   ],
+   "rare": [
+    "plantmegapack:mountainIris"
+   ]
+  },
+  "regions_unexplored:towering_cliffs": {
+   "uncommon": [
+    "plantmegapack:fernMaidenhairSpleenwort",
+    "plantmegapack:shrubDaphne"
+   ],
+   "rare": [
+    "plantmegapack:mountainHouseleek"
+   ]
+  },
+  "minecraft:plains": {
+   "signature": [
+    "plantmegapack:grassMeadowFoxtail"
+   ],
+   "common": [
+    "plantmegapack:grassMeadow"
+   ],
+   "uncommon": [
+    "plantmegapack:flowerYellowToadflax",
+    "BiomesOPlenty:flowers:8"
+   ],
+   "rare": [
+    "plantmegapack:flowerWildCarrot",
+    "plantmegapack:leafyStingingNettle"
+   ]
+  },
+  "regions_unexplored:clover_plains": {
+   "rare": [
+    "BiomesOPlenty:flowers:15"
+   ]
+  },
+  "regions_unexplored:grassland": {
+   "uncommon": [
+    "plantmegapack:flowerAchillea:8"
+   ],
+   "rare": [
+    "plantmegapack:fungusParasol"
+   ]
+  },
+  "regions_unexplored:prairie": {
+   "common": [
+    "plantmegapack:grassPrairie",
+    "plantmegapack:grassSwitch",
+    "plantmegapack:plainsPrairieBrome"
+   ],
+   "uncommon": [
+    "plantmegapack:savannaLeadplant",
+    "plantmegapack:plainsSmoothAster",
+    "plantmegapack:flowerDottedBlazingstar",
+    "plantmegapack:flowerAchillea:4"
+   ],
+   "rare": [
+    "plantmegapack:plainsThreeFloweredAvens",
+    "plantmegapack:savannaHoaryVervain"
+   ]
+  },
+  "regions_unexplored:shrubland": {
+   "signature": [
+    "plantmegapack:shrubBarberry",
+    "BiomesOPlenty:foliage:9"
+   ],
+   "common": [
+    "plantmegapack:flowerRose:11"
+   ],
+   "uncommon": [
+    "plantmegapack:berrybushBlack",
+    "plantmegapack:forestBroadleafMeadowsweet"
+   ],
+   "rare": [
+    "plantmegapack:shrubDwarfElder"
+   ]
+  },
+  "origen:PILLOW_PLAINS": {
+   "signature": [
+    "plantmegapack:flowerDaisy:7",
+    "plantmegapack:flowerDaisy:6"
+   ],
+   "common": [
+    "plantmegapack:grassMeadow"
+   ],
+   "uncommon": [
+    "plantmegapack:groundcoverFlowers",
+    "plantmegapack:flowerBell:9",
+    "plantmegapack:flowerAchillea:7"
+   ],
+   "rare": [
+    "BiomesOPlenty:flowers:8"
+   ]
+  },
+  "origen:VERDANT_VALLEYS": {
+   "signature": [
+    "plantmegapack:flowerCarnation:6"
+   ],
+   "common": [
+    "plantmegapack:grassMeadow"
+   ],
+   "uncommon": [
+    "plantmegapack:flowerMarigold:0",
+    "plantmegapack:flowerMarigold:1",
+    "BiomesOPlenty:flowers:5"
+   ],
+   "rare": [
+    "plantmegapack:flowerRoseCampion",
+    "plantmegapack:flowerGladiolus:7"
+   ]
+  },
+  "minecraft:savanna": {
+   "signature": [
+    "plantmegapack:grassFountain",
+    "plantmegapack:savannaShonaCabbage"
+   ],
+   "uncommon": [
+    "plantmegapack:flowerTorchLily",
+    "plantmegapack:flowerLionsTail",
+    "plantmegapack:flowerGeranium:4"
+   ],
+   "rare": [
+    "plantmegapack:flowerCandelabraAloe"
+   ]
+  },
+  "regions_unexplored:baobab_savanna": {
+   "signature": [
+    "plantmegapack:jungleMadagascarPalm",
+    "plantmegapack:savannaPropellerPlant"
+   ],
+   "uncommon": [
+    "plantmegapack:flowerCandelabraAloe",
+    "plantmegapack:flowerGladiolus:1"
+   ],
+   "rare": [
+    "plantmegapack:fungusBlackPowderpuff"
+   ]
+  },
+  "regions_unexplored:dry_bushland": {
+   "signature": [
+    "BiomesOPlenty:flowers2:3",
+    "plantmegapack:desertWhiteSage"
+   ],
+   "uncommon": [
+    "plantmegapack:desertPeninsulaOnion",
+    "plantmegapack:flowerMediterraneanSeaHolly",
+    "plantmegapack:flowerGeranium:3"
+   ],
+   "rare": [
+    "plantmegapack:flowerParrotsBeak"
+   ]
+  },
+  "regions_unexplored:outback": {
+   "signature": [
+    "plantmegapack:desertKangarooPaw"
+   ],
+   "uncommon": [
+    "plantmegapack:shrubMottlecah"
+   ],
+   "rare": [
+    "plantmegapack:fungusBlackPowderpuff"
+   ]
+  },
+  "regions_unexplored:ashen_woodland": {
+   "rare": [
+    "plantmegapack:forestHorseweed"
+   ]
+  },
+  "origen:ARID_ARBORETUM": {
+   "signature": [
+    "plantmegapack:leafyPaleYucca",
+    "plantmegapack:leafyDevilsShoestring"
+   ],
+   "uncommon": [
+    "plantmegapack:desertApachePlume",
+    "plantmegapack:flowerDahlia:2"
+   ],
+   "rare": [
+    "plantmegapack:cactusPricklyPear"
+   ]
+  },
+  "origen:BADLANDS_BALCONIES": {
+   "signature": [
+    "plantmegapack:cactusSnowPole",
+    "plantmegapack:cactusMatucanaAureiflora"
+   ],
+   "uncommon": [
+    "plantmegapack:flowerPeruvianLily"
+   ],
+   "rare": [
+    "plantmegapack:flowerQuinoa"
+   ]
+  },
+  "origen:MESA_MONUMENTS": {
+   "signature": [
+    "plantmegapack:cactusArmatocereusMatucanensis",
+    "plantmegapack:cactusBaseballBat"
+   ],
+   "uncommon": [
+    "plantmegapack:cactusPricklyPear"
+   ]
+  },
+  "origen:CARVING_CREAKS": {
+   "signature": [
+    "plantmegapack:cactusToothpick",
+    "plantmegapack:desertBroomSnakeweed"
+   ],
+   "uncommon": [
+    "plantmegapack:cactusPricklyPear",
+    "plantmegapack:flowerDahlia:0"
+   ]
+  },
+  "origen:DESERT": {
+   "signature": [
+    "plantmegapack:savannaPiersonsMilkVetch"
+   ],
+   "rare": [
+    "plantmegapack:fungusBlackPowderpuff"
+   ]
+  },
+  "origen:DESERT_SPIKES_GOLD": {
+   "signature": [
+    "plantmegapack:cactusGoldenSaguaro"
+   ]
+  },
+  "origen:SANDY_SPLITS": {
+   "signature": [
+    "plantmegapack:cactusGoldenCereus"
+   ],
+   "uncommon": [
+    "plantmegapack:fernMaidenhairSpleenwort",
+    "plantmegapack:flowerColumbine:2"
+   ]
+  },
+  "minecraft:desert": {
+   "signature": [
+    "BiomesOPlenty:plants:1",
+    "BiomesOPlenty:plants:2"
+   ],
+   "uncommon": [
+    "BiomesOPlenty:plants:12"
+   ]
+  },
+  "regions_unexplored:joshua_desert": {
+   "signature": [
+    "plantmegapack:desertBroadLeafGilia",
+    "plantmegapack:cactusEchinocereusMetornii"
+   ],
+   "uncommon": [
+    "plantmegapack:desertApachePlume"
+   ]
+  },
+  "regions_unexplored:saguaro_desert": {
+   "signature": [
+    "plantmegapack:desertOcotillo",
+    "plantmegapack:desertBrittlebush"
+   ],
+   "uncommon": [
+    "plantmegapack:cactusPricklyPear"
+   ]
+  },
+  "origen:SALT_FLATS": {
+   "signature": [
+    "plantmegapack:desertSeepwood"
+   ],
+   "uncommon": [
+    "saltymod:saltworts:5"
+   ],
+   "rare": [
+    "saltymod:salt_crystal:2"
+   ]
+  },
+  "regions_unexplored:rainforest": {
+   "signature": [
+    "plantmegapack:jungleTorchGinger",
+    "plantmegapack:jungleDevilsTongue"
+   ],
+   "uncommon": [
+    "plantmegapack:jungleConeHeadedGuzmania",
+    "plantmegapack:jungleSilverVase",
+    "plantmegapack:flowerBegonia:7"
+   ],
+   "rare": [
+    "plantmegapack:jungleVoodooLily"
+   ]
+  },
+  "regions_unexplored:sparse_rainforest": {
+   "signature": [
+    "plantmegapack:leafyKrisPlant",
+    "plantmegapack:junglePanamaQueen"
+   ],
+   "uncommon": [
+    "plantmegapack:jungleStaghornClubmoss",
+    "plantmegapack:bambooWetForest"
+   ],
+   "rare": [
+    "plantmegapack:flowerBegonia:8"
+   ]
+  },
+  "regions_unexplored:tropics": {
+   "signature": [
+    "plantmegapack:flowerBirdofParadise",
+    "plantmegapack:junglePalmLily"
+   ],
+   "uncommon": [
+    "plantmegapack:shrubHummingbirdBush",
+    "plantmegapack:jungleLollipopPlant",
+    "plantmegapack:flowerCelosia:6"
+   ],
+   "rare": [
+    "plantmegapack:berrybushOrange",
+    "plantmegapack:bambooGolden"
+   ]
+  },
+  "regions_unexplored:eucalyptus_forest": {
+   "signature": [
+    "plantmegapack:fernScalyTree",
+    "plantmegapack:forestAustralianBugle"
+   ],
+   "uncommon": [
+    "plantmegapack:fernKangaroo",
+    "plantmegapack:berrybushElder"
+   ],
+   "rare": [
+    "plantmegapack:jungleRicheaDracophylla"
+   ]
+  },
+  "regions_unexplored:bamboo_forest": {
+   "signature": [
+    "plantmegapack:shrubSpicebush"
+   ]
+  },
+  "origen:LUSH_LOOPS": {
+   "signature": [
+    "plantmegapack:junglePorteaAlatisepala"
+   ],
+   "common": [
+    "plantmegapack:leafyEmeraldPhilodendron"
+   ],
+   "uncommon": [
+    "plantmegapack:jungleStaghornClubmoss",
+    "plantmegapack:bambooAsper"
+   ]
+  },
+  "origen:OVERGROWN_CLIFFS": {
+   "common": [
+    "plantmegapack:leafyEmeraldPhilodendron"
+   ],
+   "uncommon": [
+    "plantmegapack:jungleHoneySpurge",
+    "plantmegapack:flowerFuchsia"
+   ],
+   "rare": [
+    "plantmegapack:bambooTimorBlack"
+   ]
+  },
+  "origen:SINKHOLE_JUNGLE": {
+   "uncommon": [
+    "plantmegapack:jungleRacinaeaFraseri"
+   ]
+  },
+  "regions_unexplored:bayou": {
+   "signature": [
+    "plantmegapack:fernDwarfPalmetto"
+   ],
+   "uncommon": [
+    "plantmegapack:wetlandsPickerelweed",
+    "plantmegapack:shrubCypressGreen"
+   ],
+   "rare": [
+    "plantmegapack:flowerAzalea:2"
+   ]
+  },
+  "regions_unexplored:old_growth_bayou": {
+   "uncommon": [
+    "plantmegapack:wetlandsPickerelweed"
+   ]
+  },
+  "regions_unexplored:fen": {
+   "signature": [
+    "plantmegapack:forestNorthernPitcherPlant"
+   ],
+   "uncommon": [
+    "plantmegapack:wetlandsCommonRush",
+    "plantmegapack:forestBroadleafMeadowsweet"
+   ],
+   "rare": [
+    "plantmegapack:wetlandsWhiteTurtlehead"
+   ]
+  },
+  "regions_unexplored:marsh": {
+   "signature": [
+    "plantmegapack:wetlandsFloweringRush",
+    "plantmegapack:wetlandsSwampMilkweed"
+   ],
+   "uncommon": [
+    "plantmegapack:wetlandsReedMannagrass",
+    "plantmegapack:wetlandsPickerelweed"
+   ]
+  },
+  "regions_unexplored:fungal_fen": {
+   "uncommon": [
+    "BiomesOPlenty:mushrooms:1",
+    "BiomesOPlenty:mushrooms:4"
+   ],
+   "rare": [
+    "plantmegapack:fungusStinkhorn"
+   ]
+  },
+  "origen:MURKY_MARSHLANDS": {
+   "signature": [
+    "BiomesOPlenty:flowers:1",
+    "BiomesOPlenty:foliage:11"
+   ],
+   "common": [
+    "BiomesOPlenty:lilyBop:0",
+    "BiomesOPlenty:lilyBop:1",
+    "BiomesOPlenty:lilyBop:2"
+   ],
+   "uncommon": [
+    "BiomesOPlenty:plants:6"
+   ],
+   "rare": [
+    "BiomesOPlenty:flowers:10"
+   ]
+  },
+  "origen:FOSSILIZED_FENLANDS": {
+   "signature": [
+    "plantmegapack:wetlandsClubrush"
+   ],
+   "rare": [
+    "plantmegapack:wetlandsWhiteTurtlehead"
+   ]
+  },
+  "origen:MANGROVE_SWAMP": {
+   "signature": [
+    "plantmegapack:beachHighTideBush"
+   ]
+  },
+  "saltymod:salt_marsh": {
+   "common": [
+    "plantmegapack:grassCord"
+   ],
+   "uncommon": [
+    "plantmegapack:beachSeaLavender"
+   ]
+  },
+  "origen:BEACH": {
+   "signature": [
+    "plantmegapack:beachSeaSandwort"
+   ],
+   "uncommon": [
+    "plantmegapack:beachShowyAster"
+   ]
+  },
+  "origen:PALM_BEACH": {
+   "signature": [
+    "plantmegapack:grassSeaOats"
+   ],
+   "common": [
+    "BiomesOPlenty:plants:3"
+   ]
+  },
+  "origen:SHALE_BEACH": {
+   "signature": [
+    "saltymod:salt_flower_s:1"
+   ]
+  },
+  "regions_unexplored:grassy_beach": {
+   "signature": [
+    "plantmegapack:beachButtonSage"
+   ],
+   "uncommon": [
+    "BiomesOPlenty:plants:3"
+   ]
+  },
+  "regions_unexplored:gravel_beach": {
+   "signature": [
+    "plantmegapack:beachSeaLymeGrass"
+   ]
+  },
+  "origen:TEMPERATE_SEA_ARCHES": {
+   "signature": [
+    "plantmegapack:mountainAlpineArmeria"
+   ],
+   "uncommon": [
+    "plantmegapack:flowerRose:10"
+   ]
+  },
+  "origen:MARINE_MONOLITHS": {
+   "signature": [
+    "plantmegapack:beachPrideOfMadeira"
+   ],
+   "common": [
+    "plantmegapack:grassMeadow"
+   ]
+  },
+  "origen:STONEGATE_SEAS": {
+   "common": [
+    "BiomesOPlenty:moss:0"
+   ]
+  },
+  "regions_unexplored:chalk_cliffs": {
+   "signature": [
+    "plantmegapack:forestLongBractedOrchid",
+    "plantmegapack:leafyDustyMiller"
+   ],
+   "uncommon": [
+    "plantmegapack:flowerRose:12"
+   ]
+  },
+  "biomesoplenty:garden": {
+   "signature": [
+    "plantmegapack:shrubBoxwood",
+    "plantmegapack:shrubCedarGlobe",
+    "plantmegapack:shrubCedarPyramid",
+    "plantmegapack:shrubCedarCylinder",
+    "plantmegapack:shrubCypressYellow",
+    "plantmegapack:shrubCanyonCreekAbelia",
+    "plantmegapack:shrubButterfly",
+    "plantmegapack:flowerRose",
+    "plantmegapack:flowerDahlia",
+    "plantmegapack:flowerGladiolus",
+    "plantmegapack:flowerBegonia",
+    "plantmegapack:flowerGeranium",
+    "plantmegapack:flowerNemesia",
+    "plantmegapack:flowerCelosia",
+    "plantmegapack:flowerTulip",
+    "plantmegapack:flowerLily",
+    "plantmegapack:jungleShellflower"
+   ]
+  },
+  "biomesoplenty:wasteland": {
+   "uncommon": [
+    "plantmegapack:leafyPricklyLettuce",
+    "plantmegapack:forestHorseweed"
+   ]
+  }
+ },
+ "patches": {
+  "=origen:FOLIAGE_FORTRESS": [
+   "plantmegapack:savannaTexasTickseed",
+   "plantmegapack:savannaButterflyWeed",
+   "plantmegapack:savannaMarcela",
+   "plantmegapack:forestHorseweed",
+   "BiomesOPlenty:flowers:5"
+  ],
+  "=origen:SCARLET_SANCTUARY": [
+   "plantmegapack:leafyColeus",
+   "minecraft:red_flower:0",
+   "BiomesOPlenty:flowers2:4"
+  ],
+  "=origen:SAKURA_STREAMS": [
+   "plantmegapack:flowerAzalea:1",
+   "etfuturum:pink_petals:0",
+   "plantmegapack:shrubKerria",
+   "plantmegapack:forestGiantAngelica"
+  ],
+  "=origen:CANOPY_CASCADES": [
+   "plantmegapack:flowerNewGuineaImpatiens",
+   "plantmegapack:flowerBegonia:1",
+   "biomic:ru_decor_hibiscus:0",
+   "plantmegapack:jungleSilverVase",
+   "plantmegapack:jungleLobsterClaws"
+  ],
+  "=origen:GLOOMY_GORGE": [
+   "plantmegapack:flowerAzalea:9",
+   "plantmegapack:forestPinesap",
+   "etfuturum:lily_of_the_valley:0"
+  ],
+  "=origen:ALPINE_ASCENDANCY": [
+   "plantmegapack:mountainAlpineBellflower",
+   "plantmegapack:flowerDelphinium:0",
+   "plantmegapack:flowerDelphinium:1",
+   "plantmegapack:mountainIris",
+   "plantmegapack:mountainYellowBellflower",
+   "minecraft:red_flower:8"
+  ],
+  "=origen:VERTICAL_VISTAS": [
+   "plantmegapack:mountainScarletTrumpet",
+   "plantmegapack:forestWesternWallflower",
+   "plantmegapack:flowerBell:6",
+   "plantmegapack:mountainAlpineBellflower"
+  ],
+  "=origen:PILLOW_PLAINS": [
+   "plantmegapack:flowerDaisy:6",
+   "plantmegapack:flowerDaisy:7",
+   "etfuturum:cornflower:0",
+   "plantmegapack:flowerAchillea:7",
+   "plantmegapack:flowerBell:9",
+   "minecraft:red_flower:8"
+  ],
+  "=origen:VERDANT_VALLEYS": [
+   "plantmegapack:flowerCarnation:6",
+   "plantmegapack:flowerMarigold:0",
+   "plantmegapack:flowerMarigold:1",
+   "plantmegapack:flowerGladiolus:7",
+   "plantmegapack:flowerRoseCampion"
+  ],
+  "=origen:ARID_ARBORETUM": [
+   "plantmegapack:flowerDahlia:2",
+   "plantmegapack:desertApachePlume",
+   "plantmegapack:leafyDevilsShoestring"
+  ],
+  "=origen:WATERY_WILDS": [
+   "plantmegapack:flowerTorchLily",
+   "plantmegapack:flowerGladiolus:1",
+   "plantmegapack:flowerLionsTail"
+  ],
+  "=origen:LUSH_LOOPS": [
+   "plantmegapack:junglePorteaAlatisepala",
+   "plantmegapack:jungleStaghornClubmoss",
+   "plantmegapack:leafyEmeraldPhilodendron",
+   "plantmegapack:epiphyteWildfire"
+  ],
+  "=origen:OVERGROWN_CLIFFS": [
+   "plantmegapack:flowerFuchsia",
+   "plantmegapack:jungleHoneySpurge",
+   "plantmegapack:leafyEmeraldPhilodendron"
+  ],
+  "=origen:MURKY_MARSHLANDS": [
+   "BiomesOPlenty:flowers:1",
+   "plantmegapack:wetlandsPickerelweed",
+   "plantmegapack:immersedYellowFlag"
+  ],
+  "=origen:FOSSILIZED_FENLANDS": [
+   "plantmegapack:wetlandsClubrush",
+   "plantmegapack:wetlandsWhiteTurtlehead",
+   "plantmegapack:immersedSimplestemBurReed",
+   "etfuturum:lily_of_the_valley:0"
+  ],
+  "=origen:MANGROVE_SWAMP": [
+   "plantmegapack:beachHighTideBush",
+   "plantmegapack:beachSeaLavender"
+  ],
+  "=origen:MARINE_MONOLITHS": [
+   "plantmegapack:beachPrideOfMadeira",
+   "plantmegapack:flowerRose:10",
+   "minecraft:red_flower:8"
+  ]
+ },
+ "forms": {
+  "biomesoplenty:garden": {
+   "vines": [
+    {
+     "id": "plantmegapack:vineFlowersBurgundy",
+     "tier": "signature"
+    },
+    {
+     "id": "plantmegapack:vineFlowersCoral",
+     "tier": "signature"
+    },
+    {
+     "id": "plantmegapack:vineFlowersCyan",
+     "tier": "signature"
+    },
+    {
+     "id": "plantmegapack:vineFlowersGreen",
+     "tier": "signature"
+    },
+    {
+     "id": "plantmegapack:vineFlowersMagenta",
+     "tier": "signature"
+    },
+    {
+     "id": "plantmegapack:vineFlowersPurple",
+     "tier": "signature"
+    },
+    {
+     "id": "plantmegapack:vineFlowersRoyal",
+     "tier": "signature"
+    },
+    {
+     "id": "plantmegapack:vineFlowersYellow",
+     "tier": "signature"
+    }
+   ]
+  },
+  "origen:CANOPY_CASCADES": {
+   "epiphytes": [
+    {
+     "id": "plantmegapack:epiphyteCuthbertsDendrobium",
+     "tier": "rare"
+    }
+   ]
+  },
+  "origen:FOSSILIZED_FENLANDS": {
+   "immersed": [
+    {
+     "id": "plantmegapack:immersedSimplestemBurReed",
+     "tier": "uncommon"
+    }
+   ]
+  },
+  "origen:GLOOMY_GORGE": {
+   "vines": [
+    {
+     "id": "plantmegapack:vineVariegatedPersianIvy",
+     "tier": "signature"
+    }
+   ],
+   "epiphytes": [
+    {
+     "id": "plantmegapack:epiphyteArtistsConk",
+     "tier": "uncommon"
+    }
+   ]
+  },
+  "origen:LUSH_LOOPS": {
+   "epiphytes": [
+    {
+     "id": "plantmegapack:epiphyteWildfire",
+     "tier": "rare"
+    }
+   ]
+  },
+  "origen:MANGROVE_SWAMP": {
+   "floating": [
+    {
+     "id": "plantmegapack:floatingWaterLettuce",
+     "tier": "uncommon"
+    }
+   ]
+  },
+  "origen:MURKY_MARSHLANDS": {
+   "floating": [
+    {
+     "id": "plantmegapack:floatingWaterLily:11",
+     "tier": "uncommon"
+    }
+   ]
+  },
+  "origen:OASIS": {
+   "immersed": [
+    {
+     "id": "plantmegapack:immersedSoftstemBulrush",
+     "tier": "signature"
+    }
+   ],
+   "floating": [
+    {
+     "id": "plantmegapack:floatingWaterLily:12",
+     "tier": "signature"
+    }
+   ]
+  },
+  "origen:OVERGROWN_CLIFFS": {
+   "vines": [
+    {
+     "id": "plantmegapack:vineSilverveinCreeper",
+     "tier": "signature"
+    }
+   ],
+   "epiphytes": [
+    {
+     "id": "plantmegapack:epiphyteFishBoneCactus",
+     "tier": "signature"
+    },
+    {
+     "id": "plantmegapack:epiphyteClimbingCactus",
+     "tier": "rare"
+    }
+   ]
+  },
+  "origen:SINKHOLE_JUNGLE": {
+   "epiphytes": [
+    {
+     "id": "plantmegapack:epiphyteFragrantFern",
+     "tier": "signature"
+    }
+   ]
+  },
+  "origen:WATERY_WILDS": {
+   "immersed": [
+    {
+     "id": "plantmegapack:immersedGreySedge",
+     "tier": "signature"
+    }
+   ],
+   "floating": [
+    {
+     "id": "plantmegapack:floatingWaterLily:7",
+     "tier": "signature"
+    },
+    {
+     "id": "plantmegapack:floatingWaterLettuce",
+     "tier": "uncommon"
+    }
+   ]
+  },
+  "regions_unexplored:bayou": {
+   "immersed": [
+    {
+     "id": "plantmegapack:immersedDuckPotato",
+     "tier": "signature"
+    },
+    {
+     "id": "plantmegapack:immersedArrowArum",
+     "tier": "rare"
+    }
+   ]
+  },
+  "regions_unexplored:eucalyptus_forest": {
+   "epiphytes": [
+    {
+     "id": "plantmegapack:epiphyteKingOrchid",
+     "tier": "rare"
+    },
+    {
+     "id": "plantmegapack:epiphyteCreepingMistletoe",
+     "tier": "rare"
+    }
+   ]
+  },
+  "regions_unexplored:fen": {
+   "immersed": [
+    {
+     "id": "plantmegapack:immersedEuropeanBurReed",
+     "tier": "signature"
+    }
+   ]
+  },
+  "regions_unexplored:magnolia_woodland": {
+   "vines": [
+    {
+     "id": "plantmegapack:vineFlowersWhite",
+     "tier": "uncommon"
+    },
+    {
+     "id": "plantmegapack:vineFlowersPink",
+     "tier": "rare"
+    }
+   ]
+  },
+  "regions_unexplored:marsh": {
+   "immersed": [
+    {
+     "id": "plantmegapack:immersedCommonReed",
+     "tier": "common"
+    },
+    {
+     "id": "plantmegapack:immersedYellowFlag",
+     "tier": "rare"
+    }
+   ]
+  },
+  "regions_unexplored:old_growth_bayou": {
+   "epiphytes": [
+    {
+     "id": "plantmegapack:epiphyteTampaOrchid",
+     "tier": "signature"
+    }
+   ],
+   "immersed": [
+    {
+     "id": "plantmegapack:immersedArrowArum",
+     "tier": "rare"
+    }
+   ]
+  },
+  "regions_unexplored:old_growth_forest": {
+   "epiphytes": [
+    {
+     "id": "plantmegapack:epiphyteTurkeyTail",
+     "tier": "signature"
+    },
+    {
+     "id": "plantmegapack:epiphyteArtistsConk",
+     "tier": "uncommon"
+    },
+    {
+     "id": "plantmegapack:epiphyteSulphurShelf",
+     "tier": "rare"
+    }
+   ]
+  },
+  "regions_unexplored:orchard": {
+   "epiphytes": [
+    {
+     "id": "plantmegapack:epiphyteMistletoe",
+     "tier": "rare"
+    }
+   ]
+  },
+  "regions_unexplored:outback": {
+   "epiphytes": [
+    {
+     "id": "plantmegapack:epiphyteHarlequinMistletoe",
+     "tier": "rare"
+    }
+   ]
+  },
+  "regions_unexplored:pine_slopes": {
+   "epiphytes": [
+    {
+     "id": "plantmegapack:epiphyteApacheDwarf",
+     "tier": "rare"
+    }
+   ]
+  },
+  "regions_unexplored:pine_taiga": {
+   "epiphytes": [
+    {
+     "id": "plantmegapack:epiphyteApacheDwarf",
+     "tier": "rare"
+    }
+   ]
+  },
+  "regions_unexplored:rainforest": {
+   "epiphytes": [
+    {
+     "id": "plantmegapack:epiphyteCrimsonCattleya",
+     "tier": "rare"
+    }
+   ]
+  },
+  "regions_unexplored:sparse_rainforest": {
+   "epiphytes": [
+    {
+     "id": "plantmegapack:epiphyteLargeFootDendrobium",
+     "tier": "rare"
+    },
+    {
+     "id": "plantmegapack:epiphyteLanternForest",
+     "tier": "rare"
+    }
+   ]
+  },
+  "regions_unexplored:sparse_redwoods": {
+   "epiphytes": [
+    {
+     "id": "plantmegapack:epiphyteSulphurShelf",
+     "tier": "rare"
+    }
+   ]
+  },
+  "regions_unexplored:towering_cliffs": {
+   "vines": [
+    {
+     "id": "plantmegapack:vineJapaneseIvy",
+     "tier": "signature"
+    }
+   ]
+  },
+  "regions_unexplored:tropics": {
+   "vines": [
+    {
+     "id": "plantmegapack:vineFlowersRed",
+     "tier": "rare"
+    },
+    {
+     "id": "plantmegapack:vineFlowersOrange",
+     "tier": "rare"
+    }
+   ]
+  },
+  "regions_unexplored:willow_forest": {
+   "immersed": [
+    {
+     "id": "plantmegapack:immersedYellowFlag",
+     "tier": "uncommon"
+    }
+   ]
+  },
+  "regions_unexplored:wisteria_grove": {
+   "vines": [
+    {
+     "id": "plantmegapack:vineFlowersBlue",
+     "tier": "rare"
+    }
+   ]
+  },
+  "saltymod:salt_marsh": {
+   "immersed": [
+    {
+     "id": "plantmegapack:immersedCommonReed",
+     "tier": "rare"
+    }
+   ]
+  }
+ },
+ "sky": [
+  "plantmegapack:flowerAzalea:7",
+  "plantmegapack:flowerAzalea:6",
+  "plantmegapack:flowerAzalea:5",
+  "plantmegapack:flowerAzalea:8",
+  "plantmegapack:flowerRose:7",
+  "plantmegapack:flowerRose:6",
+  "plantmegapack:flowerRose:5",
+  "plantmegapack:flowerRose:8",
+  "plantmegapack:flowerNemesia:7",
+  "plantmegapack:flowerNemesia:6",
+  "plantmegapack:flowerNemesia:5",
+  "plantmegapack:flowerNemesia:8",
+  "plantmegapack:flowerBell:5",
+  "plantmegapack:flowerBell:4",
+  "plantmegapack:flowerGladiolus:5",
+  "plantmegapack:flowerLupine:5",
+  "plantmegapack:flowerDaisy:4",
+  "plantmegapack:epiphyteTillandsiaIonantha"
+ ]
+}

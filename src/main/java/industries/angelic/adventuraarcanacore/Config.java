@@ -19,6 +19,8 @@ public final class Config {
     public static boolean pmpBambooInBiomic = true;
     public static boolean madakeInBiomic = true;
     public static boolean bambooShootsInBiomic = true;
+    public static boolean floraInBiomic = true;
+    public static boolean leafDecorInBiomic = true;
 
     private Config() {}
 
@@ -102,6 +104,9 @@ public final class Config {
             "HarvestCraft's and Harvest the Nether's crops stay where they grow wild (grass, sand, netherrack); sowing still needs farmland.");
         patch("pmpHarvestCraftBerries", "Plant Mega Pack's berry bushes give HarvestCraft's berries (with foodLinks).");
         patch(
+            "naturaBerriesStandDown",
+            "Natura's wild berry bushes are not generated in Biomic's overworld while wildFoodInBiomic is on.");
+        patch(
             "saltyModBeeNests",
             "SaltyMod's bee nests are seeded per chunk, so a seed gives the same nests; none in Biomic's overworld while beeNestsInBiomic is on.");
         patch(
@@ -130,6 +135,12 @@ public final class Config {
         bambooShootsInBiomic = biomic(
             "bambooShootsInBiomic",
             "Bamboo shoots grow wild where their bamboo grows in Biomic's habitats, and HarvestCraft's generic shoot crop becomes a Moso shoot when a chunk generates. Needs HarvestCraft (enableBambooShoots).");
+        floraInBiomic = biomic(
+            "floraInBiomic",
+            "Other mods' plants in Biomic's habitats (Plant Mega Pack's above all, BOP's, SaltyMod's, Natura's), epiphytes and tree mushrooms on trunks, vines, water plants, flower patches and the sky islands' plants; Plant Mega Pack's own generator stands down. Each plant needs its mod.");
+        leafDecorInBiomic = biomic(
+            "leafDecorInBiomic",
+            "Origen's leaf decor in BOP's and Plant Mega Pack's plants: their shrubs in bush clumps, ivy and flowering vines on cliffs, moss and willow on walls. Each plant needs its mod.");
         if (configuration.hasChanged()) {
             configuration.save();
         }
