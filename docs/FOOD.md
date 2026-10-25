@@ -9,6 +9,11 @@ Natural forms of HarvestCraft crops that have none of their own, registered only
   stages; a ripe pod picked by hand starts again. HarvestCraft's fruit-tree generator grows their trees.
 * Fruiting vines: wild grapevine and kiwi vine, on tree trunks. Picking turns a vine bare; it fruits again in time.
 
+Bamboo shoots (`enableBambooShoots`), one for each bamboo: Plant Mega Pack's nine species and Madake, in place of
+HarvestCraft's one generic shoot crop. A shoot has eight stages; picked by hand when grown, it drops shoot items
+(`cropBambooshoot`, which plant it again) and starts over; left alone, it turns into its bamboo after about half an
+hour (a PMP stalk, or with Biomic Madake's tree). Its colour is its bamboo's culm.
+
 The textures are painted when the block atlas is stitched (`util.PaintedSprite`), from PMP's, HarvestCraft's and
 vanilla's own textures, so AAC ships none of their art.
 

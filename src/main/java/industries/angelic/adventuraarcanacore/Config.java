@@ -15,6 +15,10 @@ public final class Config {
     public static boolean foodLinks = true;
     public static boolean wildFoodInBiomic = true;
     public static boolean beeNestsInBiomic = true;
+    public static boolean enableBambooShoots = true;
+    public static boolean pmpBambooInBiomic = true;
+    public static boolean madakeInBiomic = true;
+    public static boolean bambooShootsInBiomic = true;
 
     private Config() {}
 
@@ -76,6 +80,14 @@ public final class Config {
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config.foodLinks")
             .setRequiresMcRestart(true)
             .getBoolean();
+        enableBambooShoots = configuration.get(
+            Categories.GENERAL,
+            "enableBambooShoots",
+            true,
+            "A shoot for each bamboo species, in place of HarvestCraft's one shoot crop: picked when grown, it turns into its bamboo if left. Needs HarvestCraft; the bamboos need Plant Mega Pack, Madake needs Biomic. Requires a restart; use the same setting on client and server.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.enableBambooShoots")
+            .setRequiresMcRestart(true)
+            .getBoolean();
         configuration.setCategoryLanguageKey(Categories.PATCHES, AdventuraArcanaCore.MODID + ".config.patches");
         configuration.setCategoryComment(
             Categories.PATCHES,
@@ -109,6 +121,15 @@ public final class Config {
         beeNestsInBiomic = biomic(
             "beeNestsInBiomic",
             "Et Futurum's bee nests hang on trees in Biomic's habitats, the only wild hives there. Needs Et Futurum Requiem.");
+        pmpBambooInBiomic = biomic(
+            "pmpBambooInBiomic",
+            "Origen's bamboo grows as Plant Mega Pack's species in Biomic's worlds (Moso by default, Tropical Blue in the sinkhole's jungle, Giant Timber in the fossilized fenlands), and Growthcraft's bamboo stands down. Needs Plant Mega Pack.");
+        madakeInBiomic = biomic(
+            "madakeInBiomic",
+            "Regions Unexplored's bamboo tree is Madake in Biomic's worlds and grows in both of the Bamboo Forest's tree groups.");
+        bambooShootsInBiomic = biomic(
+            "bambooShootsInBiomic",
+            "Bamboo shoots grow wild where their bamboo grows in Biomic's habitats, and HarvestCraft's generic shoot crop becomes a Moso shoot when a chunk generates. Needs HarvestCraft (enableBambooShoots).");
         if (configuration.hasChanged()) {
             configuration.save();
         }

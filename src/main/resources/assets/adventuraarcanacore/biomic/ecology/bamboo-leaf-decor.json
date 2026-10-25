@@ -1,0 +1,22 @@
+{
+ "format": 1,
+ "default_bamboo": "plantmegapack:bambooMoso",
+ "features": {
+  "=BAMBOO_PATCHES": {
+   "type": "bamboo",
+   "species": "plantmegapack:bambooMoso"
+  },
+  "=SINKHOLE_JUNGLE_TREES": {
+   "type": "bamboo",
+   "species": "plantmegapack:bambooTropicalBlue"
+  }
+ },
+ "profiles": {
+  "BAMBOO_PATCHES": {
+   "=FOSSILIZED_FENLANDS": {
+    "type": "bamboo",
+    "species": "plantmegapack:bambooGiantTimber"
+   }
+  }
+ }
+}

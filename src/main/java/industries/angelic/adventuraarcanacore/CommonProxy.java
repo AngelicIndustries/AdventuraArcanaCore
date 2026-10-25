@@ -11,6 +11,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import industries.angelic.adventuraarcanacore.compartment.Compartments;
 import industries.angelic.adventuraarcanacore.compartment.TileCompartment;
 import industries.angelic.adventuraarcanacore.compat.biomic.BiomicIntegration;
+import industries.angelic.adventuraarcanacore.food.BambooShoots;
 import industries.angelic.adventuraarcanacore.food.FoodBlocks;
 import industries.angelic.adventuraarcanacore.food.FoodLinks;
 import industries.angelic.adventuraarcanacore.food.PamFood;
@@ -25,6 +26,7 @@ public class CommonProxy {
         if (Config.enableCompartments) Compartments.preInit();
         if (Config.enableWorktable) Worktables.preInit();
         if (Config.enableWildFood) FoodBlocks.register();
+        if (Config.enableBambooShoots) BambooShoots.register();
         if (Loader.isModLoaded("biomic")) BiomicIntegration.preInit();
         NetworkRegistry.INSTANCE.registerGuiHandler(AdventuraArcanaCore.instance, new GuiHandler());
     }

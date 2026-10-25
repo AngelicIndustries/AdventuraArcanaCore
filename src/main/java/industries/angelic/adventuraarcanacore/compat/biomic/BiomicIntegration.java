@@ -13,6 +13,7 @@ public final class BiomicIntegration {
     /** At preInit: data and stand-downs, before Biomic reads them. */
     public static void preInit() {
         if (Config.wildFoodInBiomic) FoodPlants.preInit();
+        Bamboo.preInit();
     }
 
     /** At postInit, once every mod's blocks exist. */
@@ -20,5 +21,6 @@ public final class BiomicIntegration {
         if (Config.pmpIvyForVines) PmpIvy.register();
         if (Config.wildFoodInBiomic) FoodPlants.postInit();
         if (Config.beeNestsInBiomic) FoodPlants.nests();
+        Bamboo.postInit();
     }
 }

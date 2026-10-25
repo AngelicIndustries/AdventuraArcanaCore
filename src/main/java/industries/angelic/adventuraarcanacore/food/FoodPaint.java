@@ -13,7 +13,8 @@ import java.awt.Color;
 import industries.angelic.adventuraarcanacore.util.SpritePixels.Source;
 
 /**
- * The pixels of the food blocks, painted from installed textures when the atlas is stitched (util.PaintedSprite):
+ * The pixels of the food blocks and bamboo shoots, painted from installed textures when the atlas is stitched
+ * (util.PaintedSprite):
  * PMP's berry bush with its berries in another colour, HarvestCraft's fruit in another colour, vanilla's vine with
  * grapes or kiwis. All images are 16x16 ARGB.
  */
@@ -65,6 +66,43 @@ public final class FoodPaint {
             if (stem) continue;
             int recoloured = Color.HSBtoRGB(target[0], target[1], (float) Math.min(1, hsb[2] * target[2] / 0.75));
             out[i] = argb & 0xFF000000 | mix(argb, recoloured, amount) & 0xFFFFFF;
+        }
+        return out;
+    }
+
+    /**
+     * HarvestCraft's bamboo shoot ({@code path} among its textures: a crop stage or the item) in the colour of a
+     * bamboo's culm, read from {@code culm} (domain, path): each pixel takes the culm's hue and most of its
+     * saturation, and keeps its own shading around the culm's brightness.
+     */
+    public static int[] shoot(Source source, String path, String[] culm) {
+        int[] shoot = source.read("harvestcraft", path);
+        if (shoot == null) return null;
+        int[] stalk = source.read(culm[0], culm[1]);
+        if (stalk == null) return shoot;
+        double r = 0, g = 0, b = 0, shootBrightness = 0;
+        int culmPixels = 0, shootPixels = 0;
+        for (int argb : stalk) if (argb >>> 24 != 0) {
+            r += argb >> 16 & 255;
+            g += argb >> 8 & 255;
+            b += argb & 255;
+            culmPixels++;
+        }
+        for (int argb : shoot) if (argb >>> 24 != 0) {
+            shootBrightness += hsb(argb)[2];
+            shootPixels++;
+        }
+        if (culmPixels == 0 || shootPixels == 0) return shoot;
+        float[] target = hsb((int) (r / culmPixels) << 16 | (int) (g / culmPixels) << 8 | (int) (b / culmPixels));
+        double gain = target[2] / (shootBrightness / shootPixels);
+        int[] out = shoot.clone();
+        for (int i = 0; i < out.length; i++) {
+            int argb = out[i];
+            if (argb >>> 24 == 0) continue;
+            float[] hsb = hsb(argb);
+            float saturation = (float) (0.35 * hsb[1] + 0.65 * target[1]);
+            float brightness = (float) clamp(hsb[2] * (0.4 + 0.6 * gain), 0, 1);
+            out[i] = argb & 0xFF000000 | Color.HSBtoRGB(target[0], saturation, brightness) & 0xFFFFFF;
         }
         return out;
     }

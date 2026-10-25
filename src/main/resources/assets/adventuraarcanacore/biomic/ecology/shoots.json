@@ -1,0 +1,57 @@
+{
+ "format": 1,
+ "food": {
+  "habitats": {
+   "origen:FOSSILIZED_FENLANDS": {
+    "shoots": [
+     "giant_timber"
+    ]
+   },
+   "origen:LUSH_LOOPS": {
+    "shoots": [
+     "asper"
+    ]
+   },
+   "origen:OVERGROWN_CLIFFS": {
+    "shoots": [
+     "timor_black"
+    ]
+   },
+   "origen:SAKURA_STREAMS": {
+    "shoots": [
+     "fargesia_robusta"
+    ]
+   },
+   "regions_unexplored:sparse_rainforest": {
+    "shoots": [
+     "wet_forest"
+    ]
+   },
+   "regions_unexplored:tropics": {
+    "shoots": [
+     "golden"
+    ]
+   },
+   "origen:BAMBOO_BASIN": {
+    "shoots": [
+     "moso"
+    ]
+   },
+   "origen:GLOOMY_GORGE": {
+    "shoots": [
+     "moso"
+    ]
+   },
+   "origen:SINKHOLE_JUNGLE": {
+    "shoots": [
+     "tropical_blue"
+    ]
+   },
+   "regions_unexplored:bamboo_forest": {
+    "shoots": [
+     "madake"
+    ]
+   }
+  }
+ }
+}
