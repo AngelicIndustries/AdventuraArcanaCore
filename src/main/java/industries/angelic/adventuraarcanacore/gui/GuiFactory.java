@@ -34,12 +34,23 @@ public class GuiFactory implements IModGuiFactory {
 
     public static class ConfigGui extends GuiConfig {
 
+        /** The general settings, then each other category as its own page. */
+        private static java.util.List<cpw.mods.fml.client.config.IConfigElement> elements() {
+            java.util.List<cpw.mods.fml.client.config.IConfigElement> elements = new java.util.ArrayList<>(
+                new ConfigElement<Object>(
+                    Config.getRawConfig()
+                        .getCategory(Config.Categories.GENERAL)).getChildElements());
+            elements.add(
+                new ConfigElement<Object>(
+                    Config.getRawConfig()
+                        .getCategory(Config.Categories.PATCHES)));
+            return elements;
+        }
+
         public ConfigGui(GuiScreen parentScreen) {
             super(
                 parentScreen,
-                new ConfigElement<Object>(
-                    Config.getRawConfig()
-                        .getCategory(Config.Categories.GENERAL)).getChildElements(),
+                elements(),
                 AdventuraArcanaCore.MODID,
                 false,
                 false,

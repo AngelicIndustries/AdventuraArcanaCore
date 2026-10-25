@@ -9,13 +9,16 @@ public enum Mixins implements IMixins {
 
     GROWTHCRAFT_OPTIONAL_FORESTRY(
         new MixinBuilder("Make Growthcraft Forestry integration optional").setPhase(Phase.EARLY)
+            .setApplyIf(() -> PatchSwitches.enabled("growthcraftWithoutForestry"))
             .addCommonMixins("fml.MixinFMLModContainer")),
     NATURA_NO_CLOUDS(new MixinBuilder("Generate no Natura clouds").setPhase(Phase.LATE)
         .addRequiredMod(TargetMod.NATURA)
+        .setApplyIf(() -> PatchSwitches.enabled("noNaturaClouds"))
         .addCommonMixins("natura.MixinNaturaNoClouds")),
     SALTYMOD_DEDICATED_SERVER(
         new MixinBuilder("Keep SaltyMod's client code off a dedicated server").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.SALTYMOD)
+            .setApplyIf(() -> PatchSwitches.enabled("saltyModDedicatedServer"))
             .addServerMixins(
                 "saltymod.MixinBeeNestServerIcons",
                 "saltymod.MixinNeiServerRegistration",

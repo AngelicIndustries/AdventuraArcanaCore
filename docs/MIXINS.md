@@ -53,8 +53,10 @@ Do not call `Loader.isModLoaded` or load target classes during early discovery.
 A builder can use `.addExcludedMod(TargetMod.CONFLICTING_MOD)` or
 `.setApplyIf(() -> yourBootstrapFlag)`. Conditions run before Forge `preInit`, including for late
 mixins. The normal `Config` class is loaded in `preInit`, so it is too late to decide which mixins load.
-Introduce a separate early-safe config loader if patch selection needs configuration; never access
-Minecraft client classes or initialize the main mod from it. Mixin selection requires a restart.
+Every patch has a switch in the `patches` category of `config/adventuraarcanacore.cfg`. `Config` declares it (so it
+is written to the file and shown in the config screen), and `core.PatchSwitches` reads it before `preInit`, when the
+mixins are chosen: add `.setApplyIf(() -> PatchSwitches.enabled("someKey"))` to the builder and a `patch("someKey",
+"...")` line to `Config.sync`. A missing file or key means on. Mixin selection requires a restart.
 Ordinary runtime settings can use `Config` and its GUI reload event.
 
 ## Config files
@@ -75,18 +77,21 @@ annotation. Other requirements and other mods are unchanged.
 
 This patch runs early on both sides because late mixins load after dependency validation.
 It targets Forge and checks the exact `Growthcraft` mod ID, so Growthcraft itself is optional.
+Switch: `growthcraftWithoutForestry`.
 
 ## Natura clouds
 
 `natura.MixinNaturaNoClouds` stops Natura's cloud generator in every dimension: its clouds float as flat slabs. It
 loads for Natura 2.8.19 and 2.8.24 only (`TargetMod.NATURA`, which reads the version from `mods.natura.Natura`).
+Switch: `noNaturaClouds`.
 
 ## SaltyMod on a dedicated server
 
 Three server-only patches keep SaltyMod's client code off a dedicated server, which crashes on it otherwise:
 `MixinBeeNestServerIcons` skips the bee nest's client-only icon fields, `MixinNeiServerRegistration` skips its NEI
 screens, and `MixinServerRenderType` answers the render type of four blocks without the client proxy. They load for
-the pack's SaltyMod build only (`TargetMod.SALTYMOD`, runtime version `2.0.0-master.150+9a0954aa6f`).
+the pack's SaltyMod build only (`TargetMod.SALTYMOD`, runtime version `2.0.0-master.150+9a0954aa6f`). Switch:
+`saltyModDedicatedServer`.
 
 Both moved here from Biomic, which keeps only what a player with Biomic and that mod alone would expect.
 

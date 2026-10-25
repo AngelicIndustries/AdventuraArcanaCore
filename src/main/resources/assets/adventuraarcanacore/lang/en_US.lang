@@ -35,3 +35,7 @@ adventuraarcanacore.worktable.ghost=Left-click to copy a held item. Right-click 
 adventuraarcanacore.worktable.recall=Left-click to recall this recipe
 adventuraarcanacore.worktable.lock=Right-click to lock this recipe
 adventuraarcanacore.worktable.unlock=Right-click to unlock this recipe
+adventuraarcanacore.config.patches=Patches
+adventuraarcanacore.config.growthcraftWithoutForestry=Growthcraft without Forestry
+adventuraarcanacore.config.noNaturaClouds=No Natura clouds
+adventuraarcanacore.config.saltyModDedicatedServer=SaltyMod on a dedicated server

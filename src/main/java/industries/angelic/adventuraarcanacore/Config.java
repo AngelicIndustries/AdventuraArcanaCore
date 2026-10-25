@@ -16,6 +16,8 @@ public final class Config {
     public static final class Categories {
 
         public static final String GENERAL = "general";
+        /** Read before preInit by core.PatchSwitches, which selects the mixins. */
+        public static final String PATCHES = industries.angelic.adventuraarcanacore.core.PatchSwitches.CATEGORY;
 
         private Categories() {}
     }
@@ -52,9 +54,27 @@ public final class Config {
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config.enableWorktable")
             .setRequiresMcRestart(true)
             .getBoolean();
+        configuration.setCategoryLanguageKey(Categories.PATCHES, AdventuraArcanaCore.MODID + ".config.patches");
+        configuration.setCategoryComment(
+            Categories.PATCHES,
+            "Patches to other mods, each applied only with its mod. Changes need a restart.");
+        configuration.setCategoryRequiresMcRestart(Categories.PATCHES, true);
+        patch(
+            "growthcraftWithoutForestry",
+            "Growthcraft loads without Forestry: its Forestry integration becomes optional.");
+        patch("noNaturaClouds", "Natura generates no clouds in any dimension.");
+        patch(
+            "saltyModDedicatedServer",
+            "SaltyMod's client code stays off a dedicated server, which crashes on it otherwise.");
         if (configuration.hasChanged()) {
             configuration.save();
         }
+    }
+
+    private static void patch(String key, String comment) {
+        configuration.get(Categories.PATCHES, key, true, comment)
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config." + key)
+            .setRequiresMcRestart(true);
     }
 
     public static Configuration getRawConfig() {
