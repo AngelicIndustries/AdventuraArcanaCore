@@ -16,6 +16,7 @@ public final class Config {
     public static boolean wildFoodInBiomic = true;
     public static boolean beeNestsInBiomic = true;
     public static boolean enableBambooShoots = true;
+    public static boolean growthcraftGrapes = true;
     public static boolean pmpBambooInBiomic = true;
     public static boolean madakeInBiomic = true;
     public static boolean bambooShootsInBiomic = true;
@@ -90,6 +91,14 @@ public final class Config {
             true,
             "A shoot for each bamboo species, in place of HarvestCraft's one shoot crop: picked when grown, it turns into its bamboo if left. Needs HarvestCraft; the bamboos need Plant Mega Pack, Madake needs Biomic. Requires a restart; use the same setting on client and server.")
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config.enableBambooShoots")
+            .setRequiresMcRestart(true)
+            .getBoolean();
+        growthcraftGrapes = configuration.get(
+            Categories.GENERAL,
+            "growthcraftGrapes",
+            true,
+            "Growthcraft's grape is the only grape: the wild grape vines give Growthcraft's grapes and grape seeds, and NEI hides HarvestCraft's grape, grape seeds and grape crop (HarvestCraft's recipes take Growthcraft's grapes). Needs Growthcraft Grapes; requires a restart.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.growthcraftGrapes")
             .setRequiresMcRestart(true)
             .getBoolean();
         configuration.setCategoryLanguageKey(Categories.PATCHES, AdventuraArcanaCore.MODID + ".config.patches");

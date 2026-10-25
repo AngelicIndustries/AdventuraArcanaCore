@@ -78,6 +78,7 @@ item.adventuraarcanacore.bamboo_shoot.wet_forest.name=Wet Forest Bamboo Shoot
 tile.adventuraarcanacore.bamboo_shoot_madake.name=Madake Bamboo Shoot
 item.adventuraarcanacore.bamboo_shoot.madake.name=Madake Bamboo Shoot
 adventuraarcanacore.config.enableBambooShoots=Enable bamboo shoots
+adventuraarcanacore.config.growthcraftGrapes=Growthcraft grapes only
 adventuraarcanacore.config.pmpBambooInBiomic=PMP bamboo in Biomic
 adventuraarcanacore.config.madakeInBiomic=Madake in Biomic
 adventuraarcanacore.config.bambooShootsInBiomic=Bamboo shoots in Biomic

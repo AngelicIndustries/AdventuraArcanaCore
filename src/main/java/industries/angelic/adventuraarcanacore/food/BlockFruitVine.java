@@ -59,6 +59,10 @@ public final class BlockFruitVine extends BlockVine {
         ArrayList<ItemStack> drops = new ArrayList<>();
         if (!fruiting) return drops;
         Item produce = PamFood.produce(crop), seed = PamFood.seed(crop);
+        if ("grape".equals(crop) && GrowthcraftGrapes.active()) {
+            produce = GrowthcraftGrapes.grapes();
+            seed = GrowthcraftGrapes.seeds();
+        }
         if (produce != null) drops.add(new ItemStack(produce, 1 + world.rand.nextInt(2)));
         if (seed != null && world.rand.nextInt(3) == 0) drops.add(new ItemStack(seed));
         return drops;

@@ -8,6 +8,9 @@ Natural forms of HarvestCraft crops that have none of their own, registered only
 * Fruit pods: coffee cherries, curry berries, bay berries and tea flowers, hanging under leaves. They ripen in three
   stages; a ripe pod picked by hand starts again. HarvestCraft's fruit-tree generator grows their trees.
 * Fruiting vines: wild grapevine and kiwi vine, on tree trunks. Picking turns a vine bare; it fruits again in time.
+  With Growthcraft Grapes (`growthcraftGrapes`), Growthcraft's grape is the only grape: the wild grapevine gives
+  Growthcraft's grapes and grape seeds, and NEI hides HarvestCraft's grape, grape seeds and grape crop. HarvestCraft's
+  recipes take Growthcraft's grapes, which are `cropGrape` too.
 
 Bamboo shoots (`enableBambooShoots`), one for each bamboo: Plant Mega Pack's nine species and Madake, in place of
 HarvestCraft's one generic shoot crop. A shoot has eight stages; picked by hand when grown, it drops shoot items
