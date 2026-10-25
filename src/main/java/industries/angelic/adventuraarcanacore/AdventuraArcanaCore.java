@@ -15,7 +15,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
     name = "Adventura Arcana Core",
     version = Tags.VERSION,
     acceptedMinecraftVersions = "[1.7.10]",
-    dependencies = "required-after:unimixins@[0.3.1,);required-after:biomic",
+    dependencies = "required-after:unimixins@[0.3.1,);after:biomic",
     guiFactory = "industries.angelic.adventuraarcanacore.gui.GuiFactory",
     customProperties = { @Mod.CustomProperty(k = "license", v = "LGPLv3"),
         @Mod.CustomProperty(

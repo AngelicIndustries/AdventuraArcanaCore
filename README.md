@@ -24,8 +24,6 @@ Gameplay changes and mod integration patches for the Adventura Arcana modpack.
   [![curse](images/icons/curse.png)](https://www.curseforge.com/minecraft/mc-mods/unimixins)
   [![modrinth](images/icons/modrinth.png)](https://modrinth.com/mod/unimixins/versions)
   [![git](images/icons/git.png)](https://github.com/LegacyModdingMC/UniMixins/releases)
-* [Biomic](https://github.com/JackOfNoneTrades/Biomic)
-  [![git](images/icons/git.png)](https://github.com/JackOfNoneTrades/Biomic)
 
 ## Building
 
