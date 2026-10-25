@@ -1,0 +1,5 @@
+dependencies {
+    // usesMixins supplies UniMixins, including the GTNHMixins builders and annotation processor.
+    // Add optional mixin targets with compileOnly; guard them in core.TargetMod and core.Mixins.
+    // The usual dev-mod stack is intentionally omitted: this project only depends on UniMixins.
+}

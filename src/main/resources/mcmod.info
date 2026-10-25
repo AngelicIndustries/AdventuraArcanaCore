@@ -1,0 +1,26 @@
+{
+  "modListVersion": 2,
+  "modList": [
+    {
+      "modid": "${modId}",
+      "name": "${modName}",
+      "description": "Gameplay changes and mod integration patches for the Adventura Arcana modpack.",
+      "version": "${modVersion}",
+      "mcversion": "${minecraftVersion}",
+      "url": "https://github.com/AngelicIndustries/AdventuraArcanaCore",
+      "authorList": [
+        "Angelic Industries"
+      ],
+      "credits": "GTNH buildscript and UniMixins contributors",
+      "logoFile": "assets/${modId}/logo.png",
+      "screenshots": [],
+      "requiredMods": [
+        "unimixins"
+      ],
+      "dependencies": [
+        "unimixins"
+      ],
+      "useDependencyInformation": false
+    }
+  ]
+}

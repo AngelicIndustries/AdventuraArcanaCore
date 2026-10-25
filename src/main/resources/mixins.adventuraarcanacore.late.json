@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8.7-GTNH",
+  "package": "industries.angelic.adventuraarcanacore.mixins.late",
+  "refmap": "mixins.adventuraarcanacore.refmap.json",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
