@@ -22,6 +22,7 @@ public final class Config {
     public static boolean floraInBiomic = true;
     public static boolean leafDecorInBiomic = true;
     public static boolean netherFoodInBiomic = true;
+    public static boolean decorInBiomic = true;
 
     private Config() {}
 
@@ -145,6 +146,9 @@ public final class Config {
         netherFoodInBiomic = biomic(
             "netherFoodInBiomic",
             "Harvest the Nether grows wild in Biomic's Tartarus: its crops in patches by biome, glow flowers over Soul Valley, ignis trees here and there; its own gardens and trees stand down. Needs Harvest the Nether.");
+        decorInBiomic = biomic(
+            "decorInBiomic",
+            "BOP's and Plant Mega Pack's blocks in Biomic's cave and sea decoration: moss, ivy, glowshrooms, stone formations, bones and miner's delight in caves; Plant Mega Pack's kelp, eelgrass, sea plants and corals in the seas, in place of Biomic's ported seagrass and algae. Each block needs its mod.");
         if (configuration.hasChanged()) {
             configuration.save();
         }

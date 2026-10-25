@@ -1,0 +1,59 @@
+{
+ "format": 1,
+ "cave": {
+  "=mossy_wall": "BiomesOPlenty:moss:0",
+  "=glowshroom": "BiomesOPlenty:mushrooms:3",
+  "=stalactite": "BiomesOPlenty:stoneFormations:1",
+  "=stalagmite": "BiomesOPlenty:stoneFormations:0",
+  "=dry_bones": "BiomesOPlenty:bones:0",
+  "=spider_bones": "BiomesOPlenty:bones:0",
+  "=mouth_vine": "BiomesOPlenty:ivy:0",
+  "=mouth_fern": "plantmegapack:fernMaidenhairSpleenwort",
+  "=mouth_bush": "BiomesOPlenty:foliage:12",
+  "=miners_delight": "BiomesOPlenty:flowers2:6",
+  "=moss_skin_wall": "BiomesOPlenty:moss:0"
+ },
+ "marine": {
+  "plants": {
+   "=sea_lettuce": "plantmegapack:oceanSeaLettuce",
+   "=sea_grapes": "plantmegapack:oceanSeaGrapes",
+   "=eelgrass": "plantmegapack:oceanCommonEelgrass",
+   "=kelp_yellow": "plantmegapack:waterKelpGiantYEL",
+   "=kelp_green": "plantmegapack:waterKelpGiantGRN",
+   "=tangle": "plantmegapack:oceanTangle",
+   "=rockweed": "plantmegapack:oceanRockweed",
+   "=coral_weed": "plantmegapack:oceanCoralWeed",
+   "=mozuku": "plantmegapack:oceanMozuku",
+   "=glow_coral": "BiomesOPlenty:coral1:15",
+   "=bamboo_coral": "plantmegapack:waterBambooCoralYEL",
+   "=sun_polyps": "plantmegapack:coralSunPolyps"
+  },
+  "lists": {
+   "=fresh_warm": [
+    "plantmegapack:riverAmazonSword",
+    "plantmegapack:riverWaterWisteria",
+    "plantmegapack:waterCryptWendtii",
+    "plantmegapack:riverWrightsWaternymph"
+   ],
+   "=fresh_cold": [
+    "plantmegapack:riverCanadianWaterweed",
+    "plantmegapack:waterDwarfHairGrass"
+   ],
+   "=fresh_temperate": [
+    "plantmegapack:riverCoonsTail",
+    "plantmegapack:riverEelgrass",
+    "plantmegapack:riverCanadianWaterweed",
+    "plantmegapack:waterDwarfHairGrass"
+   ],
+   "=corals": [
+    "plantmegapack:coralBlueStaghorn",
+    "plantmegapack:coralPillar",
+    "plantmegapack:coralElegance",
+    "plantmegapack:waterPulsingXenia",
+    "plantmegapack:coralFeatheredHydroid",
+    "plantmegapack:waterPurpleSeaWhip",
+    "plantmegapack:waterRedSeaFan"
+   ]
+  }
+ }
+}

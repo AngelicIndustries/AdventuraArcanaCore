@@ -25,5 +25,6 @@ final class Flora {
             ForeignGenerators.standDown("plantmegapack.worldgen.PMPWorldGenerator", ForeignGenerators.Scope.OVERWORLD);
         }
         if (Config.leafDecorInBiomic) EcologyOverlays.register("leaf-decor.json", ECOLOGY + "flora-leaf-decor.json");
+        if (Config.decorInBiomic) EcologyOverlays.register("decor.json", ECOLOGY + "decor.json");
     }
 }
