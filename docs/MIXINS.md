@@ -1,7 +1,7 @@
 # Adding pack patches
 
 All registrations live in `core/Mixins.java`, which implements GTNHMixins' `IMixins`.
-`core/TargetMod.java` implements `ITargetMod` for optional targets. Both start empty.
+`core/TargetMod.java` implements `ITargetMod` for optional targets.
 The builders and loader interfaces come from UniMixins; no separate GTNHMixins or AngelLib jar is needed.
 
 ## Vanilla patches
@@ -65,8 +65,16 @@ Ordinary runtime settings can use `Config` and its GUI reload event.
 
 Keep the JSON mixin lists empty when registering through the builder; otherwise a class can be
 loaded twice or bypass its side/mod guards. All three configs share the generated refmap.
-With no actual `@Mixin` classes yet, the annotation processor produces no refmap or mixin SRG file;
-the build/runtime may report their absence. These are generated once real mixins are added.
+
+## Growthcraft Forestry dependency
+
+`fml.MixinFMLModContainer` runs after Forge binds mod metadata and before dependency validation.
+It removes Forestry from Growthcraft's required mods while preserving its load order and version
+constraint. Releases that use `mcmod.info` also receive the Forestry ordering rule declared in their
+annotation. Other requirements and other mods are unchanged.
+
+This patch runs early on both sides because late mixins load after dependency validation.
+It targets Forge and checks the exact `Growthcraft` mod ID, so Growthcraft itself is optional.
 
 Keep future integration helpers in `compat/`, event handlers in `handlers/client/` or
 `handlers/server/`, and add `network/`, `util/`, `varinstances/` and `commands/` as needed.
