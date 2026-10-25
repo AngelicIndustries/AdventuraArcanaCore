@@ -15,10 +15,12 @@
       "logoFile": "assets/${modId}/logo.png",
       "screenshots": [],
       "requiredMods": [
-        "unimixins"
+        "unimixins",
+        "biomic"
       ],
       "dependencies": [
-        "unimixins"
+        "unimixins",
+        "biomic"
       ],
       "useDependencyInformation": false
     }

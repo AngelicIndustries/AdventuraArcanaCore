@@ -1,4 +1,6 @@
 repositories {
+    // Biomic, published locally while it is developed together with AAC.
+    mavenLocal()
     maven {
         name = "Angelic Maven"
         url = "https://maven.angelic.industries/releases"
