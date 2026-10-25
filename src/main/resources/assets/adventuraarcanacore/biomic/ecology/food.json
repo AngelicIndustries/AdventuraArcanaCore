@@ -1,0 +1,375 @@
+{
+ "format": 1,
+ "food": {
+  "habitats": {
+   "minecraft:forest": {
+    "crops": [
+     "garlic"
+    ],
+    "trees": [
+     "apple",
+     "pear",
+     "walnut"
+    ],
+    "nests": true
+   },
+   "minecraft:plains": {
+    "crops": [
+     "mustardseeds",
+     "turnip",
+     "whitemushroom"
+    ],
+    "nests": true
+   },
+   "minecraft:savanna": {
+    "crops": [
+     "cantaloupe",
+     "okra"
+    ]
+   },
+   "origen:ALPINE_ASCENDANCY": {
+    "crops": [
+     "rhubarb"
+    ]
+   },
+   "origen:BADLANDS_BALCONIES": {
+    "crops": [
+     "chilipepper",
+     "tomato"
+    ]
+   },
+   "origen:BEACH": {
+    "crops": [
+     "asparagus"
+    ]
+   },
+   "origen:BLACK_FOREST": {
+    "bushes": [
+     "raspberry"
+    ]
+   },
+   "origen:CANOPY_CASCADES": {
+    "trees": [
+     "lemon",
+     "orange"
+    ]
+   },
+   "origen:CARVING_CREAKS": {
+    "crops": [
+     "chilipepper",
+     "corn"
+    ],
+    "trees": [
+     "pistachio"
+    ]
+   },
+   "origen:COLD_STEPPE": {
+    "crops": [
+     "rye"
+    ]
+   },
+   "origen:FLOWERING_FOREST": {
+    "trees": [
+     "plum"
+    ],
+    "nests": true
+   },
+   "origen:FOLIAGE_FORTRESS": {
+    "crops": [
+     "bean",
+     "wintersquash"
+    ],
+    "trees": [
+     "chestnut"
+    ]
+   },
+   "origen:FOSSILIZED_FENLANDS": {
+    "bushes": [
+     "cranberry"
+    ]
+   },
+   "origen:LUSH_LOOPS": {
+    "trees": [
+     "grapefruit",
+     "orange",
+     "peppercorn"
+    ]
+   },
+   "origen:MARINE_MONOLITHS": {
+    "bushes": [
+     "candleberry"
+    ],
+    "trees": [
+     "spiceleaf"
+    ]
+   },
+   "origen:OASIS": {
+    "trees": [
+     "date",
+     "fig",
+     "pomegranate"
+    ]
+   },
+   "origen:OVERGROWN_CLIFFS": {
+    "trees": [
+     "dragonfruit"
+    ]
+   },
+   "origen:PALM_BEACH": {
+    "trees": [
+     "coconut"
+    ]
+   },
+   "origen:PILLOW_PLAINS": {
+    "crops": [
+     "oats",
+     "parsnip",
+     "whitemushroom"
+    ],
+    "nests": true
+   },
+   "origen:SAKURA_STREAMS": {
+    "trees": [
+     "tealeaf",
+     "cherry",
+     "persimmon"
+    ],
+    "vines": [
+     "kiwi"
+    ],
+    "nests": true
+   },
+   "origen:TEMPERATE_SEA_ARCHES": {
+    "crops": [
+     "cabbage"
+    ]
+   },
+   "origen:VERDANT_VALLEYS": {
+    "crops": [
+     "artichoke",
+     "oats"
+    ],
+    "trees": [
+     "olive"
+    ],
+    "vines": [
+     "grape"
+    ],
+    "nests": true
+   },
+   "regions_unexplored:autumnal_maple_forest": {
+    "trees": [
+     "chestnut"
+    ],
+    "nests": true
+   },
+   "regions_unexplored:baobab_savanna": {
+    "crops": [
+     "sesameseeds"
+    ],
+    "trees": [
+     "cashew"
+    ]
+   },
+   "regions_unexplored:bayou": {
+    "trees": [
+     "pecan"
+    ]
+   },
+   "regions_unexplored:chalk_cliffs": {
+    "crops": [
+     "cabbage"
+    ]
+   },
+   "regions_unexplored:clover_plains": {
+    "nests": true
+   },
+   "regions_unexplored:dry_bushland": {
+    "crops": [
+     "artichoke",
+     "peas"
+    ],
+    "bushes": [
+     "cotton"
+    ],
+    "trees": [
+     "almond",
+     "apricot",
+     "fig",
+     "olive",
+     "pomegranate"
+    ],
+    "vines": [
+     "grape"
+    ]
+   },
+   "regions_unexplored:eucalyptus_forest": {
+    "trees": [
+     "paperbark"
+    ]
+   },
+   "regions_unexplored:fen": {
+    "bushes": [
+     "cranberry"
+    ]
+   },
+   "regions_unexplored:flower_fields": {
+    "nests": true
+   },
+   "regions_unexplored:grassland": {
+    "crops": [
+     "asparagus"
+    ]
+   },
+   "regions_unexplored:grassy_beach": {
+    "crops": [
+     "radish"
+    ],
+    "trees": [
+     "coconut"
+    ]
+   },
+   "regions_unexplored:highland_fields": {
+    "crops": [
+     "rhubarb",
+     "rye"
+    ],
+    "nests": true
+   },
+   "regions_unexplored:joshua_desert": {
+    "trees": [
+     "pistachio"
+    ]
+   },
+   "regions_unexplored:magnolia_woodland": {
+    "crops": [
+     "soybean"
+    ],
+    "trees": [
+     "tealeaf",
+     "persimmon"
+    ],
+    "vines": [
+     "kiwi"
+    ],
+    "nests": true
+   },
+   "regions_unexplored:maple_forest": {
+    "crops": [
+     "leek"
+    ],
+    "bushes": [
+     "raspberry"
+    ],
+    "trees": [
+     "apple",
+     "maple"
+    ],
+    "nests": true
+   },
+   "regions_unexplored:marsh": {
+    "crops": [
+     "celery"
+    ]
+   },
+   "regions_unexplored:old_growth_forest": {
+    "crops": [
+     "garlic"
+    ],
+    "trees": [
+     "chestnut",
+     "walnut"
+    ]
+   },
+   "regions_unexplored:orchard": {
+    "trees": [
+     "apple",
+     "apricot",
+     "cherry",
+     "peach",
+     "pear",
+     "plum"
+    ],
+    "nests": true
+   },
+   "regions_unexplored:outback": {
+    "bushes": [
+     "cotton"
+    ],
+    "trees": [
+     "paperbark"
+    ]
+   },
+   "regions_unexplored:prairie": {
+    "crops": [
+     "mustardseeds"
+    ]
+   },
+   "regions_unexplored:rainforest": {
+    "crops": [
+     "ginger"
+    ],
+    "trees": [
+     "coffeebean",
+     "banana",
+     "cinnamon",
+     "durian",
+     "nutmeg"
+    ]
+   },
+   "regions_unexplored:saguaro_desert": {
+    "trees": [
+     "date"
+    ]
+   },
+   "regions_unexplored:shrubland": {
+    "bushes": [
+     "candleberry"
+    ]
+   },
+   "regions_unexplored:silver_birch_forest": {
+    "bushes": [
+     "raspberry"
+    ],
+    "nests": true
+   },
+   "regions_unexplored:sparse_rainforest": {
+    "crops": [
+     "cucumber"
+    ],
+    "trees": [
+     "coffeebean",
+     "avocado",
+     "mango",
+     "starfruit",
+     "vanillabean"
+    ]
+   },
+   "regions_unexplored:tropics": {
+    "crops": [
+     "eggplant",
+     "pineapple",
+     "sweetpotato"
+    ],
+    "trees": [
+     "curryleaf",
+     "banana",
+     "candlenut",
+     "lime",
+     "mango",
+     "papaya"
+    ]
+   },
+   "regions_unexplored:willow_forest": {
+    "trees": [
+     "pecan"
+    ]
+   },
+   "saltymod:salt_marsh": {
+    "crops": [
+     "celery"
+    ]
+   }
+  }
+ }
+}

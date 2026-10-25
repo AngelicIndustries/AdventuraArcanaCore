@@ -1,0 +1,14 @@
+{
+ "BiomesOPlenty:plants:6": "rice",
+ "biomic:ru_decor_barley:0": "barley",
+ "minecraft:double_plant:0": "sunflower",
+ "plantmegapack:berrybushBlack": "blackberry",
+ "plantmegapack:berrybushBlue": "blueberry",
+ "plantmegapack:berrybushStraw": "strawberry",
+ "plantmegapack:cactusPricklyPear": "cactusfruit",
+ "plantmegapack:floatingWaterChestnut": "waterchestnut",
+ "plantmegapack:leafyPricklyLettuce": "lettuce",
+ "plantmegapack:oceanSeaLettuce": "seaweed",
+ "saltymod:salt_flower_d:4": "onion",
+ "saltymod:salt_flower_s:1": "beet"
+}

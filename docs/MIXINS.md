@@ -93,7 +93,20 @@ screens, and `MixinServerRenderType` answers the render type of four blocks with
 the pack's SaltyMod build only (`TargetMod.SALTYMOD`, runtime version `2.0.0-master.150+9a0954aa6f`). Switch:
 `saltyModDedicatedServer`.
 
-Both moved here from Biomic, which keeps only what a player with Biomic and that mod alone would expect.
+## Wild food
+
+`minecraft.MixinBlockBushWildCrops` (early) lets HarvestCraft's and Harvest the Nether's crops stay where they grow
+wild: natural ground for HarvestCraft's, nether ground for Harvest the Nether's. Sowing still needs farmland. Switch:
+`wildCropsStay`.
+
+`plantmegapack.MixinPmpBerryLinks` gives HarvestCraft's berries from PMP's berry bushes (`food_links.json`). Switch:
+`pmpHarvestCraftBerries`.
+
+`saltymod.MixinSaltyBeeNestSeed` seeds SaltyMod's bee nests per chunk from the world seed, so a seed gives the same
+nests (they came from one clock-seeded random). In Biomic's overworld it places none while `beeNestsInBiomic` is on.
+Switch: `saltyModBeeNests`.
+
+These moved here from Biomic, which keeps only what a player with Biomic and that mod alone would expect.
 
 Keep future integration helpers in `compat/`, event handlers in `handlers/client/` or
 `handlers/server/`, and add `network/`, `util/`, `varinstances/` and `commands/` as needed.

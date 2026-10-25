@@ -11,6 +11,10 @@ public final class Config {
     public static boolean enableCompartments = true;
     public static boolean enableWorktable = true;
     public static boolean pmpIvyForVines = true;
+    public static boolean enableWildFood = true;
+    public static boolean foodLinks = true;
+    public static boolean wildFoodInBiomic = true;
+    public static boolean beeNestsInBiomic = true;
 
     private Config() {}
 
@@ -56,6 +60,22 @@ public final class Config {
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config.enableWorktable")
             .setRequiresMcRestart(true)
             .getBoolean();
+        enableWildFood = configuration.get(
+            Categories.GENERAL,
+            "enableWildFood",
+            true,
+            "Wild berry bushes, fruit pods and fruiting vines for HarvestCraft's crops that have no natural form of their own. Needs HarvestCraft; requires a restart; use the same setting on client and server.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.enableWildFood")
+            .setRequiresMcRestart(true)
+            .getBoolean();
+        foodLinks = configuration.get(
+            Categories.GENERAL,
+            "foodLinks",
+            true,
+            "Other mods' wild plants drop HarvestCraft food: BOP's rice, sunflowers' seeds, PMP's berries and lettuce. Needs HarvestCraft; requires a restart.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.foodLinks")
+            .setRequiresMcRestart(true)
+            .getBoolean();
         configuration.setCategoryLanguageKey(Categories.PATCHES, AdventuraArcanaCore.MODID + ".config.patches");
         configuration.setCategoryComment(
             Categories.PATCHES,
@@ -65,6 +85,13 @@ public final class Config {
             "growthcraftWithoutForestry",
             "Growthcraft loads without Forestry: its Forestry integration becomes optional.");
         patch("noNaturaClouds", "Natura generates no clouds in any dimension.");
+        patch(
+            "wildCropsStay",
+            "HarvestCraft's and Harvest the Nether's crops stay where they grow wild (grass, sand, netherrack); sowing still needs farmland.");
+        patch("pmpHarvestCraftBerries", "Plant Mega Pack's berry bushes give HarvestCraft's berries (with foodLinks).");
+        patch(
+            "saltyModBeeNests",
+            "SaltyMod's bee nests are seeded per chunk, so a seed gives the same nests; none in Biomic's overworld while beeNestsInBiomic is on.");
         patch(
             "saltyModDedicatedServer",
             "SaltyMod's client code stays off a dedicated server, which crashes on it otherwise.");
@@ -76,6 +103,12 @@ public final class Config {
         pmpIvyForVines = biomic(
             "pmpIvyForVines",
             "Vanilla's vine becomes Plant Mega Pack's ivy in Biomic's worlds (Swedish where hot and wet, Japanese elsewhere). Needs Plant Mega Pack.");
+        wildFoodInBiomic = biomic(
+            "wildFoodInBiomic",
+            "HarvestCraft's food grows wild in Biomic's habitats (crop patches, berry bushes, fruit groves, fruiting vines), and HarvestCraft's own gardens, fruit trees, hives and salt stand down there. Needs HarvestCraft.");
+        beeNestsInBiomic = biomic(
+            "beeNestsInBiomic",
+            "Et Futurum's bee nests hang on trees in Biomic's habitats, the only wild hives there. Needs Et Futurum Requiem.");
         if (configuration.hasChanged()) {
             configuration.save();
         }

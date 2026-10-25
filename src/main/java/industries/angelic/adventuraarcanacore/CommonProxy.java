@@ -11,6 +11,9 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import industries.angelic.adventuraarcanacore.compartment.Compartments;
 import industries.angelic.adventuraarcanacore.compartment.TileCompartment;
 import industries.angelic.adventuraarcanacore.compat.biomic.BiomicIntegration;
+import industries.angelic.adventuraarcanacore.food.FoodBlocks;
+import industries.angelic.adventuraarcanacore.food.FoodLinks;
+import industries.angelic.adventuraarcanacore.food.PamFood;
 import industries.angelic.adventuraarcanacore.gui.GuiHandler;
 import industries.angelic.adventuraarcanacore.worktable.TileWorktable;
 import industries.angelic.adventuraarcanacore.worktable.Worktables;
@@ -21,6 +24,8 @@ public class CommonProxy {
         Config.loadConfig(event.getSuggestedConfigurationFile());
         if (Config.enableCompartments) Compartments.preInit();
         if (Config.enableWorktable) Worktables.preInit();
+        if (Config.enableWildFood) FoodBlocks.register();
+        if (Loader.isModLoaded("biomic")) BiomicIntegration.preInit();
         NetworkRegistry.INSTANCE.registerGuiHandler(AdventuraArcanaCore.instance, new GuiHandler());
     }
 
@@ -29,6 +34,7 @@ public class CommonProxy {
     public void postInit(FMLPostInitializationEvent event) {
         if (Config.enableCompartments) Compartments.registerRecipes();
         if (Config.enableWorktable) Worktables.registerRecipes();
+        if (Config.foodLinks && PamFood.installed()) FoodLinks.register();
         if (Loader.isModLoaded("biomic")) BiomicIntegration.postInit();
     }
 

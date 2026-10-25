@@ -22,7 +22,19 @@ public enum Mixins implements IMixins {
             .addServerMixins(
                 "saltymod.MixinBeeNestServerIcons",
                 "saltymod.MixinNeiServerRegistration",
-                "saltymod.MixinServerRenderType"));
+                "saltymod.MixinServerRenderType")),
+    WILD_CROPS_STAY(new MixinBuilder("Keep HarvestCraft's crops where they grow wild").setPhase(Phase.EARLY)
+        .setApplyIf(() -> PatchSwitches.enabled("wildCropsStay"))
+        .addCommonMixins("minecraft.MixinBlockBushWildCrops")),
+    PMP_HARVESTCRAFT_BERRIES(
+        new MixinBuilder("Give HarvestCraft's berries from Plant Mega Pack's bushes").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.PLANTMEGAPACK)
+            .setApplyIf(() -> PatchSwitches.enabled("pmpHarvestCraftBerries"))
+            .addCommonMixins("plantmegapack.MixinPmpBerryLinks")),
+    SALTYMOD_BEE_NESTS(new MixinBuilder("Seed SaltyMod's bee nests per chunk").setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.SALTYMOD)
+        .setApplyIf(() -> PatchSwitches.enabled("saltyModBeeNests"))
+        .addCommonMixins("saltymod.MixinSaltyBeeNestSeed"));
 
     private final MixinBuilder builder;
 

@@ -10,6 +10,7 @@ public enum TargetMod implements ITargetMod {
     NATURA(new TargetModBuilder().setModId("Natura")
         .setTargetClass("mods.natura.Natura")
         .testModVersion("Natura", version -> "2.8.19".equals(version) || "2.8.24".equals(version))),
+    PLANTMEGAPACK(new TargetModBuilder().setModId("plantmegapack")),
     /** The SaltyMod build the patches are written against (its runtime version string). */
     SALTYMOD(new TargetModBuilder().setModId("saltymod")
         .setTargetClass("darkbum.saltymod.SaltyMod")
