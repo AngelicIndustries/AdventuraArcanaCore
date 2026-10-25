@@ -15,6 +15,7 @@ public final class BiomicIntegration {
         if (Config.wildFoodInBiomic) FoodPlants.preInit();
         Bamboo.preInit();
         Flora.preInit();
+        if (Config.netherFoodInBiomic) NetherFood.preInit();
     }
 
     /** At postInit, once every mod's blocks exist. */
@@ -23,5 +24,6 @@ public final class BiomicIntegration {
         if (Config.wildFoodInBiomic) FoodPlants.postInit();
         if (Config.beeNestsInBiomic) FoodPlants.nests();
         Bamboo.postInit();
+        if (Config.netherFoodInBiomic) NetherFood.postInit();
     }
 }

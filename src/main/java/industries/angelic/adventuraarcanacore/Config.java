@@ -21,6 +21,7 @@ public final class Config {
     public static boolean bambooShootsInBiomic = true;
     public static boolean floraInBiomic = true;
     public static boolean leafDecorInBiomic = true;
+    public static boolean netherFoodInBiomic = true;
 
     private Config() {}
 
@@ -141,6 +142,9 @@ public final class Config {
         leafDecorInBiomic = biomic(
             "leafDecorInBiomic",
             "Origen's leaf decor in BOP's and Plant Mega Pack's plants: their shrubs in bush clumps, ivy and flowering vines on cliffs, moss and willow on walls. Each plant needs its mod.");
+        netherFoodInBiomic = biomic(
+            "netherFoodInBiomic",
+            "Harvest the Nether grows wild in Biomic's Tartarus: its crops in patches by biome, glow flowers over Soul Valley, ignis trees here and there; its own gardens and trees stand down. Needs Harvest the Nether.");
         if (configuration.hasChanged()) {
             configuration.save();
         }

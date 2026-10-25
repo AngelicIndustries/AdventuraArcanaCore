@@ -1,0 +1,30 @@
+{
+ "format": 1,
+ "food": {
+  "nether": {
+   "Bloody Remnants": [
+    "harvestthenether:bloodleafCrop",
+    "harvestthenether:ignisFruit"
+   ],
+   "Crimson Forest": [
+    "harvestthenether:bloodleafCrop"
+   ],
+   "Corrupted Wastes": [
+    "harvestthenether:fleshrootCrop"
+   ],
+   "Flaming Hellscapes": [
+    "harvestthenether:fleshrootCrop",
+    "harvestthenether:ignisFruit"
+   ],
+   "Torrid Crags": [
+    "harvestthenether:marrowberryCrop"
+   ],
+   "Bloodless Undergrowth": [
+    "harvestthenether:marrowberryCrop"
+   ],
+   "Soul Valley": [
+    "harvestthenether:glowFlower"
+   ]
+  }
+ }
+}
