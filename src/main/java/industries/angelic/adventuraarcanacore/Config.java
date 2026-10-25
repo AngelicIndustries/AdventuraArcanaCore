@@ -8,6 +8,7 @@ public final class Config {
 
     private static Configuration configuration;
     public static boolean debugMode;
+    public static boolean enableCompartments = true;
 
     private Config() {}
 
@@ -32,6 +33,15 @@ public final class Config {
             false,
             "Enable debug logging.",
             AdventuraArcanaCore.MODID + ".config.debugMode");
+        enableCompartments = configuration
+            .get(
+                Categories.GENERAL,
+                "enableCompartments",
+                true,
+                "Enable compartment blocks and recipes. Requires a restart; use the same setting on client and server.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.enableCompartments")
+            .setRequiresMcRestart(true)
+            .getBoolean();
         if (configuration.hasChanged()) {
             configuration.save();
         }

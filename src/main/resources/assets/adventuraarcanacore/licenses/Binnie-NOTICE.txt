@@ -1,0 +1,11 @@
+Compartments ported from Binnie's Mods (Binnie and contributors).
+Source: https://github.com/GTNewHorizons/Binnie
+Revision: c6a72a489c7c825f3da33ad958ac2b7ede0aa783
+License: GNU Lesser General Public License version 3.
+See Binnie-LGPL-3.0.txt and GPL-3.0.txt in this directory.
+
+The compartment model and six textures are copied from Binnie.
+CompartmentTab, storage capacities, recipes and GUI behavior are adapted
+from binnie.core.machines.storage. The Forge inventory, container, GUI and
+networking replace Binnie's machine/CraftGUI framework and Forestry API use.
+Changes made for Adventura Arcana Core, 2026.

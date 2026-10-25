@@ -1,3 +1,21 @@
 adventuraarcanacore.config.general=General
 adventuraarcanacore.config.debugMode=Debug logging
+adventuraarcanacore.config.enableCompartments=Enable compartments
 adventuraarcanacore.configgui.title=Adventura Arcana Core
+
+tile.adventuraarcanacore.compartment.wood.name=Compartment
+tile.adventuraarcanacore.compartment.copper.name=Copper Compartment
+tile.adventuraarcanacore.compartment.bronze.name=Bronze Compartment
+tile.adventuraarcanacore.compartment.iron.name=Iron Compartment
+tile.adventuraarcanacore.compartment.gold.name=Gold Compartment
+tile.adventuraarcanacore.compartment.diamond.name=Diamond Compartment
+adventuraarcanacore.compartment.capacity=%s tabs of %s slots (%s total)
+adventuraarcanacore.compartment.tab=Tab %s
+adventuraarcanacore.compartment.search=Search
+adventuraarcanacore.compartment.back=Back
+adventuraarcanacore.compartment.items=Items
+adventuraarcanacore.compartment.blocks=Blocks
+adventuraarcanacore.compartment.results=%s stacks (%s/%s)
+adventuraarcanacore.compartment.rename=Tab name (Enter to save)
+adventuraarcanacore.compartment.icon=Click with a held item to copy its icon. Empty hand resets it.
+adventuraarcanacore.compartment.color=Tab color

@@ -35,6 +35,8 @@ VERSION=version ./gradlew build
 
 ## Credits
 
+* [Binnie](https://github.com/GTNewHorizons/Binnie), for the compartments.
+
 * [GTNH buildscript and ExampleMod](https://github.com/GTNewHorizons/ExampleMod1.7.10).
 
 ## License

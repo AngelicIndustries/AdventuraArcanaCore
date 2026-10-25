@@ -30,6 +30,9 @@ public class AdventuraArcanaCore {
     public static final Logger LOG = LogManager.getLogger(MODID);
     public static final boolean DEBUG_MODE = System.getenv("MCMODDING_DEBUG_MODE") != null;
 
+    @Mod.Instance(MODID)
+    public static AdventuraArcanaCore instance;
+
     @SidedProxy(
         clientSide = MODGROUP + "." + MODID + ".ClientProxy",
         serverSide = MODGROUP + "." + MODID + ".CommonProxy")

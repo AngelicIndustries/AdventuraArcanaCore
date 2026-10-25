@@ -1,7 +1,8 @@
 dependencies {
+    testImplementation("junit:junit:4.13.2")
     // usesMixins supplies UniMixins, including the GTNHMixins builders and annotation processor.
     // Add optional mixin targets with compileOnly; guard them in core.TargetMod and core.Mixins.
-    // The usual dev-mod stack is intentionally omitted: this project only depends on UniMixins and Biomic.
+    runtimeOnlyNonPublishable("com.github.GTNewHorizons:NotEnoughItems:2.8.167-GTNH:dev")
     // Biomic is the pack's world generator; AAC's world content builds on its API. While developing, run
     // `./gradlew publishToMavenLocal` in Biomic first.
     implementation("org.fentanylsolutions.biomic:Biomic:0.0.1-debloat:dev")
