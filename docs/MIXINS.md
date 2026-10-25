@@ -76,5 +76,19 @@ annotation. Other requirements and other mods are unchanged.
 This patch runs early on both sides because late mixins load after dependency validation.
 It targets Forge and checks the exact `Growthcraft` mod ID, so Growthcraft itself is optional.
 
+## Natura clouds
+
+`natura.MixinNaturaNoClouds` stops Natura's cloud generator in every dimension: its clouds float as flat slabs. It
+loads for Natura 2.8.19 and 2.8.24 only (`TargetMod.NATURA`, which reads the version from `mods.natura.Natura`).
+
+## SaltyMod on a dedicated server
+
+Three server-only patches keep SaltyMod's client code off a dedicated server, which crashes on it otherwise:
+`MixinBeeNestServerIcons` skips the bee nest's client-only icon fields, `MixinNeiServerRegistration` skips its NEI
+screens, and `MixinServerRenderType` answers the render type of four blocks without the client proxy. They load for
+the pack's SaltyMod build only (`TargetMod.SALTYMOD`, runtime version `2.0.0-master.150+9a0954aa6f`).
+
+Both moved here from Biomic, which keeps only what a player with Biomic and that mod alone would expect.
+
 Keep future integration helpers in `compat/`, event handlers in `handlers/client/` or
 `handlers/server/`, and add `network/`, `util/`, `varinstances/` and `commands/` as needed.
