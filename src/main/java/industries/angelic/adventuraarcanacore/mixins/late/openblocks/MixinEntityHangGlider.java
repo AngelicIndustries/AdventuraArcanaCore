@@ -48,7 +48,7 @@ public abstract class MixinEntityHangGlider {
 
     @Inject(method = "isGliderValid", at = @At("TAIL"), cancellable = true, remap = false, require = 1)
     private static void adventuraarcanacore$wear(EntityPlayer player, EntityHangGlider glider,
-        CallbackInfoReturnable<Boolean> valid, @Local ItemStack held) {
+        CallbackInfoReturnable<Boolean> valid, @Local(ordinal = 0) ItemStack held) {
         if (valid.getReturnValueZ() && !HangGlider.wear(player, glider, held, glider.isDeployed()))
             valid.setReturnValue(false);
     }
