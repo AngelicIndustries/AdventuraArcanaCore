@@ -42,6 +42,7 @@ adventuraarcanacore.config.saltyModDedicatedServer=SaltyMod on a dedicated serve
 adventuraarcanacore.config.angelicaDsWeather=Dynamic Surroundings weather with Angelica
 adventuraarcanacore.config.ruinsEndlessIdsStats=Ruins with EndlessIDs biomes
 adventuraarcanacore.config.betterSleepingFixes=Better Sleeping fixes
+adventuraarcanacore.config.hangGliderNerf=Weaker hang glider
 adventuraarcanacore.config.biomic=Biomic
 adventuraarcanacore.config.pmpIvyForVines=PMP ivy for vines
 tile.adventuraarcanacore.wild_bush.name=Wild Berry Bush

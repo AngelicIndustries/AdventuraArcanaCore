@@ -57,7 +57,11 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.BETTER_SLEEPING)
         .setApplyIf(() -> PatchSwitches.enabled("betterSleepingFixes"))
         .addCommonMixins("bettersleeping.MixinBetterSleepingEvents", "bettersleeping.MixinAlternateSleep")
-        .addClientMixins("bettersleeping.MixinSleepOverlay"));
+        .addClientMixins("bettersleeping.MixinSleepOverlay")),
+    HANG_GLIDER_NERF(new MixinBuilder("Make OpenBlocks' hang glider glide worse and wear out").setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.OPENBLOCKS)
+        .setApplyIf(() -> PatchSwitches.enabled("hangGliderNerf"))
+        .addCommonMixins("openblocks.MixinEntityHangGlider", "openblocks.MixinItemHangGlider"));
 
     private final MixinBuilder builder;
 

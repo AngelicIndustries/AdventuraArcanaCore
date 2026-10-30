@@ -135,6 +135,9 @@ public final class Config {
         patch(
             "betterSleepingFixes",
             "Better Sleeping ends the night as soon as its share of players is asleep, not only when someone gets into bed; its sleeping message shows the real share, lying in bed makes nobody tired and the sleep bar's marker follows guiOffsetLeft.");
+        patch(
+            "hangGliderNerf",
+            "OpenBlocks' hang glider glides about 2.5 blocks per block of height instead of 6, dives at a third of the speed, wears out after 4 minutes in the air and is repaired with leather.");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");
         configuration.setCategoryComment(
             Categories.BIOMIC,

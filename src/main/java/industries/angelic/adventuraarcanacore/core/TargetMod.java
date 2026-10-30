@@ -17,6 +17,8 @@ public enum TargetMod implements ITargetMod {
     NATURA(new TargetModBuilder().setModId("Natura")
         .setTargetClass("mods.natura.Natura")
         .testModVersion("Natura", version -> "2.8.19".equals(version) || "2.8.24".equals(version))),
+    OPENBLOCKS(new TargetModBuilder().setModId("OpenBlocks")
+        .setTargetClass("openblocks.OpenBlocks")),
     PLANTMEGAPACK(new TargetModBuilder().setModId("plantmegapack")),
     RUINS(new TargetModBuilder().setModId("AS_Ruins")
         .setTargetClass("atomicstryker.ruins.common.RuinsMod")),
