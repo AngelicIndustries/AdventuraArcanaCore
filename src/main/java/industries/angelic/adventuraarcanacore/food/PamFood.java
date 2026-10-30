@@ -23,7 +23,7 @@ public final class PamFood {
 
     public static final String MOD = "harvestcraft";
     public static final String NETHER = "harvestthenether";
-    /** The HarvestCraft build the food is written against. */
+    /** The oldest HarvestCraft build the food is written against. Later GTNH builds keep its blocks and items. */
     public static final String SUPPORTED = "1.3.13-GTNH";
 
     /** Seed items whose names do not follow HarvestCraft's {@code <crop>seedItem} pattern. */
@@ -44,16 +44,17 @@ public final class PamFood {
 
     private PamFood() {}
 
-    /** HarvestCraft at the version the food is written against. */
+    /** HarvestCraft at or above the version the food is written against. */
     public static boolean installed() {
         Boolean known = installed;
         if (known == null) {
             ModContainer mod = Loader.instance()
                 .getIndexedModList()
                 .get(MOD);
-            known = mod != null && SUPPORTED.equals(mod.getVersion());
+            known = mod != null && new cpw.mods.fml.common.versioning.DefaultArtifactVersion(mod.getVersion())
+                .compareTo(new cpw.mods.fml.common.versioning.DefaultArtifactVersion(SUPPORTED)) >= 0;
             if (mod != null && !known) AdventuraArcanaCore.LOG
-                .warn("HarvestCraft {} is not {}; no wild HarvestCraft food", mod.getVersion(), SUPPORTED);
+                .warn("HarvestCraft {} is older than {}; no wild HarvestCraft food", mod.getVersion(), SUPPORTED);
             installed = known;
         }
         return known;
