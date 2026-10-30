@@ -51,7 +51,13 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.RUINS)
         .addRequiredMod(TargetMod.ENDLESSIDS)
         .setApplyIf(() -> PatchSwitches.enabled("ruinsEndlessIdsStats"))
-        .addCommonMixins("ruins.MixinRuinStats"));
+        .addCommonMixins("ruins.MixinRuinStats")),
+    BETTER_SLEEPING_FIXES(new MixinBuilder("Fix Better Sleeping's sleep percentage, sleep message, bed and sleep bar")
+        .setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.BETTER_SLEEPING)
+        .setApplyIf(() -> PatchSwitches.enabled("betterSleepingFixes"))
+        .addCommonMixins("bettersleeping.MixinBetterSleepingEvents", "bettersleeping.MixinAlternateSleep")
+        .addClientMixins("bettersleeping.MixinSleepOverlay"));
 
     private final MixinBuilder builder;
 

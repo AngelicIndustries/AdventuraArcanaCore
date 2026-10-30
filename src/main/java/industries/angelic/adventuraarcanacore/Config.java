@@ -132,6 +132,9 @@ public final class Config {
         patch(
             "ruinsEndlessIdsStats",
             "Ruins sizes its biome statistics for EndlessIDs' biome IDs, which otherwise overflow them.");
+        patch(
+            "betterSleepingFixes",
+            "Better Sleeping ends the night as soon as its share of players is asleep, not only when someone gets into bed; its sleeping message shows the real share, lying in bed makes nobody tired and the sleep bar's marker follows guiOffsetLeft.");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");
         configuration.setCategoryComment(
             Categories.BIOMIC,

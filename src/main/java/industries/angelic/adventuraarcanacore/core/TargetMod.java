@@ -7,6 +7,10 @@ import com.gtnewhorizon.gtnhmixins.builders.TargetModBuilder;
 public enum TargetMod implements ITargetMod {
 
     ANGELICA(new TargetModBuilder().setModId("angelica")),
+    /** The Better Sleeping build the patches are written against. */
+    BETTER_SLEEPING(new TargetModBuilder().setModId("bettersleeping")
+        .setTargetClass("cz.ondraster.bettersleeping.BetterSleeping")
+        .testModVersion("bettersleeping", "1.7.10-1.2.27")),
     DYNAMIC_SURROUNDINGS(new TargetModBuilder().setModId("dsurround")),
     ENDLESSIDS(new TargetModBuilder().setModId("endlessids")),
     /** Natura builds whose classes the patches are written against. */
