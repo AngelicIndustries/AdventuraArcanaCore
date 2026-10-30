@@ -126,6 +126,12 @@ public final class Config {
         patch(
             "saltyModDedicatedServer",
             "SaltyMod's client code stays off a dedicated server, which crashes on it otherwise.");
+        patch(
+            "angelicaDsWeather",
+            "Dynamic Surroundings' rain sounds, splashes and auroras work with Angelica's weather, which otherwise skips them. The game stops at startup if Angelica or Dynamic Surroundings changed in a way the patch doesn't fit.");
+        patch(
+            "ruinsEndlessIdsStats",
+            "Ruins sizes its biome statistics for EndlessIDs' biome IDs, which otherwise overflow them.");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");
         configuration.setCategoryComment(
             Categories.BIOMIC,

@@ -8,12 +8,16 @@ import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import industries.angelic.adventuraarcanacore.compartment.Compartments;
 import industries.angelic.adventuraarcanacore.compartment.TileCompartment;
 import industries.angelic.adventuraarcanacore.compartment.client.CompartmentRenderer;
 import industries.angelic.adventuraarcanacore.compartment.client.GuiCompartment;
+import industries.angelic.adventuraarcanacore.compat.angelica.AngelicaDSWeather;
+import industries.angelic.adventuraarcanacore.core.PatchSwitches;
 import industries.angelic.adventuraarcanacore.sounds.CaveMoodFilter;
 import industries.angelic.adventuraarcanacore.worktable.TileWorktable;
 import industries.angelic.adventuraarcanacore.worktable.client.GuiWorktable;
@@ -32,6 +36,13 @@ public class ClientProxy extends CommonProxy {
         FMLCommonHandler.instance()
             .bus()
             .register(this);
+    }
+
+    @Override
+    public void postInit(FMLPostInitializationEvent event) {
+        super.postInit(event);
+        if (Loader.isModLoaded("angelica") && Loader.isModLoaded("dsurround")
+            && PatchSwitches.enabled("angelicaDsWeather")) AngelicaDSWeather.verify();
     }
 
     @Override

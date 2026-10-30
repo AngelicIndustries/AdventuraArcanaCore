@@ -39,7 +39,19 @@ public enum Mixins implements IMixins {
         new MixinBuilder("Keep Natura's wild berries out of Biomic's overworld").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.NATURA)
             .setApplyIf(() -> PatchSwitches.enabled("naturaBerriesStandDown"))
-            .addCommonMixins("natura.MixinNaturaBerryOwnership"));
+            .addCommonMixins("natura.MixinNaturaBerryOwnership")),
+    ANGELICA_DS_WEATHER(
+        new MixinBuilder("Run Dynamic Surroundings' rain sounds, splashes and auroras beside Angelica's weather")
+            .setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.ANGELICA)
+            .addRequiredMod(TargetMod.DYNAMIC_SURROUNDINGS)
+            .setApplyIf(() -> PatchSwitches.enabled("angelicaDsWeather"))
+            .addClientMixins("angelica.MixinWeatherRenderer")),
+    RUINS_ENDLESSIDS_STATS(new MixinBuilder("Size Ruins' biome statistics for EndlessIDs").setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.RUINS)
+        .addRequiredMod(TargetMod.ENDLESSIDS)
+        .setApplyIf(() -> PatchSwitches.enabled("ruinsEndlessIdsStats"))
+        .addCommonMixins("ruins.MixinRuinStats"));
 
     private final MixinBuilder builder;
 
