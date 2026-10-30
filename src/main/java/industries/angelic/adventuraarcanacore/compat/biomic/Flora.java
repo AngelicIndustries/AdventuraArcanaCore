@@ -1,9 +1,8 @@
 package industries.angelic.adventuraarcanacore.compat.biomic;
 
+import industries.angelic.adventuraarcanacore.Config;
 import industries.angelic.biomic.api.EcologyOverlays;
 import industries.angelic.biomic.api.ForeignGenerators;
-
-import industries.angelic.adventuraarcanacore.Config;
 
 /**
  * The pack's flora in Biomic's habitats (ecology proposal v3), as overlays of Biomic's ecology files: other mods'

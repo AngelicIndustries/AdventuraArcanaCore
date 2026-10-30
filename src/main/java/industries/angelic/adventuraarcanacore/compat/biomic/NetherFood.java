@@ -6,13 +6,12 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-import industries.angelic.biomic.api.EcologyOverlays;
-import industries.angelic.biomic.api.ForeignGenerators;
-import industries.angelic.biomic.api.PlantLayer;
-
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import industries.angelic.adventuraarcanacore.AdventuraArcanaCore;
+import industries.angelic.biomic.api.EcologyOverlays;
+import industries.angelic.biomic.api.ForeignGenerators;
+import industries.angelic.biomic.api.PlantLayer;
 
 /**
  * Harvest the Nether in Biomic's Tartarus (ecology proposal v3): its crops grow wild in patches on nether ground in

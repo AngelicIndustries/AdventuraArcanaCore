@@ -3,17 +3,16 @@ package industries.angelic.adventuraarcanacore.compat.biomic;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 
-import industries.angelic.biomic.api.BlockSubstitutes;
-import industries.angelic.biomic.api.EcologyOverlays;
-import industries.angelic.biomic.api.ForeignGenerators;
-import industries.angelic.biomic.api.PlantLayer;
-
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import industries.angelic.adventuraarcanacore.Config;
 import industries.angelic.adventuraarcanacore.food.BambooShoots;
 import industries.angelic.adventuraarcanacore.food.BambooSpecies;
 import industries.angelic.adventuraarcanacore.food.BlockBambooShoot;
+import industries.angelic.biomic.api.BlockSubstitutes;
+import industries.angelic.biomic.api.EcologyOverlays;
+import industries.angelic.biomic.api.ForeignGenerators;
+import industries.angelic.biomic.api.PlantLayer;
 
 /**
  * The pack's bamboo in Biomic's worlds (review, 2026-10-25): Origen's bamboo in Plant Mega Pack's species, Regions

@@ -9,13 +9,12 @@ import net.minecraft.block.Block;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-import industries.angelic.biomic.api.EcologyOverlays;
-import industries.angelic.biomic.api.ForeignGenerators;
-import industries.angelic.biomic.api.PlantLayer;
-
 import cpw.mods.fml.common.Loader;
 import industries.angelic.adventuraarcanacore.food.FoodBlocks;
 import industries.angelic.adventuraarcanacore.food.PamFood;
+import industries.angelic.biomic.api.EcologyOverlays;
+import industries.angelic.biomic.api.ForeignGenerators;
+import industries.angelic.biomic.api.PlantLayer;
 
 /**
  * HarvestCraft's food growing wild in Biomic's habitats (ecology proposal v3): the habitats' food lists

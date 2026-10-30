@@ -4,9 +4,8 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
 
-import industries.angelic.biomic.api.BlockSubstitutes;
-
 import cpw.mods.fml.common.Loader;
+import industries.angelic.biomic.api.BlockSubstitutes;
 
 /**
  * In Biomic's worlds vanilla's vine is not generated: every vine, whoever writes it, becomes a Plant Mega Pack ivy with
