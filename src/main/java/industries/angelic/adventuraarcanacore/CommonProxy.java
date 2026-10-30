@@ -1,6 +1,7 @@
 package industries.angelic.adventuraarcanacore;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraftforge.common.MinecraftForge;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -16,6 +17,7 @@ import industries.angelic.adventuraarcanacore.food.FoodBlocks;
 import industries.angelic.adventuraarcanacore.food.FoodLinks;
 import industries.angelic.adventuraarcanacore.food.PamFood;
 import industries.angelic.adventuraarcanacore.gui.GuiHandler;
+import industries.angelic.adventuraarcanacore.sounds.WolfHowls;
 import industries.angelic.adventuraarcanacore.worktable.TileWorktable;
 import industries.angelic.adventuraarcanacore.worktable.Worktables;
 
@@ -29,6 +31,7 @@ public class CommonProxy {
         if (Config.enableBambooShoots) BambooShoots.register();
         if (Loader.isModLoaded("biomic")) BiomicIntegration.preInit();
         NetworkRegistry.INSTANCE.registerGuiHandler(AdventuraArcanaCore.instance, new GuiHandler());
+        MinecraftForge.EVENT_BUS.register(new WolfHowls());
     }
 
     public void init(FMLInitializationEvent event) {}

@@ -1,0 +1,6 @@
+Wolf howls from Rhapsodia, a MAtmos sound pack by Sarys (Lzn02).
+Source: https://github.com/makamys/rhapsodia, release 0.6.1
+Files: assets/minecraft/sounds/biomes/snow/howl1-4.ogg
+
+sounds/mob/wolf/howl1-4.ogg are those files mixed down to mono and
+raised to a -3 dB peak. Changes made for Adventura Arcana Core, 2026.

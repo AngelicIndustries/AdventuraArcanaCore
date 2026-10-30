@@ -24,6 +24,8 @@ public final class Config {
     public static boolean leafDecorInBiomic = true;
     public static boolean netherFoodInBiomic = true;
     public static boolean decorInBiomic = true;
+    public static boolean caveMoods;
+    public static boolean wolfHowls = true;
 
     private Config() {}
 
@@ -33,6 +35,7 @@ public final class Config {
         /** Read before preInit by core.PatchSwitches, which selects the mixins. */
         public static final String PATCHES = industries.angelic.adventuraarcanacore.core.PatchSwitches.CATEGORY;
         public static final String BIOMIC = "biomic";
+        public static final String SOUNDS = "sounds";
 
         private Categories() {}
     }
@@ -158,6 +161,23 @@ public final class Config {
         decorInBiomic = biomic(
             "decorInBiomic",
             "BOP's and Plant Mega Pack's blocks in Biomic's cave and sea decoration: moss, ivy, glowshrooms, stone formations, bones and miner's delight in caves; Plant Mega Pack's kelp, eelgrass, sea plants and corals in the seas, in place of Biomic's ported seagrass and algae. Each block needs its mod.");
+        configuration.setCategoryLanguageKey(Categories.SOUNDS, AdventuraArcanaCore.MODID + ".config.sounds");
+        configuration.setCategoryComment(Categories.SOUNDS, "The pack's sound changes.");
+        caveMoods = configuration.get(
+            Categories.SOUNDS,
+            "caveMoods",
+            false,
+            "Vanilla's random cave sounds play underground, with the ones Et Futurum adds. Off so scary sounds come from real creatures; other mods' replacements, such as Netherlicious's Nether moods, still play. Client side.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.caveMoods")
+            .getBoolean();
+        wolfHowls = configuration
+            .get(
+                Categories.SOUNDS,
+                "wolfHowls",
+                true,
+                "Wild wolves howl at night in the Overworld, and wild wolves nearby may join in. Server side.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.wolfHowls")
+            .getBoolean();
         if (configuration.hasChanged()) {
             configuration.save();
         }

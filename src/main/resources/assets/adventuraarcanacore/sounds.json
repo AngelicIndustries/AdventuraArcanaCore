@@ -1,0 +1,11 @@
+{
+  "mob.wolf.howl": {
+    "category": "neutral",
+    "sounds": [
+      "mob/wolf/howl1",
+      "mob/wolf/howl2",
+      "mob/wolf/howl3",
+      "mob/wolf/howl4"
+    ]
+  }
+}

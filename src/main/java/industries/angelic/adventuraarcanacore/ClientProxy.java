@@ -3,6 +3,7 @@ package industries.angelic.adventuraarcanacore;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.common.MinecraftForge;
 
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.client.registry.ClientRegistry;
@@ -13,6 +14,7 @@ import industries.angelic.adventuraarcanacore.compartment.Compartments;
 import industries.angelic.adventuraarcanacore.compartment.TileCompartment;
 import industries.angelic.adventuraarcanacore.compartment.client.CompartmentRenderer;
 import industries.angelic.adventuraarcanacore.compartment.client.GuiCompartment;
+import industries.angelic.adventuraarcanacore.sounds.CaveMoodFilter;
 import industries.angelic.adventuraarcanacore.worktable.TileWorktable;
 import industries.angelic.adventuraarcanacore.worktable.client.GuiWorktable;
 
@@ -26,6 +28,7 @@ public class ClientProxy extends CommonProxy {
             ClientRegistry.bindTileEntitySpecialRenderer(TileCompartment.class, renderer);
             MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Compartments.BLOCK), renderer);
         }
+        MinecraftForge.EVENT_BUS.register(new CaveMoodFilter());
         FMLCommonHandler.instance()
             .bus()
             .register(this);

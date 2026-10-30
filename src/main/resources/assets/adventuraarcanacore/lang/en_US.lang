@@ -87,3 +87,6 @@ adventuraarcanacore.config.leafDecorInBiomic=Leaf decor in Biomic
 adventuraarcanacore.config.naturaBerriesStandDown=No Natura berries in Biomic
 adventuraarcanacore.config.netherFoodInBiomic=Nether food in Biomic
 adventuraarcanacore.config.decorInBiomic=Cave and sea decor in Biomic
+adventuraarcanacore.config.sounds=Sounds
+adventuraarcanacore.config.caveMoods=Cave moods
+adventuraarcanacore.config.wolfHowls=Wolf howls

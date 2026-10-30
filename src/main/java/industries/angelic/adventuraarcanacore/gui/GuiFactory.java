@@ -48,6 +48,10 @@ public class GuiFactory implements IModGuiFactory {
                 new ConfigElement<Object>(
                     Config.getRawConfig()
                         .getCategory(Config.Categories.BIOMIC)));
+            elements.add(
+                new ConfigElement<Object>(
+                    Config.getRawConfig()
+                        .getCategory(Config.Categories.SOUNDS)));
             return elements;
         }
 
