@@ -5,9 +5,8 @@ dependencies {
     // Optional worktable recipe transfer; NEI is only installed automatically in the dev runtime.
     compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.8.167-GTNH:dev")
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:NotEnoughItems:2.8.167-GTNH:dev")
-    // Optional Biomic integration (compat/biomic). Biomic's API is not published yet: run
-    // `VERSION=0.0.1-debloat ./gradlew publishToMavenLocal` in Biomic before building.
-    compileOnly("industries.angelic.biomic:Biomic:0.0.1-debloat:dev")
+    // Optional Biomic integration (compat/biomic).
+    compileOnly("industries.angelic.biomic:Biomic:a8e4d86-snapshot:dev")
     // Angelica's WeatherRenderer for the ANGELICA_DS_WEATHER mixin, which can't be @Pseudo.
     compileOnly("com.github.GTNewHorizons:Angelica:2.2.37:dev") { transitive = false }
     // Et Futurum's bee nests in Biomic's worlds (compat/biomic/BeeNests) and its AssetDirector (compat/etfuturum).
