@@ -1,7 +1,7 @@
 package industries.angelic.adventuraarcanacore.compat.biomic;
 
-import org.fentanylsolutions.biomic.api.EcologyOverlays;
-import org.fentanylsolutions.biomic.api.ForeignGenerators;
+import industries.angelic.biomic.api.EcologyOverlays;
+import industries.angelic.biomic.api.ForeignGenerators;
 
 import industries.angelic.adventuraarcanacore.Config;
 

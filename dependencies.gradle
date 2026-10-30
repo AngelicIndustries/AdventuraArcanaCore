@@ -7,7 +7,7 @@ dependencies {
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:NotEnoughItems:2.8.167-GTNH:dev")
     // Optional Biomic integration (compat/biomic). Biomic's API is not published yet: run
     // `VERSION=0.0.1-debloat ./gradlew publishToMavenLocal` in Biomic before building.
-    compileOnly("org.fentanylsolutions.biomic:Biomic:0.0.1-debloat:dev")
+    compileOnly("industries.angelic.biomic:Biomic:0.0.1-debloat:dev")
     // Et Futurum's bee nests in Biomic's worlds (compat/biomic/BeeNests).
     compileOnly("ganymedes01.etfuturum:Et-Futurum-Requiem:2.6.62-GTNH:dev")
 }

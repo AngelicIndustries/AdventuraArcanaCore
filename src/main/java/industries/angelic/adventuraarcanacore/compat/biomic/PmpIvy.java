@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
 
-import org.fentanylsolutions.biomic.api.BlockSubstitutes;
+import industries.angelic.biomic.api.BlockSubstitutes;
 
 import cpw.mods.fml.common.Loader;
 

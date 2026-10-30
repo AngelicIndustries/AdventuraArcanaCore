@@ -3,10 +3,10 @@ package industries.angelic.adventuraarcanacore.compat.biomic;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 
-import org.fentanylsolutions.biomic.api.BlockSubstitutes;
-import org.fentanylsolutions.biomic.api.EcologyOverlays;
-import org.fentanylsolutions.biomic.api.ForeignGenerators;
-import org.fentanylsolutions.biomic.api.PlantLayer;
+import industries.angelic.biomic.api.BlockSubstitutes;
+import industries.angelic.biomic.api.EcologyOverlays;
+import industries.angelic.biomic.api.ForeignGenerators;
+import industries.angelic.biomic.api.PlantLayer;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.LanguageRegistry;

@@ -1,7 +1,7 @@
 # Biomic integration
 
 Biomic is optional. When it is installed, `compat/biomic/BiomicIntegration` adds the pack's choices to Biomic's worlds
-through Biomic's API (`org.fentanylsolutions.biomic.api`); nothing here loads without it. Each addition has a switch in
+through Biomic's API (`industries.angelic.biomic.api`); nothing here loads without it. Each addition has a switch in
 the `biomic` category of `config/adventuraarcanacore.cfg` and needs the mods it names.
 
 Biomic's API is not published yet. To build, run `VERSION=0.0.1-debloat ./gradlew publishToMavenLocal` in Biomic
