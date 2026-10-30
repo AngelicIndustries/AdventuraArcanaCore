@@ -44,7 +44,7 @@ public abstract class MixinSaltyBeeNestSeed {
     private static boolean biomicOverworld(World world) {
         return world != null && !world.isRemote
             && world.provider.dimensionId == 0
-            && "biomic_blend".equals(
+            && "biomic".equals(
                 world.getWorldInfo()
                     .getTerrainType()
                     .getWorldTypeName());

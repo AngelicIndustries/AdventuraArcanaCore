@@ -26,7 +26,7 @@ public abstract class MixinNaturaBerryOwnership {
         if (Config.wildFoodInBiomic && world != null
             && !world.isRemote
             && world.provider.dimensionId == 0
-            && "biomic_blend".equals(
+            && "biomic".equals(
                 world.getWorldInfo()
                     .getTerrainType()
                     .getWorldTypeName()))
