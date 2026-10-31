@@ -133,6 +133,9 @@ public final class Config {
             "ruinsEndlessIdsStats",
             "Ruins sizes its biome statistics for EndlessIDs' biome IDs, which otherwise overflow them.");
         patch(
+            "reccomplexNaturalFill",
+            "Recurrent Complex fills the ground under a structure once per column, instead of queueing columns again and again, which could hold the server for seconds. The game stops at startup if Recurrent Complex changed in a way the patch doesn't fit.");
+        patch(
             "betterSleepingFixes",
             "Better Sleeping ends the night as soon as its share of players is asleep, not only when someone gets into bed; its sleeping message shows the real share, lying in bed makes nobody tired and the sleep bar's marker follows guiOffsetLeft.");
         patch(

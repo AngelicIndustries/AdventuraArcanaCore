@@ -22,6 +22,8 @@ public enum TargetMod implements ITargetMod {
     OPENBLOCKS(new TargetModBuilder().setModId("OpenBlocks")
         .setTargetClass("openblocks.OpenBlocks")),
     PLANTMEGAPACK(new TargetModBuilder().setModId("plantmegapack")),
+    RECURRENT_COMPLEX(new TargetModBuilder().setModId("reccomplex")
+        .setTargetClass("ivorius.reccomplex.RecurrentComplex")),
     RUINS(new TargetModBuilder().setModId("AS_Ruins")
         .setTargetClass("atomicstryker.ruins.common.RuinsMod")),
     /** The SaltyMod build the patches are written against (its runtime version string). */

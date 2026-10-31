@@ -52,6 +52,11 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.ENDLESSIDS)
         .setApplyIf(() -> PatchSwitches.enabled("ruinsEndlessIdsStats"))
         .addCommonMixins("ruins.MixinRuinStats")),
+    RECURRENT_COMPLEX_NATURAL_FILL(
+        new MixinBuilder("Dedupe the columns of Recurrent Complex's natural fill").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.RECURRENT_COMPLEX)
+            .setApplyIf(() -> PatchSwitches.enabled("reccomplexNaturalFill"))
+            .addCommonMixins("reccomplex.MixinTransformerNatural")),
     BETTER_SLEEPING_FIXES(new MixinBuilder("Fix Better Sleeping's sleep percentage, sleep message, bed and sleep bar")
         .setPhase(Phase.LATE)
         .addRequiredMod(TargetMod.BETTER_SLEEPING)
