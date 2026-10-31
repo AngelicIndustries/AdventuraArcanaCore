@@ -138,6 +138,12 @@ public final class Config {
         patch(
             "hangGliderNerf",
             "OpenBlocks' hang glider glides about 2.5 blocks per block of height instead of 6, dives at a third of the speed, wears out after 4 minutes in the air and is repaired with leather.");
+        patch(
+            "aetherParachuteRider",
+            "The Aether's parachutes vanish when their rider changes worlds or dies, instead of following them into another dimension, which crashes servers.");
+        patch(
+            "aetherGloveAccessories",
+            "The Aether's copper and netherite gloves can be worn when their own Et Futurum recipe option is on; the Aether mixes the two up.");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");
         configuration.setCategoryComment(
             Categories.BIOMIC,

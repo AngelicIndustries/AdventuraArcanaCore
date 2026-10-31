@@ -6,6 +6,8 @@ import com.gtnewhorizon.gtnhmixins.builders.TargetModBuilder;
 /** Optional targets, identified by mod ID or coremod class without loading their classes. */
 public enum TargetMod implements ITargetMod {
 
+    AETHER(new TargetModBuilder().setModId("aether_legacy")
+        .setTargetClass("com.gildedgames.the_aether.Aether")),
     ANGELICA(new TargetModBuilder().setModId("angelica")),
     /** The Better Sleeping build the patches are written against. */
     BETTER_SLEEPING(new TargetModBuilder().setModId("bettersleeping")

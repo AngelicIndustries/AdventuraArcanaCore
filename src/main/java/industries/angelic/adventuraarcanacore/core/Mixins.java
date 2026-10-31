@@ -61,7 +61,18 @@ public enum Mixins implements IMixins {
     HANG_GLIDER_NERF(new MixinBuilder("Make OpenBlocks' hang glider glide worse and wear out").setPhase(Phase.LATE)
         .addRequiredMod(TargetMod.OPENBLOCKS)
         .setApplyIf(() -> PatchSwitches.enabled("hangGliderNerf"))
-        .addCommonMixins("openblocks.MixinEntityHangGlider", "openblocks.MixinItemHangGlider"));
+        .addCommonMixins("openblocks.MixinEntityHangGlider", "openblocks.MixinItemHangGlider")),
+    AETHER_PARACHUTE_RIDER(
+        new MixinBuilder("Drop the Aether's parachutes when their rider changes worlds").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.AETHER)
+            .setApplyIf(() -> PatchSwitches.enabled("aetherParachuteRider"))
+            .addCommonMixins("aether.MixinParachuteRider")),
+    AETHER_GLOVE_ACCESSORIES(
+        new MixinBuilder("Register the Aether's copper and netherite gloves under their own options")
+            .setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.AETHER)
+            .setApplyIf(() -> PatchSwitches.enabled("aetherGloveAccessories"))
+            .addCommonMixins("aether.MixinGloveAccessories"));
 
     private final MixinBuilder builder;
 
