@@ -140,7 +140,17 @@ public enum Mixins implements IMixins {
     VILLAGE_NAMES_FLAT_LOOKUP(new MixinBuilder("Give each village one name in tall worlds").setPhase(Phase.LATE)
         .addRequiredMod(TargetMod.VILLAGE_NAMES)
         .setApplyIf(() -> PatchSwitches.enabled("villageNamesFlatLookup"))
-        .addCommonMixins("villagenames.MixinVillageNameLookup"));
+        .addCommonMixins("villagenames.MixinVillageNameLookup")),
+    BIBLIOCRAFT_EASTER_EGG_DROPS(
+        new MixinBuilder("Keep BiblioCraft's easter egg from dropping switched-off items").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.BIBLIOCRAFT)
+            .setApplyIf(() -> PatchSwitches.enabled("biblioCraftEasterEggDrops"))
+            .addCommonMixins("bibliocraft.MixinEasterEggDrops")),
+    BIBLIOCRAFT_NO_READING_ENCHANT(
+        new MixinBuilder("Make BiblioCraft's Reading enchant unobtainable").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.BIBLIOCRAFT)
+            .setApplyIf(() -> PatchSwitches.enabled("biblioCraftNoReadingEnchant"))
+            .addCommonMixins("bibliocraft.MixinReadingEnchant"));
 
     private final MixinBuilder builder;
 

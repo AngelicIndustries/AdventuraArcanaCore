@@ -214,6 +214,12 @@ public final class Config {
         patch(
             "villageNamesFlatLookup",
             "Village Names finds a village's name horizontally, so its sign, Antique Atlas marker and waystones agree in tall worlds; it used to name a village twice, at vanilla's height and at its real one.");
+        patch(
+            "biblioCraftEasterEggDrops",
+            "BiblioCraft's easter egg (mobs and players with certain names drop its tools when they die) drops nothing for tools switched off in its config, instead of stacks without an item that crash the game.");
+        patch(
+            "biblioCraftNoReadingEnchant",
+            "BiblioCraft's Reading enchant, a helmet version of its Reading Glasses, can't be had from the enchanting table, books or anvils.");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");
         configuration.setCategoryComment(
             Categories.BIOMIC,

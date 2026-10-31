@@ -15,6 +15,8 @@ public enum TargetMod implements ITargetMod {
     BETTER_SLEEPING(new TargetModBuilder().setModId("bettersleeping")
         .setTargetClass("cz.ondraster.bettersleeping.BetterSleeping")
         .testModVersion("bettersleeping", "1.7.10-1.2.27")),
+    BIBLIOCRAFT(new TargetModBuilder().setModId("BiblioCraft")
+        .setTargetClass("jds.bibliocraft.BiblioCraft")),
     BIOMES_O_PLENTY(new TargetModBuilder().setModId("BiomesOPlenty")),
     DIMENSIONAL_DOORS(new TargetModBuilder().setModId("dimdoors")
         .setTargetClass("org.dimdev.dimdoors.core.DDTeleporter")),
