@@ -127,6 +127,11 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.BATTLE_TOWERS)
             .setApplyIf(() -> PatchSwitches.enabled("battleTowersTallWorlds"))
             .addCommonMixins("battletowers.MixinBattleTowersHandler", "battletowers.MixinBattleTowersGenerator")),
+    BATTLE_TOWERS_SITES(
+        new MixinBuilder("Keep Battle Towers' tower list per world and off other structures").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.BATTLE_TOWERS)
+            .setApplyIf(() -> PatchSwitches.enabled("battleTowersSites"))
+            .addCommonMixins("battletowers.MixinBattleTowersSites")),
     ET_FUTURUM_CONCRETE_TRACKING(
         new MixinBuilder("Keep Et Futurum's falling concrete powder from crashing the server").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.ET_FUTURUM)
