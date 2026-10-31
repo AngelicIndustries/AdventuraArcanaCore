@@ -175,6 +175,9 @@ public final class Config {
             "aetherGloveAccessories",
             "The Aether's copper and netherite gloves can be worn when their own Et Futurum recipe option is on; the Aether mixes the two up.");
         patch(
+            "aetherWingFlap",
+            "Each player's Aether wings flap with their own beat, slowly while they stand. The Aether flapped them with the beat of whoever was drawn before, and took other players for always flying.");
+        patch(
             "bopNoWorldTypeScreen",
             "Biomes O' Plenty doesn't show its world type screen before Create World; the pack picks the world type.");
         patch(

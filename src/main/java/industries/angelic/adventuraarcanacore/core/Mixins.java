@@ -92,6 +92,11 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.AETHER)
             .setApplyIf(() -> PatchSwitches.enabled("aetherGloveAccessories"))
             .addCommonMixins("aether.MixinGloveAccessories")),
+    AETHER_WING_FLAP(new MixinBuilder("Flap each player's Aether wings with their own beat").setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.AETHER)
+        .setApplyIf(() -> PatchSwitches.enabled("aetherWingFlap"))
+        .addCommonMixins("aether.MixinWingBeat")
+        .addClientMixins("aether.AccessorPlayerAether", "aether.MixinWingFlap")),
     BOP_NO_WORLD_TYPE_SCREEN(new MixinBuilder("Skip Biomes O' Plenty's world type screen").setPhase(Phase.LATE)
         .addRequiredMod(TargetMod.BIOMES_O_PLENTY)
         .setApplyIf(() -> PatchSwitches.enabled("bopNoWorldTypeScreen"))
