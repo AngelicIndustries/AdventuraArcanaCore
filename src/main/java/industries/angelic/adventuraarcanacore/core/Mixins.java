@@ -101,7 +101,13 @@ public enum Mixins implements IMixins {
         new MixinBuilder("Skip Et Futurum's experimental features message").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.ET_FUTURUM)
             .setApplyIf(() -> PatchSwitches.enabled("etFuturumNoExperimentalMessage"))
-            .addClientMixins("etfuturum.MixinExperimentalWarning"));
+            .addClientMixins("etfuturum.MixinExperimentalWarning")),
+    DIMDOORS_ENTITY_CHUNK_GEN(
+        new MixinBuilder("Let mobs going through Dimensional Doors generate the pocket they enter").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.DIMENSIONAL_DOORS)
+            .addRequiredMod(TargetMod.HODGEPODGE)
+            .setApplyIf(() -> PatchSwitches.enabled("dimDoorsEntityChunkGen"))
+            .addCommonMixins("dimdoors.MixinDDTeleporterChunkGen"));
 
     private final MixinBuilder builder;
 

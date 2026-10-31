@@ -51,6 +51,7 @@ adventuraarcanacore.config.aetherGloveAccessories=Aether copper and netherite gl
 adventuraarcanacore.config.bopNoWorldTypeScreen=No BoP world type screen
 adventuraarcanacore.config.distantHorizonsNoDevBuildMessage=No Distant Horizons unstable build message
 adventuraarcanacore.config.etFuturumNoExperimentalMessage=No Et Futurum experimental message
+adventuraarcanacore.config.dimDoorsEntityChunkGen=Mobs through Dimensional Doors
 adventuraarcanacore.config.biomic=Biomic
 adventuraarcanacore.config.pmpIvyForVines=PMP ivy for vines
 tile.adventuraarcanacore.wild_bush.name=Wild Berry Bush

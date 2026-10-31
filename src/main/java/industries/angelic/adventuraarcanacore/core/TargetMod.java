@@ -14,10 +14,15 @@ public enum TargetMod implements ITargetMod {
         .setTargetClass("cz.ondraster.bettersleeping.BetterSleeping")
         .testModVersion("bettersleeping", "1.7.10-1.2.27")),
     BIOMES_O_PLENTY(new TargetModBuilder().setModId("BiomesOPlenty")),
+    DIMENSIONAL_DOORS(new TargetModBuilder().setModId("dimdoors")
+        .setTargetClass("org.dimdev.dimdoors.core.DDTeleporter")),
     DISTANT_HORIZONS(new TargetModBuilder().setModId("distanthorizons")),
     DYNAMIC_SURROUNDINGS(new TargetModBuilder().setModId("dsurround")),
     ENDLESSIDS(new TargetModBuilder().setModId("endlessids")),
     ET_FUTURUM(new TargetModBuilder().setModId("etfuturum")),
+    /** Hodgepodge builds with the chunk generation guard (preventEntityChunkLoading). */
+    HODGEPODGE(new TargetModBuilder().setModId("hodgepodge")
+        .setTargetClass("com.mitchej123.hodgepodge.mixins.hooks.ChunkGenScheduler")),
     /** Natura builds whose classes the patches are written against. */
     NATURA(new TargetModBuilder().setModId("Natura")
         .setTargetClass("mods.natura.Natura")

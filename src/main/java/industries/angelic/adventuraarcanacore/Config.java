@@ -171,6 +171,9 @@ public final class Config {
         patch(
             "etFuturumNoExperimentalMessage",
             "Et Futurum doesn't warn in chat about its experimental features, which Biomic turns on; the warning stays in the log.");
+        patch(
+            "dimDoorsEntityChunkGen",
+            "A mob going through a Dimensional Doors door can generate the pocket behind it. Hodgepodge's preventEntityChunkLoading hands entity ticks empty chunks, so the dungeon was built into nothing and the game crashed.");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");
         configuration.setCategoryComment(
             Categories.BIOMIC,

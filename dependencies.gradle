@@ -20,4 +20,7 @@ dependencies {
     // OpenBlocks for the HANG_GLIDER_NERF mixins.
     compileOnly("com.github.GTNewHorizons:OpenBlocks:1.12.22-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:OpenModsLib:0.10.15:dev") { transitive = false }
+    // Dimensional Doors 2.2.6 and Hodgepodge's chunk generation guard for the DIMDOORS_ENTITY_CHUNK_GEN mixin.
+    compileOnly(deobfCurse("dimensional-doors-legacy-404239:4967772"))
+    compileOnly("com.github.GTNewHorizons:Hodgepodge:2.7.219:dev") { transitive = false }
 }
