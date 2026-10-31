@@ -20,6 +20,7 @@ import industries.angelic.adventuraarcanacore.food.FoodLinks;
 import industries.angelic.adventuraarcanacore.food.PamFood;
 import industries.angelic.adventuraarcanacore.gui.GuiHandler;
 import industries.angelic.adventuraarcanacore.sounds.WolfHowls;
+import industries.angelic.adventuraarcanacore.util.BrokenRecipes;
 import industries.angelic.adventuraarcanacore.worktable.TileWorktable;
 import industries.angelic.adventuraarcanacore.worktable.Worktables;
 
@@ -44,6 +45,7 @@ public class CommonProxy {
         if (Config.enableWorktable) Worktables.registerRecipes();
         if (Config.foodLinks && PamFood.installed()) FoodLinks.register();
         if (Loader.isModLoaded("biomic")) BiomicIntegration.postInit();
+        if (Config.dropBrokenRecipes) BrokenRecipes.drop();
         if (Config.netherliciousDuplicates && Loader.isModLoaded("netherlicious") && Loader.isModLoaded("etfuturum"))
             NetherliciousDuplicates.apply();
     }

@@ -28,6 +28,7 @@ public final class Config {
     public static boolean wolfHowls = true;
     public static boolean extraBaubleSlots = true;
     public static boolean netherliciousDuplicates = true;
+    public static boolean dropBrokenRecipes = true;
     public static double battleTowerChance = 1;
 
     private Config() {}
@@ -121,6 +122,14 @@ public final class Config {
             true,
             "Et Futurum's Nether Update blocks are the only ones: Netherlicious' copies (the same English name) leave the creative tabs and NEI, lose their recipes and drop as Et Futurum's, and Netherlicious' other recipes take Et Futurum's. Needs Netherlicious and Et Futurum; requires a restart; use the same setting on client and server.")
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config.netherliciousDuplicates")
+            .setRequiresMcRestart(true)
+            .getBoolean();
+        dropBrokenRecipes = configuration.get(
+            Categories.GENERAL,
+            "dropBrokenRecipes",
+            true,
+            "Drops crafting recipes that hold items no mod registered, which can't be crafted and crash NEI and the Netherlicious duplicate pass. BiblioCraft leaves some behind when its Reading Glasses are switched off. Requires a restart.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.dropBrokenRecipes")
             .setRequiresMcRestart(true)
             .getBoolean();
         battleTowerChance = configuration.get(

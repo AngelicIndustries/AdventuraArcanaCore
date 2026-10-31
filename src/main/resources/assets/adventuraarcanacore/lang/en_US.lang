@@ -76,6 +76,7 @@ adventuraarcanacore.config.enableWildFood=Enable wild food
 adventuraarcanacore.config.foodLinks=Food from wild plants
 adventuraarcanacore.config.extraBaubleSlots=Extra bauble slots
 adventuraarcanacore.config.netherliciousDuplicates=Hide Netherlicious duplicates
+adventuraarcanacore.config.dropBrokenRecipes=Drop broken recipes
 adventuraarcanacore.config.battleTowerChance=Battle Tower chance per chunk
 adventuraarcanacore.config.wildCropsStay=Wild crops stay
 adventuraarcanacore.config.pmpHarvestCraftBerries=HarvestCraft berries from PMP bushes

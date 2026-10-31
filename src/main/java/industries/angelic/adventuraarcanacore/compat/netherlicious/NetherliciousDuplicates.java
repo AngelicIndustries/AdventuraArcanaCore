@@ -215,7 +215,8 @@ public final class NetherliciousDuplicates {
     }
 
     private static ItemStack swap(ItemStack stack) {
-        if (stack == null || stack.getItemDamage() == OreDictionary.WILDCARD_VALUE) return stack;
+        if (stack == null || stack.getItem() == null || stack.getItemDamage() == OreDictionary.WILDCARD_VALUE)
+            return stack;
         ItemStack namesake = namesake(stack);
         return namesake != null ? namesake : stack;
     }
