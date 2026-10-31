@@ -36,6 +36,8 @@ public enum TargetMod implements ITargetMod {
         .setTargetClass("ivorius.reccomplex.RecurrentComplex")),
     RUINS(new TargetModBuilder().setModId("AS_Ruins")
         .setTargetClass("atomicstryker.ruins.common.RuinsMod")),
+    VILLAGE_NAMES(new TargetModBuilder().setModId("VillageNames")
+        .setTargetClass("astrotibs.villagenames.village.StructureVillageVN")),
     STRUCTURE_MEMORY(new TargetModBuilder().setModId("structurememory")
         .setTargetClass("xsoras.structurememory.memory.MemoryStore")),
     /** The SaltyMod build the patches are written against (its runtime version string). */

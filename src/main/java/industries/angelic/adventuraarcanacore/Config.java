@@ -208,6 +208,9 @@ public final class Config {
         patch(
             "etFuturumConcreteTracking",
             "Et Futurum's falling concrete powder turning into concrete in water no longer crashes the server when the new concrete brings more falling powder (ConcurrentModificationException in doConcreteTracking).");
+        patch(
+            "villageNamesFlatLookup",
+            "Village Names finds a village's name horizontally, so its sign, Antique Atlas marker and waystones agree in tall worlds; it used to name a village twice, at vanilla's height and at its real one.");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");
         configuration.setCategoryComment(
             Categories.BIOMIC,

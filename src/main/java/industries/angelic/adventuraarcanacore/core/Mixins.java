@@ -131,7 +131,11 @@ public enum Mixins implements IMixins {
         new MixinBuilder("Keep Et Futurum's falling concrete powder from crashing the server").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.ET_FUTURUM)
             .setApplyIf(() -> PatchSwitches.enabled("etFuturumConcreteTracking"))
-            .addCommonMixins("etfuturum.MixinConcreteTracking"));
+            .addCommonMixins("etfuturum.MixinConcreteTracking")),
+    VILLAGE_NAMES_FLAT_LOOKUP(new MixinBuilder("Give each village one name in tall worlds").setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.VILLAGE_NAMES)
+        .setApplyIf(() -> PatchSwitches.enabled("villageNamesFlatLookup"))
+        .addCommonMixins("villagenames.MixinVillageNameLookup"));
 
     private final MixinBuilder builder;
 
