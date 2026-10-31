@@ -13,6 +13,7 @@ import industries.angelic.adventuraarcanacore.compartment.Compartments;
 import industries.angelic.adventuraarcanacore.compartment.TileCompartment;
 import industries.angelic.adventuraarcanacore.compat.baubles.BaubleSlots;
 import industries.angelic.adventuraarcanacore.compat.biomic.BiomicIntegration;
+import industries.angelic.adventuraarcanacore.compat.netherlicious.NetherliciousDuplicates;
 import industries.angelic.adventuraarcanacore.food.BambooShoots;
 import industries.angelic.adventuraarcanacore.food.FoodBlocks;
 import industries.angelic.adventuraarcanacore.food.FoodLinks;
@@ -43,6 +44,8 @@ public class CommonProxy {
         if (Config.enableWorktable) Worktables.registerRecipes();
         if (Config.foodLinks && PamFood.installed()) FoodLinks.register();
         if (Loader.isModLoaded("biomic")) BiomicIntegration.postInit();
+        if (Config.netherliciousDuplicates && Loader.isModLoaded("netherlicious") && Loader.isModLoaded("etfuturum"))
+            NetherliciousDuplicates.apply();
     }
 
     public void serverStarting(FMLServerStartingEvent event) {}

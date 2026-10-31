@@ -27,6 +27,7 @@ public final class Config {
     public static boolean caveMoods;
     public static boolean wolfHowls = true;
     public static boolean extraBaubleSlots = true;
+    public static boolean netherliciousDuplicates = true;
 
     private Config() {}
 
@@ -111,6 +112,14 @@ public final class Config {
             true,
             "Baubles Expanded gets at least 4 ring, 2 amulet and 3 charm slots, so the Aether's accessories and Uralte Zauber's artefacts don't compete for them. Needs Baubles Expanded; requires a restart; use the same setting on client and server.")
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config.extraBaubleSlots")
+            .setRequiresMcRestart(true)
+            .getBoolean();
+        netherliciousDuplicates = configuration.get(
+            Categories.GENERAL,
+            "netherliciousDuplicates",
+            true,
+            "Et Futurum's Nether Update blocks are the only ones: Netherlicious' copies (the same English name) leave the creative tabs and NEI, lose their recipes and drop as Et Futurum's, and Netherlicious' other recipes take Et Futurum's. Needs Netherlicious and Et Futurum; requires a restart; use the same setting on client and server.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.netherliciousDuplicates")
             .setRequiresMcRestart(true)
             .getBoolean();
         configuration.setCategoryLanguageKey(Categories.PATCHES, AdventuraArcanaCore.MODID + ".config.patches");
