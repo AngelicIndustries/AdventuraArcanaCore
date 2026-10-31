@@ -3,4 +3,16 @@ repositories {
         name = "Angelic Maven"
         url = "https://maven.angelic.industries/releases"
     }
+    // GitHub release assets as Maven modules: owner:repository:tag:classifier.
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Angelic GitHub Releases"
+                url = "https://maven.angelic.industries/github/"
+            }
+        }
+        filter {
+            includeModule("GTNewHorizons", "DistantHorizons")
+        }
+    }
 }

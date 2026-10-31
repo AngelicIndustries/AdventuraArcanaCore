@@ -9,6 +9,8 @@ dependencies {
     compileOnly("industries.angelic.biomic:Biomic:a8e4d86-snapshot:dev")
     // Angelica's WeatherRenderer for the ANGELICA_DS_WEATHER mixin, which can't be @Pseudo.
     compileOnly("com.github.GTNewHorizons:Angelica:2.2.37:dev") { transitive = false }
+    // Distant Horizons' internal-server generator for the DISTANT_HORIZONS_CHUNK_TASKS mixin (a GitHub release).
+    compileOnly("GTNewHorizons:DistantHorizons:upstream-preview8-rple-biomes:dev") { transitive = false }
     // Et Futurum's bee nests in Biomic's worlds (compat/biomic/BeeNests) and its AssetDirector (compat/etfuturum).
     compileOnly("ganymedes01.etfuturum:Et-Futurum-Requiem:2.6.62-GTNH:dev")
     // Better Sleeping 1.2.27 for the BETTER_SLEEPING_FIXES mixins.

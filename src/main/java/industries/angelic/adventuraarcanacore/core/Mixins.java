@@ -52,6 +52,11 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.ENDLESSIDS)
         .setApplyIf(() -> PatchSwitches.enabled("ruinsEndlessIdsStats"))
         .addCommonMixins("ruins.MixinRuinStats")),
+    DISTANT_HORIZONS_CHUNK_TASKS(
+        new MixinBuilder("Generate Distant Horizons' chunks one server task each").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.DISTANT_HORIZONS)
+            .setApplyIf(() -> PatchSwitches.enabled("distantHorizonsChunkTasks"))
+            .addCommonMixins("distanthorizons.MixinDhInternalServerGenerator")),
     RECURRENT_COMPLEX_NATURAL_FILL(
         new MixinBuilder("Dedupe the columns of Recurrent Complex's natural fill").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.RECURRENT_COMPLEX)

@@ -142,6 +142,9 @@ public final class Config {
             "ruinsEndlessIdsStats",
             "Ruins sizes its biome statistics for EndlessIDs' biome IDs, which otherwise overflow them.");
         patch(
+            "distantHorizonsChunkTasks",
+            "Distant Horizons generates each chunk for its distant terrain as its own server task, so its tick budget applies between chunks instead of letting nine fresh chunks hold one tick and lag the server for seconds. The game stops at startup if Distant Horizons changed in a way the patch doesn't fit.");
+        patch(
             "reccomplexNaturalFill",
             "Recurrent Complex fills the ground under a structure once per column, instead of queueing columns again and again, which could hold the server for seconds. The game stops at startup if Recurrent Complex changed in a way the patch doesn't fit.");
         patch(
