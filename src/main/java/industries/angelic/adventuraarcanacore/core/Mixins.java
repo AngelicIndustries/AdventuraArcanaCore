@@ -86,7 +86,17 @@ public enum Mixins implements IMixins {
     BOP_NO_WORLD_TYPE_SCREEN(new MixinBuilder("Skip Biomes O' Plenty's world type screen").setPhase(Phase.LATE)
         .addRequiredMod(TargetMod.BIOMES_O_PLENTY)
         .setApplyIf(() -> PatchSwitches.enabled("bopNoWorldTypeScreen"))
-        .addClientMixins("biomesoplenty.MixinWorldTypeScreen"));
+        .addClientMixins("biomesoplenty.MixinWorldTypeScreen")),
+    DISTANT_HORIZONS_NO_DEV_BUILD_MESSAGE(
+        new MixinBuilder("Skip Distant Horizons' unstable build message").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.DISTANT_HORIZONS)
+            .setApplyIf(() -> PatchSwitches.enabled("distantHorizonsNoDevBuildMessage"))
+            .addClientMixins("distanthorizons.MixinClientApiDevBuild")),
+    ET_FUTURUM_NO_EXPERIMENTAL_MESSAGE(
+        new MixinBuilder("Skip Et Futurum's experimental features message").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.ET_FUTURUM)
+            .setApplyIf(() -> PatchSwitches.enabled("etFuturumNoExperimentalMessage"))
+            .addClientMixins("etfuturum.MixinExperimentalWarning"));
 
     private final MixinBuilder builder;
 

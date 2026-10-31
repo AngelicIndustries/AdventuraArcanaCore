@@ -17,6 +17,7 @@ public enum TargetMod implements ITargetMod {
     DISTANT_HORIZONS(new TargetModBuilder().setModId("distanthorizons")),
     DYNAMIC_SURROUNDINGS(new TargetModBuilder().setModId("dsurround")),
     ENDLESSIDS(new TargetModBuilder().setModId("endlessids")),
+    ET_FUTURUM(new TargetModBuilder().setModId("etfuturum")),
     /** Natura builds whose classes the patches are written against. */
     NATURA(new TargetModBuilder().setModId("Natura")
         .setTargetClass("mods.natura.Natura")

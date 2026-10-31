@@ -162,6 +162,12 @@ public final class Config {
         patch(
             "bopNoWorldTypeScreen",
             "Biomes O' Plenty doesn't show its world type screen before Create World; the pack picks the world type.");
+        patch(
+            "distantHorizonsNoDevBuildMessage",
+            "Distant Horizons doesn't warn in chat that it is a nightly/unstable build; the pack uses that build on purpose. Its other chat warnings stay.");
+        patch(
+            "etFuturumNoExperimentalMessage",
+            "Et Futurum doesn't warn in chat about its experimental features, which Biomic turns on; the warning stays in the log.");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");
         configuration.setCategoryComment(
             Categories.BIOMIC,
