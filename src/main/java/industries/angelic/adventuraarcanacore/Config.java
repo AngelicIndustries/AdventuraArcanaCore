@@ -28,6 +28,7 @@ public final class Config {
     public static boolean wolfHowls = true;
     public static boolean extraBaubleSlots = true;
     public static boolean netherliciousDuplicates = true;
+    public static double battleTowerChance = 1;
 
     private Config() {}
 
@@ -122,6 +123,15 @@ public final class Config {
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config.netherliciousDuplicates")
             .setRequiresMcRestart(true)
             .getBoolean();
+        battleTowerChance = configuration.get(
+            Categories.GENERAL,
+            "battleTowerChance",
+            1.0,
+            "The chance that a newly generated chunk is tried as a Battle Tower site at all, on top of Battle Towers' own minimum distance between towers. 1 keeps its spacing (a tower as soon as a chunk is far enough from the others, so nearly a grid); lower values spread them irregularly and further apart. Needs the battleTowersTallWorlds patch.",
+            0.0,
+            1.0)
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.battleTowerChance")
+            .getDouble();
         configuration.setCategoryLanguageKey(Categories.PATCHES, AdventuraArcanaCore.MODID + ".config.patches");
         configuration.setCategoryComment(
             Categories.PATCHES,
@@ -192,6 +202,9 @@ public final class Config {
         patch(
             "structureMemoryPerSave",
             "Structure Memory keeps one memory per save (or server), instead of sharing it between saves with the same seed (or servers with the same spawn). A world's memory from before is no longer read.");
+        patch(
+            "battleTowersTallWorlds",
+            "Battle Towers look for the ground and build their floors relative to the world's ground level instead of vanilla's fixed heights, so they spawn in Biomic's tall worlds; a chunk becomes a site only by battleTowerChance, and the lines it printed for every new chunk go to the debug log.");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");
         configuration.setCategoryComment(
             Categories.BIOMIC,

@@ -9,6 +9,8 @@ public enum TargetMod implements ITargetMod {
     AETHER(new TargetModBuilder().setModId("aether_legacy")
         .setTargetClass("com.gildedgames.the_aether.Aether")),
     ANGELICA(new TargetModBuilder().setModId("angelica")),
+    BATTLE_TOWERS(new TargetModBuilder().setModId("AS_BattleTowers")
+        .setTargetClass("atomicstryker.battletowers.common.WorldGenHandler")),
     /** The Better Sleeping build the patches are written against. */
     BETTER_SLEEPING(new TargetModBuilder().setModId("bettersleeping")
         .setTargetClass("cz.ondraster.bettersleeping.BetterSleeping")

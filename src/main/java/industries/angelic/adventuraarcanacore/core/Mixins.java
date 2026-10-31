@@ -121,7 +121,12 @@ public enum Mixins implements IMixins {
         new MixinBuilder("Give each save and server its own Structure Memory").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.STRUCTURE_MEMORY)
             .setApplyIf(() -> PatchSwitches.enabled("structureMemoryPerSave"))
-            .addClientMixins("structurememory.MixinMemoryStoreWorldKey"));
+            .addClientMixins("structurememory.MixinMemoryStoreWorldKey")),
+    BATTLE_TOWERS_TALL_WORLDS(
+        new MixinBuilder("Let Battle Towers spawn in tall worlds, at a chance").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.BATTLE_TOWERS)
+            .setApplyIf(() -> PatchSwitches.enabled("battleTowersTallWorlds"))
+            .addCommonMixins("battletowers.MixinBattleTowersHandler", "battletowers.MixinBattleTowersGenerator"));
 
     private final MixinBuilder builder;
 
