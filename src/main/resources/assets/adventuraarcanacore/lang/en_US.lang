@@ -41,6 +41,7 @@ adventuraarcanacore.config.noNaturaClouds=No Natura clouds
 adventuraarcanacore.config.saltyModDedicatedServer=SaltyMod on a dedicated server
 adventuraarcanacore.config.angelicaDsWeather=Dynamic Surroundings weather with Angelica
 adventuraarcanacore.config.ruinsEndlessIdsStats=Ruins with EndlessIDs biomes
+adventuraarcanacore.config.ruinsWorldHandles=Ruins records per world
 adventuraarcanacore.config.distantHorizonsChunkTasks=Distant Horizons chunk tasks
 adventuraarcanacore.config.distantHorizonsQuickShutdown=Quick Distant Horizons shutdown
 adventuraarcanacore.config.reccomplexNaturalFill=Recurrent Complex natural fill

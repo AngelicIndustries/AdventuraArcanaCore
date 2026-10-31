@@ -52,6 +52,10 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.ENDLESSIDS)
         .setApplyIf(() -> PatchSwitches.enabled("ruinsEndlessIdsStats"))
         .addCommonMixins("ruins.MixinRuinStats")),
+    RUINS_WORLD_HANDLES(new MixinBuilder("Give each world its own Ruins records").setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.RUINS)
+        .setApplyIf(() -> PatchSwitches.enabled("ruinsWorldHandles"))
+        .addCommonMixins("ruins.MixinRuinsWorldHandles")),
     DISTANT_HORIZONS_CHUNK_TASKS(
         new MixinBuilder("Generate Distant Horizons' chunks one server task each").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.DISTANT_HORIZONS)
