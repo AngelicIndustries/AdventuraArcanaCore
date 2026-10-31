@@ -42,6 +42,7 @@ adventuraarcanacore.config.saltyModDedicatedServer=SaltyMod on a dedicated serve
 adventuraarcanacore.config.angelicaDsWeather=Dynamic Surroundings weather with Angelica
 adventuraarcanacore.config.ruinsEndlessIdsStats=Ruins with EndlessIDs biomes
 adventuraarcanacore.config.distantHorizonsChunkTasks=Distant Horizons chunk tasks
+adventuraarcanacore.config.distantHorizonsQuickShutdown=Quick Distant Horizons shutdown
 adventuraarcanacore.config.reccomplexNaturalFill=Recurrent Complex natural fill
 adventuraarcanacore.config.betterSleepingFixes=Better Sleeping fixes
 adventuraarcanacore.config.hangGliderNerf=Weaker hang glider

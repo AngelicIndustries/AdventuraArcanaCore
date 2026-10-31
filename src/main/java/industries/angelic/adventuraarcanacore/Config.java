@@ -145,6 +145,9 @@ public final class Config {
             "distantHorizonsChunkTasks",
             "Distant Horizons generates each chunk for its distant terrain as its own server task, so its tick budget applies between chunks instead of letting nine fresh chunks hold one tick and lag the server for seconds. The game stops at startup if Distant Horizons changed in a way the patch doesn't fit.");
         patch(
+            "distantHorizonsQuickShutdown",
+            "Distant Horizons cancels the work it queued for the server thread before it shuts down, instead of waiting for it in vain: quitting a single-player world no longer holds the game for 10 seconds (long enough for the desktop to report it not responding), nor a server's stop for 5. The game stops at startup if Distant Horizons changed in a way the patch doesn't fit.");
+        patch(
             "reccomplexNaturalFill",
             "Recurrent Complex fills the ground under a structure once per column, instead of queueing columns again and again, which could hold the server for seconds. The game stops at startup if Recurrent Complex changed in a way the patch doesn't fit.");
         patch(

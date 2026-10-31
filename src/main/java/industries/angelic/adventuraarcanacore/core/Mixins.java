@@ -57,6 +57,11 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.DISTANT_HORIZONS)
             .setApplyIf(() -> PatchSwitches.enabled("distantHorizonsChunkTasks"))
             .addCommonMixins("distanthorizons.MixinDhInternalServerGenerator")),
+    DISTANT_HORIZONS_QUICK_SHUTDOWN(
+        new MixinBuilder("Cancel Distant Horizons' server tasks before its thread pools shut down").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.DISTANT_HORIZONS)
+            .setApplyIf(() -> PatchSwitches.enabled("distantHorizonsQuickShutdown"))
+            .addCommonMixins("distanthorizons.MixinThreadPoolUtil")),
     RECURRENT_COMPLEX_NATURAL_FILL(
         new MixinBuilder("Dedupe the columns of Recurrent Complex's natural fill").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.RECURRENT_COMPLEX)
