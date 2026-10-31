@@ -56,6 +56,7 @@ adventuraarcanacore.config.etFuturumNoExperimentalMessage=No Et Futurum experime
 adventuraarcanacore.config.dimDoorsEntityChunkGen=Mobs through Dimensional Doors
 adventuraarcanacore.config.structureMemoryPerSave=Structure Memory per save
 adventuraarcanacore.config.battleTowersTallWorlds=Battle Towers in tall worlds
+adventuraarcanacore.config.etFuturumConcreteTracking=Et Futurum falling concrete fix
 adventuraarcanacore.config.biomic=Biomic
 adventuraarcanacore.config.pmpIvyForVines=PMP ivy for vines
 tile.adventuraarcanacore.wild_bush.name=Wild Berry Bush

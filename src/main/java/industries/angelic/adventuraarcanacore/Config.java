@@ -205,6 +205,9 @@ public final class Config {
         patch(
             "battleTowersTallWorlds",
             "Battle Towers look for the ground and build their floors relative to the world's ground level instead of vanilla's fixed heights, so they spawn in Biomic's tall worlds; a chunk becomes a site only by battleTowerChance, and the lines it printed for every new chunk go to the debug log.");
+        patch(
+            "etFuturumConcreteTracking",
+            "Et Futurum's falling concrete powder turning into concrete in water no longer crashes the server when the new concrete brings more falling powder (ConcurrentModificationException in doConcreteTracking).");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");
         configuration.setCategoryComment(
             Categories.BIOMIC,
