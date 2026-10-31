@@ -6,7 +6,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.8.167-GTNH:dev")
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:NotEnoughItems:2.8.167-GTNH:dev")
     // Optional Biomic integration (compat/biomic).
-    compileOnly("industries.angelic.biomic:Biomic:a8e4d86-snapshot:dev")
+    compileOnly("industries.angelic.biomic:Biomic:f552eb8-snapshot:dev")
     // Angelica's WeatherRenderer for the ANGELICA_DS_WEATHER mixin, which can't be @Pseudo.
     compileOnly("com.github.GTNewHorizons:Angelica:2.2.37:dev") { transitive = false }
     // Distant Horizons' internal-server generator for the DISTANT_HORIZONS_CHUNK_TASKS mixin (a GitHub release).
