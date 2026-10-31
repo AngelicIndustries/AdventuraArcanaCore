@@ -13,6 +13,8 @@ dependencies {
     compileOnly("ganymedes01.etfuturum:Et-Futurum-Requiem:2.6.62-GTNH:dev")
     // Better Sleeping 1.2.27 for the BETTER_SLEEPING_FIXES mixins.
     compileOnly(deobfCurse("better-sleeping-227114:2266519"))
+    // Baubles Expanded's slot API (compat/baubles).
+    compileOnly("com.github.GTNewHorizons:Baubles-Expanded:2.2.26-GTNH:dev") { transitive = false }
     // OpenBlocks for the HANG_GLIDER_NERF mixins.
     compileOnly("com.github.GTNewHorizons:OpenBlocks:1.12.22-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:OpenModsLib:0.10.15:dev") { transitive = false }

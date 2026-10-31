@@ -59,6 +59,7 @@ tile.adventuraarcanacore.kiwi_vine.name=Wild Kiwi Vine
 tile.adventuraarcanacore.kiwi_vine_bare.name=Wild Kiwi Vine
 adventuraarcanacore.config.enableWildFood=Enable wild food
 adventuraarcanacore.config.foodLinks=Food from wild plants
+adventuraarcanacore.config.extraBaubleSlots=Extra bauble slots
 adventuraarcanacore.config.wildCropsStay=Wild crops stay
 adventuraarcanacore.config.pmpHarvestCraftBerries=HarvestCraft berries from PMP bushes
 adventuraarcanacore.config.saltyModBeeNests=Seeded SaltyMod bee nests

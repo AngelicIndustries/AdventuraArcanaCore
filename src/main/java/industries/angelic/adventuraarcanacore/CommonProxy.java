@@ -11,6 +11,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import industries.angelic.adventuraarcanacore.compartment.Compartments;
 import industries.angelic.adventuraarcanacore.compartment.TileCompartment;
+import industries.angelic.adventuraarcanacore.compat.baubles.BaubleSlots;
 import industries.angelic.adventuraarcanacore.compat.biomic.BiomicIntegration;
 import industries.angelic.adventuraarcanacore.food.BambooShoots;
 import industries.angelic.adventuraarcanacore.food.FoodBlocks;
@@ -30,6 +31,7 @@ public class CommonProxy {
         if (Config.enableWildFood) FoodBlocks.register();
         if (Config.enableBambooShoots) BambooShoots.register();
         if (Loader.isModLoaded("biomic")) BiomicIntegration.preInit();
+        if (Config.extraBaubleSlots && Loader.isModLoaded("Baubles|Expanded")) BaubleSlots.requestShared();
         NetworkRegistry.INSTANCE.registerGuiHandler(AdventuraArcanaCore.instance, new GuiHandler());
         MinecraftForge.EVENT_BUS.register(new WolfHowls());
     }

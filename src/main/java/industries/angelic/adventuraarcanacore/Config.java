@@ -26,6 +26,7 @@ public final class Config {
     public static boolean decorInBiomic = true;
     public static boolean caveMoods;
     public static boolean wolfHowls = true;
+    public static boolean extraBaubleSlots = true;
 
     private Config() {}
 
@@ -102,6 +103,14 @@ public final class Config {
             true,
             "Growthcraft's grape is the only grape: the wild grape vines give Growthcraft's grapes and grape seeds, and NEI hides HarvestCraft's grape, grape seeds and grape crop (HarvestCraft's recipes take Growthcraft's grapes). Needs Growthcraft Grapes; requires a restart.")
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config.growthcraftGrapes")
+            .setRequiresMcRestart(true)
+            .getBoolean();
+        extraBaubleSlots = configuration.get(
+            Categories.GENERAL,
+            "extraBaubleSlots",
+            true,
+            "Baubles Expanded gets at least 4 ring, 2 amulet and 3 charm slots, so the Aether's accessories and Uralte Zauber's artefacts don't compete for them. Needs Baubles Expanded; requires a restart; use the same setting on client and server.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.extraBaubleSlots")
             .setRequiresMcRestart(true)
             .getBoolean();
         configuration.setCategoryLanguageKey(Categories.PATCHES, AdventuraArcanaCore.MODID + ".config.patches");
