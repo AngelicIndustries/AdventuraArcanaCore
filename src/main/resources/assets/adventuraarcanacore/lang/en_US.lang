@@ -46,6 +46,7 @@ adventuraarcanacore.config.betterSleepingFixes=Better Sleeping fixes
 adventuraarcanacore.config.hangGliderNerf=Weaker hang glider
 adventuraarcanacore.config.aetherParachuteRider=Aether parachutes stay in their world
 adventuraarcanacore.config.aetherGloveAccessories=Aether copper and netherite gloves
+adventuraarcanacore.config.bopNoWorldTypeScreen=No BoP world type screen
 adventuraarcanacore.config.biomic=Biomic
 adventuraarcanacore.config.pmpIvyForVines=PMP ivy for vines
 tile.adventuraarcanacore.wild_bush.name=Wild Berry Bush

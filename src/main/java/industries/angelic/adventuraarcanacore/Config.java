@@ -156,6 +156,9 @@ public final class Config {
         patch(
             "aetherGloveAccessories",
             "The Aether's copper and netherite gloves can be worn when their own Et Futurum recipe option is on; the Aether mixes the two up.");
+        patch(
+            "bopNoWorldTypeScreen",
+            "Biomes O' Plenty doesn't show its world type screen before Create World; the pack picks the world type.");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");
         configuration.setCategoryComment(
             Categories.BIOMIC,

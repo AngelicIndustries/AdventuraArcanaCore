@@ -77,7 +77,11 @@ public enum Mixins implements IMixins {
             .setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.AETHER)
             .setApplyIf(() -> PatchSwitches.enabled("aetherGloveAccessories"))
-            .addCommonMixins("aether.MixinGloveAccessories"));
+            .addCommonMixins("aether.MixinGloveAccessories")),
+    BOP_NO_WORLD_TYPE_SCREEN(new MixinBuilder("Skip Biomes O' Plenty's world type screen").setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.BIOMES_O_PLENTY)
+        .setApplyIf(() -> PatchSwitches.enabled("bopNoWorldTypeScreen"))
+        .addClientMixins("biomesoplenty.MixinWorldTypeScreen"));
 
     private final MixinBuilder builder;
 

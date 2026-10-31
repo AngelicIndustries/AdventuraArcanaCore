@@ -13,6 +13,7 @@ public enum TargetMod implements ITargetMod {
     BETTER_SLEEPING(new TargetModBuilder().setModId("bettersleeping")
         .setTargetClass("cz.ondraster.bettersleeping.BetterSleeping")
         .testModVersion("bettersleeping", "1.7.10-1.2.27")),
+    BIOMES_O_PLENTY(new TargetModBuilder().setModId("BiomesOPlenty")),
     DYNAMIC_SURROUNDINGS(new TargetModBuilder().setModId("dsurround")),
     ENDLESSIDS(new TargetModBuilder().setModId("endlessids")),
     /** Natura builds whose classes the patches are written against. */
