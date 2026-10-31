@@ -189,6 +189,9 @@ public final class Config {
         patch(
             "dimDoorsEntityChunkGen",
             "A mob going through a Dimensional Doors door can generate the pocket behind it. Hodgepodge's preventEntityChunkLoading hands entity ticks empty chunks, so the dungeon was built into nothing and the game crashed.");
+        patch(
+            "structureMemoryPerSave",
+            "Structure Memory keeps one memory per save (or server), instead of sharing it between saves with the same seed (or servers with the same spawn). A world's memory from before is no longer read.");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");
         configuration.setCategoryComment(
             Categories.BIOMIC,

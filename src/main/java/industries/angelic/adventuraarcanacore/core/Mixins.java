@@ -116,7 +116,12 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.DIMENSIONAL_DOORS)
             .addRequiredMod(TargetMod.HODGEPODGE)
             .setApplyIf(() -> PatchSwitches.enabled("dimDoorsEntityChunkGen"))
-            .addCommonMixins("dimdoors.MixinDDTeleporterChunkGen"));
+            .addCommonMixins("dimdoors.MixinDDTeleporterChunkGen")),
+    STRUCTURE_MEMORY_PER_SAVE(
+        new MixinBuilder("Give each save and server its own Structure Memory").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.STRUCTURE_MEMORY)
+            .setApplyIf(() -> PatchSwitches.enabled("structureMemoryPerSave"))
+            .addClientMixins("structurememory.MixinMemoryStoreWorldKey"));
 
     private final MixinBuilder builder;
 
