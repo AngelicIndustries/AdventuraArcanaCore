@@ -213,7 +213,7 @@ public final class Config {
             "Structure Memory keeps one memory per save (or server), instead of sharing it between saves with the same seed (or servers with the same spawn). A world's memory from before is no longer read.");
         patch(
             "battleTowersTallWorlds",
-            "Battle Towers look for the ground and build their floors relative to the world's ground level instead of vanilla's fixed heights, so they spawn in Biomic's tall worlds; a chunk becomes a site only by battleTowerChance, and the lines it printed for every new chunk go to the debug log.");
+            "Battle Towers find the ground from the top down and build their floors relative to the world's ground level instead of vanilla's fixed heights, so they spawn in Biomic's tall worlds standing on the surface (searching up from a fixed height stopped at the first cave, and towers rose half buried from cave floors); a chunk becomes a site only by battleTowerChance, and the lines it printed for every new chunk go to the debug log.");
         patch(
             "battleTowersSites",
             "Battle Towers no longer forgets its towers when another world loads or saves, which put new towers next to old ones, and skips sites where Recurrent Complex or Ruins already built.");
