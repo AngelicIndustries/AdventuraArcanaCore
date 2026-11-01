@@ -59,6 +59,7 @@ adventuraarcanacore.config.battleTowersTallWorlds=Battle Towers in tall worlds
 adventuraarcanacore.config.battleTowersSites=Battle Tower sites
 adventuraarcanacore.config.etFuturumConcreteTracking=Et Futurum falling concrete fix
 adventuraarcanacore.config.villageNamesFlatLookup=One name per village
+adventuraarcanacore.config.aetherSkyrootDoorIcon=Aether Skyroot Door icon
 adventuraarcanacore.config.biblioCraftEasterEggDrops=BiblioCraft easter egg drops
 adventuraarcanacore.config.biblioCraftNoReadingEnchant=No BiblioCraft Reading enchant
 adventuraarcanacore.config.adventureBackpackWornTankLight=Adventure Backpack worn tank light
@@ -117,3 +118,6 @@ adventuraarcanacore.config.decorInBiomic=Cave and sea decor in Biomic
 adventuraarcanacore.config.sounds=Sounds
 adventuraarcanacore.config.caveMoods=Cave moods
 adventuraarcanacore.config.wolfHowls=Wolf howls
+
+# The Aether's Skyroot Door item has no translation of its own
+item.skyroot_door_item.name=Skyroot Door

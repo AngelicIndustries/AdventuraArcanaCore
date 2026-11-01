@@ -224,6 +224,9 @@ public final class Config {
             "villageNamesFlatLookup",
             "Village Names finds a village's name horizontally, so its sign, Antique Atlas marker and waystones agree in tall worlds; it used to name a village twice, at vanilla's height and at its real one.");
         patch(
+            "aetherSkyrootDoorIcon",
+            "The Aether's Skyroot Door item draws its icon instead of the missing texture (it asked for the file with the wrong case).");
+        patch(
             "biblioCraftEasterEggDrops",
             "BiblioCraft's easter egg (mobs and players with certain names drop its tools when they die) drops nothing for tools switched off in its config, instead of stacks without an item that crash the game.");
         patch(
