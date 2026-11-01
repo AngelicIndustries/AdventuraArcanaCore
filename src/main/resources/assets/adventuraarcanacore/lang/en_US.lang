@@ -119,5 +119,6 @@ adventuraarcanacore.config.sounds=Sounds
 adventuraarcanacore.config.caveMoods=Cave moods
 adventuraarcanacore.config.wolfHowls=Wolf howls
 
-# The Aether's Skyroot Door item has no translation of its own
+# The Aether's Skyroot Door item and block have no translations of their own
 item.skyroot_door_item.name=Skyroot Door
+tile.skyroot_door.name=Skyroot Door

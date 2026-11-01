@@ -81,6 +81,11 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.OPENBLOCKS)
         .setApplyIf(() -> PatchSwitches.enabled("hangGliderNerf"))
         .addCommonMixins("openblocks.MixinEntityHangGlider", "openblocks.MixinItemHangGlider")),
+    AETHER_SKYROOT_DOOR_BLOCK_ICON(
+        new MixinBuilder("Show the Aether's Skyroot Door with its item icon in WAILA").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.AETHER)
+            .setApplyIf(() -> PatchSwitches.enabled("aetherSkyrootDoorIcon"))
+            .addClientMixins("aether.MixinSkyrootDoorBlockIcon")),
     AETHER_PARACHUTE_RIDER(
         new MixinBuilder("Drop the Aether's parachutes when their rider changes worlds").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.AETHER)
