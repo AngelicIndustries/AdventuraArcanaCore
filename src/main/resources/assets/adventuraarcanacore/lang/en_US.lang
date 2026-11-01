@@ -45,6 +45,7 @@ adventuraarcanacore.config.ruinsWorldHandles=Ruins records per world
 adventuraarcanacore.config.distantHorizonsChunkTasks=Distant Horizons chunk tasks
 adventuraarcanacore.config.distantHorizonsQuickShutdown=Quick Distant Horizons shutdown
 adventuraarcanacore.config.reccomplexNaturalFill=Recurrent Complex natural fill
+adventuraarcanacore.config.reccomplexVillages=Recurrent Complex outside villages
 adventuraarcanacore.config.betterSleepingFixes=Better Sleeping fixes
 adventuraarcanacore.config.hangGliderNerf=Weaker hang glider
 adventuraarcanacore.config.aetherParachuteRider=Aether parachutes stay in their world
