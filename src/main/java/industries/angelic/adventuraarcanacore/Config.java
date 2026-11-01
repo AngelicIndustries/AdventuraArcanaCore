@@ -219,7 +219,7 @@ public final class Config {
             "Battle Towers no longer forgets its towers when another world loads or saves, which put new towers next to old ones, and skips sites where Recurrent Complex or Ruins already built.");
         patch(
             "etFuturumConcreteTracking",
-            "Et Futurum's falling concrete powder turning into concrete in water no longer crashes the server when the new concrete brings more falling powder (ConcurrentModificationException in doConcreteTracking).");
+            "Falling concrete powder turns into concrete in the first water it reaches from the falling block itself, instead of from Et Futurum's per-tick tracking, which crashed the server (ConcurrentModificationException in doConcreteTracking), made two concrete from one powder falling fast into deep water, and kept powder whose chunk had unloaded.");
         patch(
             "villageNamesFlatLookup",
             "Village Names finds a village's name horizontally, so its sign, Antique Atlas marker and waystones agree in tall worlds; it used to name a village twice, at vanilla's height and at its real one.");

@@ -132,8 +132,12 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.BATTLE_TOWERS)
             .setApplyIf(() -> PatchSwitches.enabled("battleTowersSites"))
             .addCommonMixins("battletowers.MixinBattleTowersSites")),
+    ET_FUTURUM_CONCRETE_IN_WATER(
+        new MixinBuilder("Turn falling concrete powder into concrete from the falling block").setPhase(Phase.EARLY)
+            .setApplyIf(() -> PatchSwitches.enabled("etFuturumConcreteTracking"))
+            .addCommonMixins("minecraft.MixinFallingConcretePowder")),
     ET_FUTURUM_CONCRETE_TRACKING(
-        new MixinBuilder("Keep Et Futurum's falling concrete powder from crashing the server").setPhase(Phase.LATE)
+        new MixinBuilder("Switch off Et Futurum's tracking of falling concrete powder").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.ET_FUTURUM)
             .setApplyIf(() -> PatchSwitches.enabled("etFuturumConcreteTracking"))
             .addCommonMixins("etfuturum.MixinConcreteTracking")),
