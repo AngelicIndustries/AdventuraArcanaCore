@@ -150,7 +150,12 @@ public enum Mixins implements IMixins {
         new MixinBuilder("Make BiblioCraft's Reading enchant unobtainable").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.BIBLIOCRAFT)
             .setApplyIf(() -> PatchSwitches.enabled("biblioCraftNoReadingEnchant"))
-            .addCommonMixins("bibliocraft.MixinReadingEnchant"));
+            .addCommonMixins("bibliocraft.MixinReadingEnchant")),
+    ADVENTURE_BACKPACK_WORN_TANK_LIGHT(
+        new MixinBuilder("Light the fluid in Adventure Backpack's worn tanks where the wearer is").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.ADVENTURE_BACKPACK)
+            .setApplyIf(() -> PatchSwitches.enabled("adventureBackpackWornTankLight"))
+            .addClientMixins("adventurebackpack.MixinWornTankLight"));
 
     private final MixinBuilder builder;
 

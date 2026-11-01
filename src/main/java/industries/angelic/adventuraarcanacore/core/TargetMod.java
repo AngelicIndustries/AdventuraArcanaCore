@@ -6,6 +6,8 @@ import com.gtnewhorizon.gtnhmixins.builders.TargetModBuilder;
 /** Optional targets, identified by mod ID or coremod class without loading their classes. */
 public enum TargetMod implements ITargetMod {
 
+    ADVENTURE_BACKPACK(new TargetModBuilder().setModId("adventurebackpack")
+        .setTargetClass("com.darkona.adventurebackpack.AdventureBackpack")),
     AETHER(new TargetModBuilder().setModId("aether_legacy")
         .setTargetClass("com.gildedgames.the_aether.Aether")),
     ANGELICA(new TargetModBuilder().setModId("angelica")),

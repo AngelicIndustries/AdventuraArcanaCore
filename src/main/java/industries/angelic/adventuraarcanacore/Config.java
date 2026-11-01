@@ -229,6 +229,9 @@ public final class Config {
         patch(
             "biblioCraftNoReadingEnchant",
             "BiblioCraft's Reading enchant, a helmet version of its Reading Glasses, can't be had from the enchanting table, books or anvils.");
+        patch(
+            "adventureBackpackWornTankLight",
+            "Adventure Backpack lights the fluid in a worn backpack's, copter pack's or coal jetpack's tanks where the wearer is, as it does for a placed backpack; it used to take the light of whatever CodeChickenLib drew last, often dark or black.");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");
         configuration.setCategoryComment(
             Categories.BIOMIC,
