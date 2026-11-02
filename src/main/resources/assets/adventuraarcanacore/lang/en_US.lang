@@ -61,6 +61,7 @@ adventuraarcanacore.config.battleTowersTallWorlds=Battle Towers in tall worlds
 adventuraarcanacore.config.battleTowersSites=Battle Tower sites
 adventuraarcanacore.config.etFuturumConcreteTracking=Et Futurum falling concrete fix
 adventuraarcanacore.config.villageNamesFlatLookup=One name per village
+adventuraarcanacore.config.angelicaDimensionShaderOptions=Shader options per dimension
 adventuraarcanacore.config.aetherSkyrootDoorIcon=Aether Skyroot Door icon
 adventuraarcanacore.config.biblioCraftEasterEggDrops=BiblioCraft easter egg drops
 adventuraarcanacore.config.biblioCraftNoReadingEnchant=No BiblioCraft Reading enchant

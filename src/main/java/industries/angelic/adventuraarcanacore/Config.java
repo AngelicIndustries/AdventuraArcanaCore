@@ -230,6 +230,10 @@ public final class Config {
             "villageNamesFlatLookup",
             "Village Names finds a village's name horizontally, so its sign, Antique Atlas marker and waystones agree in tall worlds; it used to name a village twice, at vanilla's height and at its real one.");
         patch(
+            "angelicaDimensionShaderOptions",
+            "Shader packs use a dimension's own option values there, from config/adventuraarcanacore/shader_dimensions/DIMENSION/PACK.txt (for Limbo: no clouds or stars, a darker atmosphere), instead of drawing every modded dimension like the overworld.");
+
+        patch(
             "aetherSkyrootDoorIcon",
             "The Aether's Skyroot Door item draws its icon instead of the missing texture (it asked for the file with the wrong case), and WAILA shows the door with that icon and its name.");
         patch(
@@ -238,6 +242,7 @@ public final class Config {
         patch(
             "biblioCraftNoReadingEnchant",
             "BiblioCraft's Reading enchant, a helmet version of its Reading Glasses, can't be had from the enchanting table, books or anvils.");
+
         patch(
             "adventureBackpackWornTankLight",
             "Adventure Backpack lights the fluid in a worn backpack's, copter pack's or coal jetpack's tanks where the wearer is, as it does for a placed backpack; it used to take the light of whatever CodeChickenLib drew last, often dark or black.");

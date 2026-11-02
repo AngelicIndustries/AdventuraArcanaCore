@@ -51,6 +51,11 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.DYNAMIC_SURROUNDINGS)
             .setApplyIf(() -> PatchSwitches.enabled("angelicaDsWeather"))
             .addClientMixins("angelica.MixinWeatherRenderer")),
+    ANGELICA_DIMENSION_SHADER_OPTIONS(
+        new MixinBuilder("Compile shader packs with a dimension's own option values there").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.ANGELICA)
+            .setApplyIf(() -> PatchSwitches.enabled("angelicaDimensionShaderOptions"))
+            .addClientMixins("angelica.MixinShaderPackDimensionOptions")),
     RUINS_ENDLESSIDS_STATS(new MixinBuilder("Size Ruins' biome statistics for EndlessIDs").setPhase(Phase.LATE)
         .addRequiredMod(TargetMod.RUINS)
         .addRequiredMod(TargetMod.ENDLESSIDS)
