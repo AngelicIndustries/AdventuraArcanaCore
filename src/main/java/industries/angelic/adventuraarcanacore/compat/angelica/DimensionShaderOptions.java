@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.lang.reflect.Field;
+import java.nio.file.FileSystem;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,8 +39,7 @@ public final class DimensionShaderOptions {
 
     /** What each pack was made from, to make its copies the same way. */
     private static final Map<ShaderPack, Made> MADE = Collections.synchronizedMap(new WeakHashMap<>());
-    private static final Map<ShaderPack, Map<String, ShaderPack>> COPIES = Collections
-        .synchronizedMap(new WeakHashMap<>());
+    private static final Map<ShaderPack, Map<String, Copy>> COPIES = Collections.synchronizedMap(new WeakHashMap<>());
     private static final Set<ShaderPack> IS_COPY = Collections
         .newSetFromMap(Collections.synchronizedMap(new WeakHashMap<>()));
     private static final ThreadLocal<Boolean> MAKING = ThreadLocal.withInitial(() -> false);
@@ -58,8 +59,11 @@ public final class DimensionShaderOptions {
         if (MAKING.get() || dimensionName == null || IS_COPY.contains(pack)) return null;
         Made made = MADE.get(pack);
         if (made == null) return null;
-        Map<String, ShaderPack> copies = COPIES.computeIfAbsent(pack, key -> new HashMap<>());
-        ShaderPack copy = copies.get(dimensionName);
+        Map<String, Copy> copies = COPIES.computeIfAbsent(pack, key -> new HashMap<>());
+        Copy copy = copies.get(dimensionName);
+        // A copy read from a zip that Angelica has since closed (it reopens the zip when it reloads) is made again
+        if (copy != null && !copy.root.getFileSystem()
+            .isOpen()) copy = null;
         if (copy == null) {
             // Not remembered when there are none: an early warm-up can ask before the pack's name is known
             Map<String, String> own = optionsFor(dimensionName, Iris.getCurrentPackName());
@@ -68,16 +72,17 @@ public final class DimensionShaderOptions {
             if (copy == null) return null;
             copies.put(dimensionName, copy);
         }
-        return copy.getProgramSet(dimensionName);
+        return copy.pack.getProgramSet(dimensionName);
     }
 
-    private static ShaderPack makeCopy(Made made, Map<String, String> own, String dimensionName) {
+    private static Copy makeCopy(Made made, Map<String, String> own, String dimensionName) {
         Map<String, String> options = new HashMap<>(made.options);
         options.putAll(own);
+        Path root = liveRoot(made.root);
         MAKING.set(true);
         try {
-            ShaderPack copy = new ShaderPack(made.root, options, made.defines);
-            IS_COPY.add(copy);
+            Copy copy = new Copy(new ShaderPack(root, options, made.defines), root);
+            IS_COPY.add(copy.pack);
             AdventuraArcanaCore.LOG.info("Shader options of their own for {}: {}", dimensionName, own);
             return copy;
         } catch (IOException | RuntimeException e) {
@@ -90,8 +95,8 @@ public final class DimensionShaderOptions {
     }
 
     /** The dimension's file whose name the pack's name starts with (the longest such), or null. */
-    private static Map<String, String> optionsFor(String dimensionName, String packName) {
-        if (packName == null) return null;
+    public static File optionsFile(String dimensionName, String packName) {
+        if (dimensionName == null || packName == null) return null;
         File[] files = new File(
             new File(
                 Loader.instance()
@@ -111,6 +116,11 @@ public final class DimensionShaderOptions {
             if (pack.startsWith(prefix) && (best == null || prefix.length() > best.getName()
                 .length() - 4)) best = file;
         }
+        return best;
+    }
+
+    private static Map<String, String> optionsFor(String dimensionName, String packName) {
+        File best = optionsFile(dimensionName, packName);
         if (best == null) return null;
         Properties properties = new Properties();
         try (Reader reader = new FileReader(best)) {
@@ -125,6 +135,36 @@ public final class DimensionShaderOptions {
             properties.getProperty(key)
                 .trim());
         return options;
+    }
+
+    /**
+     * The pack's folder as it can be read now. Angelica reuses a pack across reloads but closes the zip it read it from
+     * and opens it again; a folder in the closed zip is found again in the open one (Iris.zipFileSystem, read by
+     * reflection: Iris loads before AAC's mixins could reach it).
+     */
+    private static Path liveRoot(Path root) {
+        if (root.getFileSystem()
+            .isOpen()) return root;
+        try {
+            Field field = Iris.class.getDeclaredField("zipFileSystem");
+            field.setAccessible(true);
+            FileSystem zip = (FileSystem) field.get(null);
+            if (zip != null && zip.isOpen()) return zip.getPath(root.toString());
+        } catch (ReflectiveOperationException | RuntimeException e) {
+            AdventuraArcanaCore.LOG.debug("Couldn't find the shader pack's open zip", e);
+        }
+        return root;
+    }
+
+    private static final class Copy {
+
+        final ShaderPack pack;
+        final Path root;
+
+        Copy(ShaderPack pack, Path root) {
+            this.pack = pack;
+            this.root = root;
+        }
     }
 
     private static final class Made {
