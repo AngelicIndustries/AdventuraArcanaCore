@@ -18,6 +18,7 @@ import industries.angelic.adventuraarcanacore.compartment.client.CompartmentRend
 import industries.angelic.adventuraarcanacore.compartment.client.GuiCompartment;
 import industries.angelic.adventuraarcanacore.compat.aether.AetherSkyrootDoor;
 import industries.angelic.adventuraarcanacore.compat.angelica.AngelicaDSWeather;
+import industries.angelic.adventuraarcanacore.compat.angelica.ShaderTuning;
 import industries.angelic.adventuraarcanacore.core.PatchSwitches;
 import industries.angelic.adventuraarcanacore.sounds.CaveMoodFilter;
 import industries.angelic.adventuraarcanacore.worktable.TileWorktable;
@@ -46,6 +47,8 @@ public class ClientProxy extends CommonProxy {
             && PatchSwitches.enabled("angelicaDsWeather")) AngelicaDSWeather.verify();
         if (Loader.isModLoaded("aether_legacy") && PatchSwitches.enabled("aetherSkyrootDoorIcon"))
             AetherSkyrootDoor.fixIcon();
+        if (Loader.isModLoaded("angelica") && PatchSwitches.enabled("angelicaDimensionShaderOptions"))
+            ShaderTuning.register();
     }
 
     @Override

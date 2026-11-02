@@ -128,3 +128,11 @@ adventuraarcanacore.config.wolfHowls=Wolf howls
 # The Aether's Skyroot Door item and block have no translations of their own
 item.skyroot_door_item.name=Skyroot Door
 tile.skyroot_door.name=Skyroot Door
+adventuraarcanacore.shadertune.title=%s's shader options for %s
+adventuraarcanacore.shadertune.apply=Apply
+adventuraarcanacore.shadertune.reset=Reset
+adventuraarcanacore.shadertune.applied=Written to %s, shaders reloaded
+adventuraarcanacore.shadertune.failed=Couldn't apply: %s
+adventuraarcanacore.shadertune.none=No numeric options in this dimension's file
+adventuraarcanacore.shadertune.nopack=No shader pack is on.
+adventuraarcanacore.shadertune.nofile=%s has no shader options for %s (config/adventuraarcanacore/shader_dimensions).

@@ -75,6 +75,17 @@ public final class DimensionShaderOptions {
         return copy.pack.getProgramSet(dimensionName);
     }
 
+    /**
+     * Reloads the shader pack with copies made from the dimension files as they are now. Angelica reuses a pack whose
+     * own
+     * files haven't changed when it reloads, and with it the copies made for it, so those are dropped first; the reload
+     * still builds every dimension's programs anew, and a dimension's come from its new copy.
+     */
+    public static void reload() throws IOException {
+        COPIES.clear();
+        Iris.reload();
+    }
+
     private static Copy makeCopy(Made made, Map<String, String> own, String dimensionName) {
         Map<String, String> options = new HashMap<>(made.options);
         options.putAll(own);
