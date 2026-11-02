@@ -65,6 +65,7 @@ adventuraarcanacore.config.angelicaDimensionShaderOptions=Shader options per dim
 adventuraarcanacore.config.angelicaShaderBlockAliases=Shader IDs for modded blocks
 adventuraarcanacore.config.aetherSkyrootDoorIcon=Aether Skyroot Door icon
 adventuraarcanacore.config.biblioCraftEasterEggDrops=BiblioCraft easter egg drops
+adventuraarcanacore.config.wildMobsSeaScorpionSpawnCap=Sea scorpion spawn cap
 adventuraarcanacore.config.biblioCraftNoReadingEnchant=No BiblioCraft Reading enchant
 adventuraarcanacore.config.adventureBackpackWornTankLight=Adventure Backpack worn tank light
 adventuraarcanacore.config.biomic=Biomic

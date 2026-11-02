@@ -179,6 +179,11 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.BIBLIOCRAFT)
             .setApplyIf(() -> PatchSwitches.enabled("biblioCraftNoReadingEnchant"))
             .addCommonMixins("bibliocraft.MixinReadingEnchant")),
+    WILD_MOBS_SEA_SCORPION_SPAWN_CAP(
+        new MixinBuilder("Count Wild Mobs' sea scorpions against the water creature cap").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.WILD_MOBS)
+            .setApplyIf(() -> PatchSwitches.enabled("wildMobsSeaScorpionSpawnCap"))
+            .addCommonMixins("wildmobs.MixinSeaScorpionSpawnCap")),
     ADVENTURE_BACKPACK_WORN_TANK_LIGHT(
         new MixinBuilder("Light the fluid in Adventure Backpack's worn tanks where the wearer is").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.ADVENTURE_BACKPACK)

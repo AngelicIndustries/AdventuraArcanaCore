@@ -252,7 +252,9 @@ public final class Config {
         patch(
             "biblioCraftNoReadingEnchant",
             "BiblioCraft's Reading enchant, a helmet version of its Reading Glasses, can't be had from the enchanting table, books or anvils.");
-
+        patch(
+            "wildMobsSeaScorpionSpawnCap",
+            "Wild Mobs' sea scorpions count against the water creature cap they spawn under, instead of against none of it (they spawned without end, tens of thousands in Biomic's deep oceans, bringing the server to a crawl) and against the monster cap.");
         patch(
             "adventureBackpackWornTankLight",
             "Adventure Backpack lights the fluid in a worn backpack's, copter pack's or coal jetpack's tanks where the wearer is, as it does for a placed backpack; it used to take the light of whatever CodeChickenLib drew last, often dark or black.");

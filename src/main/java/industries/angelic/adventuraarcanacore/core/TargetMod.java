@@ -42,6 +42,8 @@ public enum TargetMod implements ITargetMod {
         .setTargetClass("atomicstryker.ruins.common.RuinsMod")),
     VILLAGE_NAMES(new TargetModBuilder().setModId("VillageNames")
         .setTargetClass("astrotibs.villagenames.village.StructureVillageVN")),
+    WILD_MOBS(new TargetModBuilder().setModId("wildmobsmod")
+        .setTargetClass("com.wildmobsmod.main.WildMobsMod")),
     STRUCTURE_MEMORY(new TargetModBuilder().setModId("structurememory")
         .setTargetClass("xsoras.structurememory.memory.MemoryStore")),
     /** The SaltyMod build the patches are written against (its runtime version string). */
