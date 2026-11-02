@@ -56,6 +56,11 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.ANGELICA)
             .setApplyIf(() -> PatchSwitches.enabled("angelicaDimensionShaderOptions"))
             .addClientMixins("angelica.MixinShaderPackDimensionOptions")),
+    ANGELICA_SHADER_BLOCK_ALIASES(
+        new MixinBuilder("Give aliased modded blocks the shader IDs of vanilla ones").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.ANGELICA)
+            .setApplyIf(() -> PatchSwitches.enabled("angelicaShaderBlockAliases"))
+            .addClientMixins("angelica.MixinShaderBlockAliases")),
     RUINS_ENDLESSIDS_STATS(new MixinBuilder("Size Ruins' biome statistics for EndlessIDs").setPhase(Phase.LATE)
         .addRequiredMod(TargetMod.RUINS)
         .addRequiredMod(TargetMod.ENDLESSIDS)

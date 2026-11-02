@@ -30,6 +30,7 @@ public final class Config {
     public static boolean netherliciousDuplicates = true;
     public static boolean dropBrokenRecipes = true;
     public static double battleTowerChance = 1;
+    public static String[] shaderBlockAliases = { "dimdoors:fadebloom=minecraft:red_flower" };
 
     private Config() {}
 
@@ -132,6 +133,13 @@ public final class Config {
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config.dropBrokenRecipes")
             .setRequiresMcRestart(true)
             .getBoolean();
+        shaderBlockAliases = configuration.get(
+            Categories.GENERAL,
+            "shaderBlockAliases",
+            new String[] { "dimdoors:fadebloom=minecraft:red_flower" },
+            "Modded blocks that shader packs treat like a vanilla block, as modded=vanilla registry names: they take its shader IDs, so a modded flower waves and is shaded like a flower. Needs the angelicaShaderBlockAliases patch; applies when shaders load.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.shaderBlockAliases")
+            .getStringList();
         battleTowerChance = configuration.get(
             Categories.GENERAL,
             "battleTowerChance",
@@ -232,7 +240,9 @@ public final class Config {
         patch(
             "angelicaDimensionShaderOptions",
             "Shader packs use a dimension's own option values there, from config/adventuraarcanacore/shader_dimensions/DIMENSION/PACK.txt (for Limbo: no clouds or stars, a darker atmosphere), instead of drawing every modded dimension like the overworld.");
-
+        patch(
+            "angelicaShaderBlockAliases",
+            "Shader packs treat the modded blocks in shaderBlockAliases like the vanilla blocks they name (Dimensional Doors' Fadebloom waves like a flower).");
         patch(
             "aetherSkyrootDoorIcon",
             "The Aether's Skyroot Door item draws its icon instead of the missing texture (it asked for the file with the wrong case), and WAILA shows the door with that icon and its name.");
