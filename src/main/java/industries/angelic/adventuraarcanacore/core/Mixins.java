@@ -7,6 +7,10 @@ import com.gtnewhorizon.gtnhmixins.builders.MixinBuilder;
 /** Patch registrations. See docs/MIXINS.md for early, late, sided and conditional examples. */
 public enum Mixins implements IMixins {
 
+    RESUME_PAUSED_SOUNDS(
+        new MixinBuilder("Resume only paused sounds, without replaying menu clicks").setPhase(Phase.EARLY)
+            .setApplyIf(() -> PatchSwitches.enabled("resumePausedSounds"))
+            .addClientMixins("minecraft.MixinSoundManagerPause")),
     GROWTHCRAFT_OPTIONAL_FORESTRY(
         new MixinBuilder("Make Growthcraft Forestry integration optional").setPhase(Phase.EARLY)
             .setApplyIf(() -> PatchSwitches.enabled("growthcraftWithoutForestry"))

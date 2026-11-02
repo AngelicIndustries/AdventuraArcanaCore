@@ -147,6 +147,9 @@ public final class Config {
             "Patches to other mods, each applied only with its mod. Changes need a restart.");
         configuration.setCategoryRequiresMcRestart(Categories.PATCHES, true);
         patch(
+            "resumePausedSounds",
+            "Resume only paused sounds, preventing menu clicks from replaying on Return to Game.");
+        patch(
             "growthcraftWithoutForestry",
             "Growthcraft loads without Forestry: its Forestry integration becomes optional.");
         patch("noNaturaClouds", "Natura generates no clouds in any dimension.");
