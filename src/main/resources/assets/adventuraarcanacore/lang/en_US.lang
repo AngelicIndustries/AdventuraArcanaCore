@@ -136,3 +136,12 @@ adventuraarcanacore.shadertune.failed=Couldn't apply: %s
 adventuraarcanacore.shadertune.none=No numeric options in this dimension's file
 adventuraarcanacore.shadertune.nopack=No shader pack is on.
 adventuraarcanacore.shadertune.nofile=%s has no shader options for %s (config/adventuraarcanacore/shader_dimensions).
+
+item.adventuraarcanacore.corn_bread_toast.name=Corn Bread Toast
+item.adventuraarcanacore.salted_toast.name=Salted Toast
+item.adventuraarcanacore.abyssal_toast.name=Abyssal Toast
+adventuraarcanacore.config.toasterBread=Toaster bread recipes
+adventuraarcanacore.nei.toaster=Toaster
+adventuraarcanacore.nei.toaster.time=3 seconds, two slots
+adventuraarcanacore.nei.toaster.insert=Right-click: insert bread
+adventuraarcanacore.nei.toaster.start=Right-click empty: start

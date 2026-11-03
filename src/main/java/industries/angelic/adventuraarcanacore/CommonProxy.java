@@ -13,6 +13,7 @@ import industries.angelic.adventuraarcanacore.compartment.Compartments;
 import industries.angelic.adventuraarcanacore.compartment.TileCompartment;
 import industries.angelic.adventuraarcanacore.compat.baubles.BaubleSlots;
 import industries.angelic.adventuraarcanacore.compat.biomic.BiomicIntegration;
+import industries.angelic.adventuraarcanacore.compat.cookingforblockheads.Toasts;
 import industries.angelic.adventuraarcanacore.compat.netherlicious.NetherliciousDuplicates;
 import industries.angelic.adventuraarcanacore.food.BambooShoots;
 import industries.angelic.adventuraarcanacore.food.FoodBlocks;
@@ -28,6 +29,7 @@ public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent event) {
         Config.loadConfig(event.getSuggestedConfigurationFile());
+        Toasts.register();
         if (Config.enableCompartments) Compartments.preInit();
         if (Config.enableWorktable) Worktables.preInit();
         if (Config.enableWildFood) FoodBlocks.register();
@@ -41,6 +43,7 @@ public class CommonProxy {
     public void init(FMLInitializationEvent event) {}
 
     public void postInit(FMLPostInitializationEvent event) {
+        Toasts.configure();
         if (Config.enableCompartments) Compartments.registerRecipes();
         if (Config.enableWorktable) Worktables.registerRecipes();
         if (Config.foodLinks && PamFood.installed()) FoodLinks.register();

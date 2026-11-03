@@ -7,6 +7,7 @@ import java.util.function.Function;
 
 import javax.imageio.ImageIO;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
@@ -61,7 +62,9 @@ public final class PaintedSprite extends TextureAtlasSprite {
         if (pixels == null) pixels = missing();
         BufferedImage image = new BufferedImage(SIZE, SIZE, BufferedImage.TYPE_INT_ARGB);
         image.setRGB(0, 0, SIZE, SIZE, pixels, 0, SIZE);
-        loadSprite(new BufferedImage[] { image }, null, false);
+        BufferedImage[] mipmaps = new BufferedImage[Minecraft.getMinecraft().gameSettings.mipmapLevels + 1];
+        mipmaps[0] = image;
+        loadSprite(mipmaps, null, false);
         return false;
     }
 

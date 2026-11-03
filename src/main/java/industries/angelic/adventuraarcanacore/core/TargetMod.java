@@ -20,6 +20,9 @@ public enum TargetMod implements ITargetMod {
     BIBLIOCRAFT(new TargetModBuilder().setModId("BiblioCraft")
         .setTargetClass("jds.bibliocraft.BiblioCraft")),
     BIOMES_O_PLENTY(new TargetModBuilder().setModId("BiomesOPlenty")),
+    COOKING_FOR_BLOCKHEADS(new TargetModBuilder().setModId("cookingforblockheads")
+        .setTargetClass("net.blay09.mods.cookingforblockheads.registry.CookingRegistry")),
+    HARVESTCRAFT(new TargetModBuilder().setModId("harvestcraft")),
     DIMENSIONAL_DOORS(new TargetModBuilder().setModId("dimdoors")
         .setTargetClass("org.dimdev.dimdoors.core.DDTeleporter")),
     DISTANT_HORIZONS(new TargetModBuilder().setModId("distanthorizons")),

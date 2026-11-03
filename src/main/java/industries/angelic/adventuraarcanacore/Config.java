@@ -160,6 +160,9 @@ public final class Config {
         patch(
             "growthcraftWithoutForestry",
             "Growthcraft loads without Forestry: its Forestry integration becomes optional.");
+        patch(
+            "toasterBread",
+            "Cooking for Blockheads' toaster makes Pam's toast and corn bread, salted and abyssal toast. Hides the duplicate toast and removes other recipes that produce toast. Needs Cooking for Blockheads and HarvestCraft; use the same setting on client and server.");
         patch("noNaturaClouds", "Natura generates no clouds in any dimension.");
         patch(
             "wildCropsStay",

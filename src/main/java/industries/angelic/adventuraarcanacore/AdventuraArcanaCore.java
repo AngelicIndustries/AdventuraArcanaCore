@@ -8,9 +8,11 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLConstructionEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import industries.angelic.adventuraarcanacore.compat.cookingforblockheads.Toasts;
 import industries.angelic.adventuraarcanacore.compat.etfuturum.ModernAssets;
 
 @Mod(
@@ -18,7 +20,7 @@ import industries.angelic.adventuraarcanacore.compat.etfuturum.ModernAssets;
     name = "Adventura Arcana Core",
     version = Tags.VERSION,
     acceptedMinecraftVersions = "[1.7.10]",
-    dependencies = "required-after:unimixins@[0.3.1,);after:biomic;after:etfuturum;after:netherlicious",
+    dependencies = "required-after:unimixins@[0.3.1,);after:biomic;after:etfuturum;after:netherlicious;after:cookingforblockheads;after:harvestcraft;after:plantmegapack;after:saltymod",
     guiFactory = "industries.angelic.adventuraarcanacore.gui.GuiFactory",
     customProperties = { @Mod.CustomProperty(k = "license", v = "LGPLv3"),
         @Mod.CustomProperty(
@@ -61,6 +63,11 @@ public class AdventuraArcanaCore {
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         proxy.postInit(event);
+    }
+
+    @Mod.EventHandler
+    public void loadComplete(FMLLoadCompleteEvent event) {
+        Toasts.removeOtherRecipes();
     }
 
     @Mod.EventHandler
