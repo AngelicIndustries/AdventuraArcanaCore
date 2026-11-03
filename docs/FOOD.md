@@ -51,3 +51,23 @@ hand to start.
 
 The switch defaults to on and requires a restart. Disabling it, or omitting Cooking for Blockheads or HarvestCraft,
 keeps the original recipes and adds no toast variants.
+
+## Kitchen
+
+With Cooking for Blockheads installed:
+
+* `patches.kitchenSneakTake`: sneak-use the oven's top with an empty hand to take the cookware under the cursor back
+  into your hand. Where there is none, the oven opens as before. Sneak-use the toaster with an empty hand to take its
+  bread back out, which also stops it. The bread tops up the stacks you carry first, as picking it up would, then
+  goes into your hand. An empty toaster starts and stops as before. Use the same setting on client and server.
+* `patches.toasterLever`: the toaster's lever goes down over a few ticks when it starts, lowering the bread with it,
+  and pops back up when it stops. Each move has a sound, which the server plays for everyone nearby: when it finishes,
+  is stopped by hand or has its bread taken out. The toaster saves and shares whether it runs, which Cooking for
+  Blockheads kept to the side that clicked it: other players never saw the lever go down, and a reload stopped it with
+  the bread inside. The lever pops up when the server's toaster stops, together with its sound, rather than on the
+  client's own count, which ran ahead of a busy server. Each toaster also shows its own lever; they used to show the
+  one drawn before.
+* `patches.recipeListScroll`: the mouse wheel scrolls the recipe book's and cooking table's recipe list only over the
+  list or its scrollbar. It used to scroll it anywhere on the screen, including over the inventory and NEI.
+
+Each switch defaults to on and requires a restart.

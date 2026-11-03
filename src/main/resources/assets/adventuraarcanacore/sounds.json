@@ -7,5 +7,17 @@
       "mob/wolf/howl3",
       "mob/wolf/howl4"
     ]
+  },
+  "block.toaster.pop": {
+    "category": "block",
+    "sounds": [
+      "block/toaster/pop"
+    ]
+  },
+  "block.toaster.lower": {
+    "category": "block",
+    "sounds": [
+      "block/toaster/lower"
+    ]
   }
 }

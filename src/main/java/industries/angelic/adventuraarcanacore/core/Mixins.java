@@ -12,6 +12,25 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.HARVESTCRAFT)
         .setApplyIf(() -> PatchSwitches.enabled("toasterBread"))
         .addCommonMixins("cookingforblockheads.MixinToasterRecipes")),
+    KITCHEN_SNEAK_TAKE(new MixinBuilder("Take cookware off the oven and bread out of the toaster with an empty hand")
+        .setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.COOKING_FOR_BLOCKHEADS)
+        .setApplyIf(() -> PatchSwitches.enabled("kitchenSneakTake"))
+        .addCommonMixins(
+            "cookingforblockheads.AccessorToaster",
+            "cookingforblockheads.MixinOvenTakeTool",
+            "cookingforblockheads.MixinToasterTakeBread")),
+    TOASTER_LEVER(new MixinBuilder("Move the toaster's lever smoothly, with sounds, and share whether it runs")
+        .setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.COOKING_FOR_BLOCKHEADS)
+        .setApplyIf(() -> PatchSwitches.enabled("toasterLever"))
+        .addCommonMixins("cookingforblockheads.MixinToasterLever")
+        .addClientMixins("cookingforblockheads.AccessorModelToaster", "cookingforblockheads.MixinToasterLeverRender")),
+    RECIPE_LIST_SCROLL(
+        new MixinBuilder("Scroll the recipe book's list only with the mouse over it").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.COOKING_FOR_BLOCKHEADS)
+            .setApplyIf(() -> PatchSwitches.enabled("recipeListScroll"))
+            .addClientMixins("cookingforblockheads.MixinRecipeListScroll")),
 
     RESUME_PAUSED_SOUNDS(
         new MixinBuilder("Resume only paused sounds, without replaying menu clicks").setPhase(Phase.EARLY)

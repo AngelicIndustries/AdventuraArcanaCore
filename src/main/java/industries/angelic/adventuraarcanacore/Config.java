@@ -163,6 +163,15 @@ public final class Config {
         patch(
             "toasterBread",
             "Cooking for Blockheads' toaster makes Pam's toast and corn bread, salted and abyssal toast. Hides the duplicate toast and removes other recipes that produce toast. Needs Cooking for Blockheads and HarvestCraft; use the same setting on client and server.");
+        patch(
+            "kitchenSneakTake",
+            "Sneak-using Cooking for Blockheads' oven top with an empty hand takes the cookware there, and sneak-using its toaster takes the bread back out and stops it. Use the same setting on client and server.");
+        patch(
+            "toasterLever",
+            "Cooking for Blockheads' toaster lever goes down when it starts and pops up when it stops, with a sound for each. The toaster saves and shares whether it runs, so everyone sees it and it keeps toasting after a reload.");
+        patch(
+            "recipeListScroll",
+            "The mouse wheel scrolls Cooking for Blockheads' recipe list only over the list or its scrollbar, not anywhere on the screen.");
         patch("noNaturaClouds", "Natura generates no clouds in any dimension.");
         patch(
             "wildCropsStay",

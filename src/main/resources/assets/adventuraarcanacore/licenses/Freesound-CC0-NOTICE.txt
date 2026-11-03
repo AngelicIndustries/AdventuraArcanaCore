@@ -1,0 +1,13 @@
+Toaster sounds from Freesound, dedicated to the public domain under
+Creative Commons 0 (https://creativecommons.org/publicdomain/zero/1.0/).
+
+sounds/block/toaster/pop.ogg
+  "Toaster Pop.wav" by MTJohnson
+  https://freesound.org/people/MTJohnson/sounds/444430/
+
+sounds/block/toaster/lower.ogg
+  "Priming Toaster.wav" by MTJohnson
+  https://freesound.org/people/MTJohnson/sounds/444437/
+
+The files were trimmed around the sound, mixed down to mono and raised
+to a -1 dB peak. Changes made for Adventura Arcana Core, 2026.
