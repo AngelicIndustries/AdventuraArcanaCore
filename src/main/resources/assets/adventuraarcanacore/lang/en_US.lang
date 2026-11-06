@@ -60,6 +60,7 @@ adventuraarcanacore.config.structureMemoryPerSave=Structure Memory per save
 adventuraarcanacore.config.battleTowersTallWorlds=Battle Towers in tall worlds
 adventuraarcanacore.config.battleTowersSites=Battle Tower sites
 adventuraarcanacore.config.etFuturumConcreteTracking=Et Futurum falling concrete fix
+adventuraarcanacore.config.arrowsCatchFire=Arrows catch fire
 adventuraarcanacore.config.villageNamesFlatLookup=One name per village
 adventuraarcanacore.config.angelicaDimensionShaderOptions=Shader options per dimension
 adventuraarcanacore.config.angelicaShaderBlockAliases=Shader IDs for modded blocks

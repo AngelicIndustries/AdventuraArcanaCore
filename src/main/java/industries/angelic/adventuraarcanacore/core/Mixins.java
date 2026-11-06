@@ -190,6 +190,13 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.ET_FUTURUM)
             .setApplyIf(() -> PatchSwitches.enabled("etFuturumConcreteTracking"))
             .addCommonMixins("etfuturum.MixinConcreteTracking")),
+    ARROWS_CATCH_FIRE(new MixinBuilder("Light arrows that fly through fire, and let burning ones set off TNT minecarts")
+        .setPhase(Phase.EARLY)
+        .setApplyIf(() -> PatchSwitches.enabled("arrowsCatchFire"))
+        .addCommonMixins(
+            "minecraft.MixinArrowCatchesFire",
+            "minecraft.AccessorMinecartTNT",
+            "minecraft.MixinMinecartTNTBurningArrow")),
     VILLAGE_NAMES_FLAT_LOOKUP(new MixinBuilder("Give each village one name in tall worlds").setPhase(Phase.LATE)
         .addRequiredMod(TargetMod.VILLAGE_NAMES)
         .setApplyIf(() -> PatchSwitches.enabled("villageNamesFlatLookup"))

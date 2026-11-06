@@ -247,6 +247,9 @@ public final class Config {
             "etFuturumConcreteTracking",
             "Falling concrete powder turns into concrete in the first water it reaches from the falling block itself, instead of from Et Futurum's per-tick tracking, which crashed the server (ConcurrentModificationException in doConcreteTracking), made two concrete from one powder falling fast into deep water, and kept powder whose chunk had unloaded.");
         patch(
+            "arrowsCatchFire",
+            "Arrows catch fire flying through fire or lava, and a burning arrow sets off the TNT minecart it hits, as on modern versions. Dimensional Doors' 6.x traps shoot arrows through fire with this, fire charges without it.");
+        patch(
             "villageNamesFlatLookup",
             "Village Names finds a village's name horizontally, so its sign, Antique Atlas marker and waystones agree in tall worlds; it used to name a village twice, at vanilla's height and at its real one.");
         patch(

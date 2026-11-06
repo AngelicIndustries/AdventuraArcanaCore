@@ -8,12 +8,14 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLConstructionEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import industries.angelic.adventuraarcanacore.compat.cookingforblockheads.Toasts;
 import industries.angelic.adventuraarcanacore.compat.etfuturum.ModernAssets;
+import industries.angelic.adventuraarcanacore.core.PatchSwitches;
 
 @Mod(
     modid = AdventuraArcanaCore.MODID,
@@ -58,6 +60,8 @@ public class AdventuraArcanaCore {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
+        // Dimensional Doors' 6.x traps shoot arrows through fire when arrows catch fire, fire charges otherwise
+        if (PatchSwitches.enabled("arrowsCatchFire")) FMLInterModComms.sendMessage("dimdoors", "arrowsCatchFire", "");
     }
 
     @Mod.EventHandler
