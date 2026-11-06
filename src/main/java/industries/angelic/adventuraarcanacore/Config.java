@@ -1,6 +1,8 @@
 package industries.angelic.adventuraarcanacore;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 import net.minecraftforge.common.config.Configuration;
 
@@ -31,6 +33,19 @@ public final class Config {
     public static boolean dropBrokenRecipes = true;
     public static double battleTowerChance = 1;
     public static String[] shaderBlockAliases = { "dimdoors:fadebloom=minecraft:red_flower" };
+    public static String[] torchLighters = { "Natura:natura.flintandblaze" };
+    public static int torchRainDelay = 100;
+    public static boolean torchesBurnUnloaded = true;
+    public static boolean glowstonePaste = true;
+    /** The torches that burn out, by the ID of their config category, with their name for its comment. */
+    public static final String[][] TORCH_KINDS = { { "torch", "Realistic Torches' torch" },
+        { "soul_torch", "Netherlicious' soul torch" }, { "foxfire_torch", "Netherlicious' foxfire torch" },
+        { "shadow_torch", "Netherlicious' shadow torch" }, { "bone_torch", "Netherlicious' bone torch" },
+        { "soul_bone_torch", "Netherlicious' soul bone torch" },
+        { "foxfire_bone_torch", "Netherlicious' foxfire bone torch" },
+        { "shadow_bone_torch", "Netherlicious' shadow bone torch" } };
+    public static final Map<String, Integer> torchBurnout = new HashMap<>();
+    public static final Map<String, Boolean> torchRain = new HashMap<>();
 
     private Config() {}
 
@@ -41,6 +56,7 @@ public final class Config {
         public static final String PATCHES = industries.angelic.adventuraarcanacore.core.PatchSwitches.CATEGORY;
         public static final String BIOMIC = "biomic";
         public static final String SOUNDS = "sounds";
+        public static final String TORCHES = "torches";
 
         private Categories() {}
     }
@@ -177,6 +193,12 @@ public final class Config {
             "wildCropsStay",
             "HarvestCraft's and Harvest the Nether's crops stay where they grow wild (grass, sand, netherrack); sowing still needs farmland.");
         patch("pmpHarvestCraftBerries", "Plant Mega Pack's berry bushes give HarvestCraft's berries (with foodLinks).");
+        patch(
+            "realisticTorchesLighters",
+            "More items light Realistic Torches' torches, which otherwise only take the vanilla flint and steel: the torchLighters (Natura's flint and blaze) with a normal flame, Netherlicious' soul, foxfire and shadow flint and steels with theirs.");
+        patch(
+            "torchClock",
+            "Torches burn out on AAC's clock (torches category): Realistic Torches' torch, and Netherlicious' torches and bone torches, which otherwise burn forever or vanish. Each smolders, then becomes an unlit torch that any lighter relights. Burning torches are kept per chunk, so only loaded chunks are looked at, once a second; Realistic Torches no longer ticks every lit torch. Needs Realistic Torches.");
         patch(
             "naturaBerriesStandDown",
             "Natura's wild berry bushes are not generated in Biomic's overworld while wildFoodInBiomic is on.");
@@ -325,6 +347,65 @@ public final class Config {
                 "Wild wolves howl at night in the Overworld, and wild wolves nearby may join in. Server side.")
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config.wolfHowls")
             .getBoolean();
+        configuration.setCategoryLanguageKey(Categories.TORCHES, AdventuraArcanaCore.MODID + ".config.torches");
+        configuration.setCategoryComment(
+            Categories.TORCHES,
+            "Torches that burn out, after Realistic Torches: Realistic Torches' torch, and Netherlicious' soul, foxfire and shadow torches and bone torches. A lit torch smolders for the last tenth of its time, then becomes an unlit torch (the wooden ones Realistic Torches', the bone ones AAC's), which it also drops. Any lighter relights it, into its own flame. Each torch has its own settings below; Realistic Torches' torch.burnoutTime no longer applies. Needs Realistic Torches (Netherlicious for its torches) and the torchClock patch. Changes need a restart.");
+        configuration.setCategoryRequiresMcRestart(Categories.TORCHES, true);
+        torchLighters = configuration.get(
+            Categories.TORCHES,
+            "torchLighters",
+            new String[] { "Natura:natura.flintandblaze" },
+            "Items that light torches with a normal flame, like the vanilla flint and steel, as registry names. Needs the realisticTorchesLighters patch.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.torchLighters")
+            .getStringList();
+        torchRainDelay = configuration.get(
+            Categories.TORCHES,
+            "rainDelay",
+            100,
+            "Ticks a torch must stand in the rain before it goes out, if rain puts it out (20 ticks = 1 second). Rain is looked for once a second.",
+            0,
+            72000)
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.rainDelay")
+            .getInt();
+        torchesBurnUnloaded = configuration.get(
+            Categories.TORCHES,
+            "burnUnloaded",
+            true,
+            "Torches keep burning while their chunk is unloaded, catching up when it loads again; off pauses them while nobody is near. Rain only reaches torches in loaded chunks.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.burnUnloaded")
+            .getBoolean();
+        glowstonePaste = configuration.get(
+            Categories.TORCHES,
+            "glowstonePaste",
+            true,
+            "Glowstone paste, from glowstone dust, clay and a water bucket, turns a lit Realistic Torches torch into a vanilla torch that never goes out. Needs Realistic Torches.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.glowstonePaste")
+            .getBoolean();
+        for (String[] torch : TORCH_KINDS) {
+            String category = Categories.TORCHES + "." + torch[0];
+            configuration.setCategoryLanguageKey(category, AdventuraArcanaCore.MODID + ".config.torches." + torch[0]);
+            configuration.setCategoryComment(category, torch[1] + ".");
+            torchBurnout.put(
+                torch[0],
+                configuration.get(
+                    category,
+                    "burnout",
+                    72000,
+                    "Ticks until it goes out, the last tenth smoldering (20 ticks = 1 second). 0 or less: it never does.")
+                    .setLanguageKey(AdventuraArcanaCore.MODID + ".config.torchBurnout")
+                    .getInt());
+            torchRain.put(
+                torch[0],
+                configuration
+                    .get(
+                        category,
+                        "rain",
+                        !torch[0].startsWith("soul"),
+                        "Whether rain puts it out (after rainDelay), and keeps it from being lit.")
+                    .setLanguageKey(AdventuraArcanaCore.MODID + ".config.torchRain")
+                    .getBoolean());
+        }
         if (configuration.hasChanged()) {
             configuration.save();
         }

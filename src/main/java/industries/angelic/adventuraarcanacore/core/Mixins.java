@@ -220,7 +220,22 @@ public enum Mixins implements IMixins {
         new MixinBuilder("Light the fluid in Adventure Backpack's worn tanks where the wearer is").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.ADVENTURE_BACKPACK)
             .setApplyIf(() -> PatchSwitches.enabled("adventureBackpackWornTankLight"))
-            .addClientMixins("adventurebackpack.MixinWornTankLight"));
+            .addClientMixins("adventurebackpack.MixinWornTankLight")),
+    REALISTIC_TORCHES_LIGHTERS(
+        new MixinBuilder("Light Realistic Torches' torches with more lighters, each into its own torch")
+            .setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.REALISTIC_TORCHES)
+            .setApplyIf(() -> PatchSwitches.enabled("realisticTorchesLighters"))
+            .addCommonMixins("realistictorches.MixinTorchLighting")),
+    TORCH_CLOCK(new MixinBuilder("Burn Realistic Torches' torches on AAC's clock").setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.REALISTIC_TORCHES)
+        .setApplyIf(() -> PatchSwitches.enabled("torchClock"))
+        .addCommonMixins("realistictorches.MixinTorchClock", "realistictorches.MixinTorchTileIdle")),
+    NETHERLICIOUS_TORCH_CLOCK(new MixinBuilder("Burn Netherlicious' torches on AAC's clock").setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.REALISTIC_TORCHES)
+        .addRequiredMod(TargetMod.NETHERLICIOUS)
+        .setApplyIf(() -> PatchSwitches.enabled("torchClock"))
+        .addCommonMixins("netherlicious.MixinTorchClock", "netherlicious.MixinBoneTorchClock"));
 
     private final MixinBuilder builder;
 

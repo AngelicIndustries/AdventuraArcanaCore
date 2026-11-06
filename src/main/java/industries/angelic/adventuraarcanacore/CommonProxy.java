@@ -15,6 +15,9 @@ import industries.angelic.adventuraarcanacore.compat.baubles.BaubleSlots;
 import industries.angelic.adventuraarcanacore.compat.biomic.BiomicIntegration;
 import industries.angelic.adventuraarcanacore.compat.cookingforblockheads.Toasts;
 import industries.angelic.adventuraarcanacore.compat.netherlicious.NetherliciousDuplicates;
+import industries.angelic.adventuraarcanacore.compat.realistictorches.TorchClock;
+import industries.angelic.adventuraarcanacore.compat.realistictorches.Torches;
+import industries.angelic.adventuraarcanacore.core.PatchSwitches;
 import industries.angelic.adventuraarcanacore.food.BambooShoots;
 import industries.angelic.adventuraarcanacore.food.FoodBlocks;
 import industries.angelic.adventuraarcanacore.food.FoodLinks;
@@ -35,6 +38,7 @@ public class CommonProxy {
         if (Config.enableWildFood) FoodBlocks.register();
         if (Config.enableBambooShoots) BambooShoots.register();
         if (Loader.isModLoaded("biomic")) BiomicIntegration.preInit();
+        if (Loader.isModLoaded("RealisticTorches")) Torches.preInit();
         if (Config.extraBaubleSlots && Loader.isModLoaded("Baubles|Expanded")) BaubleSlots.requestShared();
         NetworkRegistry.INSTANCE.registerGuiHandler(AdventuraArcanaCore.instance, new GuiHandler());
         MinecraftForge.EVENT_BUS.register(new WolfHowls());
@@ -51,6 +55,10 @@ public class CommonProxy {
         if (Config.dropBrokenRecipes) BrokenRecipes.drop();
         if (Config.netherliciousDuplicates && Loader.isModLoaded("netherlicious") && Loader.isModLoaded("etfuturum"))
             NetherliciousDuplicates.apply();
+        if (Loader.isModLoaded("RealisticTorches")) {
+            Torches.postInit();
+            if (PatchSwitches.enabled("torchClock")) TorchClock.register();
+        }
     }
 
     public void serverStarting(FMLServerStartingEvent event) {}

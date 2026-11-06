@@ -85,6 +85,19 @@ Switch: `growthcraftWithoutForestry`.
 loads for Natura 2.8.19 and 2.8.24 only (`TargetMod.NATURA`, which reads the version from `mods.natura.Natura`).
 Switch: `noNaturaClouds`.
 
+## Torches
+
+`realistictorches.MixinTorchLighting` lets every lighter light Realistic Torches' torches through
+`compat.realistictorches.TorchLighting`, each into its own flame: Realistic Torches otherwise takes only the vanilla
+flint and steel. Switch: `realisticTorchesLighters`.
+
+`realistictorches.MixinTorchClock` and `MixinTorchTileIdle` put Realistic Torches' lit and smoldering torches on
+`compat.realistictorches.TorchClock`: placing one starts its time, its own scheduled updates do nothing and its tile
+entity, which looked for rain every tick, no longer ticks. `netherlicious.MixinTorchClock` (the soul, foxfire and shadow
+torches, whose own burnout removes them) and `netherlicious.MixinBoneTorchClock` (the bone torches, which have none) do
+the same for Netherlicious' torches, and let lighters relight them. Switch: `torchClock`, which also registers AAC's
+smoldering torches and unlit bone torch. See [TORCHES.md](TORCHES.md).
+
 ## SaltyMod on a dedicated server
 
 Three server-only patches keep SaltyMod's client code off a dedicated server, which crashes on it otherwise:
