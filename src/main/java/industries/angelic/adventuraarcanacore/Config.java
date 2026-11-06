@@ -1,10 +1,13 @@
 package industries.angelic.adventuraarcanacore;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.config.Property;
 
 public final class Config {
 
@@ -406,6 +409,7 @@ public final class Config {
                     .setLanguageKey(AdventuraArcanaCore.MODID + ".config.torchRain")
                     .getBoolean());
         }
+        dropStaleKeys();
         if (configuration.hasChanged()) {
             configuration.save();
         }
@@ -422,6 +426,21 @@ public final class Config {
         configuration.get(Categories.PATCHES, key, true, comment)
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config." + key)
             .setRequiresMcRestart(true);
+    }
+
+    /**
+     * Drops the keys of options a former version had: they stay in the file without a comment, and so show on the
+     * config screen without a description. Every current option gets its comment while syncing.
+     */
+    private static void dropStaleKeys() {
+        for (String name : configuration.getCategoryNames()) {
+            ConfigCategory category = configuration.getCategory(name);
+            for (String key : new ArrayList<>(category.keySet())) {
+                Property property = category.get(key);
+                if (property.comment == null || property.comment.trim()
+                    .isEmpty()) category.remove(key);
+            }
+        }
     }
 
     public static Configuration getRawConfig() {
