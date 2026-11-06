@@ -67,6 +67,11 @@ With Cooking for Blockheads installed:
   the bread inside. The lever pops up when the server's toaster stops, together with its sound, rather than on the
   client's own count, which ran ahead of a busy server. Each toaster also shows its own lever; they used to show the
   one drawn before.
+* `patches.toasterNoEating`: putting bread into the toaster ends the click there. The toaster used to report the click
+  as unused, so a hungry player also started eating the bread. Using a full toaster with bread it can toast does
+  nothing either. Use the same setting on client and server.
+* `patches.toasterSaltedBread` (with SaltyMod): salted bread is drawn in the toaster without the salt particles in the
+  top left of its texture. They lie outside the loaf, so in the slot they hung in the air beside it. Client only.
 * `patches.recipeListScroll`: the mouse wheel scrolls the recipe book's and cooking table's recipe list only over the
   list or its scrollbar. It used to scroll it anywhere on the screen, including over the inventory and NEI.
 

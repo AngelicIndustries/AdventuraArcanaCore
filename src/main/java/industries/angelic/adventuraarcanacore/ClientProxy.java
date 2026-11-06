@@ -19,6 +19,7 @@ import industries.angelic.adventuraarcanacore.compartment.client.GuiCompartment;
 import industries.angelic.adventuraarcanacore.compat.aether.AetherSkyrootDoor;
 import industries.angelic.adventuraarcanacore.compat.angelica.AngelicaDSWeather;
 import industries.angelic.adventuraarcanacore.compat.angelica.ShaderTuning;
+import industries.angelic.adventuraarcanacore.compat.cookingforblockheads.ToasterBreadLook;
 import industries.angelic.adventuraarcanacore.core.PatchSwitches;
 import industries.angelic.adventuraarcanacore.sounds.CaveMoodFilter;
 import industries.angelic.adventuraarcanacore.worktable.TileWorktable;
@@ -35,6 +36,8 @@ public class ClientProxy extends CommonProxy {
             MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Compartments.BLOCK), renderer);
         }
         MinecraftForge.EVENT_BUS.register(new CaveMoodFilter());
+        if (Loader.isModLoaded("cookingforblockheads") && Loader.isModLoaded("saltymod")
+            && PatchSwitches.enabled("toasterSaltedBread")) MinecraftForge.EVENT_BUS.register(new ToasterBreadLook());
         FMLCommonHandler.instance()
             .bus()
             .register(this);

@@ -189,6 +189,12 @@ public final class Config {
             "toasterLever",
             "Cooking for Blockheads' toaster lever goes down when it starts and pops up when it stops, with a sound for each. The toaster saves and shares whether it runs, so everyone sees it and it keeps toasting after a reload.");
         patch(
+            "toasterNoEating",
+            "Putting bread into Cooking for Blockheads' toaster no longer also starts eating it when you are hungry, nor does using a full toaster with bread it can toast. Use the same setting on client and server.");
+        patch(
+            "toasterSaltedBread",
+            "SaltyMod's salted bread is drawn in Cooking for Blockheads' toaster without the salt particles beside the loaf, which hung in the air next to the slot. Client only.");
+        patch(
             "recipeListScroll",
             "The mouse wheel scrolls Cooking for Blockheads' recipe list only over the list or its scrollbar, not anywhere on the screen.");
         patch("noNaturaClouds", "Natura generates no clouds in any dimension.");

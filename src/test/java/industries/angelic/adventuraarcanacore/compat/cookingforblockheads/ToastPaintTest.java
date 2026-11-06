@@ -53,4 +53,18 @@ public class ToastPaintTest {
             toast,
             ToastPaint.paint((domain, path) -> domain.equals("harvestcraft") ? toast : null, Toasts.Kind.SALTED));
     }
+
+    @Test
+    public void toasterBreadDropsOnlyTheSaltParticles() {
+        int[] saltedBread = new int[256];
+        java.util.Arrays.fill(saltedBread, 0xFF75571B);
+        int[] original = saltedBread.clone();
+        int[] expected = saltedBread.clone();
+        for (int pixel : new int[] { 18, 36, 37, 49, 50, 52, 82 }) expected[pixel] = 0;
+        assertArrayEquals(
+            expected,
+            ToastPaint.saltlessBread((domain, path) -> domain.equals("saltymod") ? saltedBread : null));
+        assertArrayEquals(original, saltedBread);
+        assertNull(ToastPaint.saltlessBread((domain, path) -> null));
+    }
 }

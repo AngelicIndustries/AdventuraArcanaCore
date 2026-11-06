@@ -26,6 +26,17 @@ public enum Mixins implements IMixins {
         .setApplyIf(() -> PatchSwitches.enabled("toasterLever"))
         .addCommonMixins("cookingforblockheads.MixinToasterLever")
         .addClientMixins("cookingforblockheads.AccessorModelToaster", "cookingforblockheads.MixinToasterLeverRender")),
+    TOASTER_NO_EATING(new MixinBuilder("End a click that puts bread into the toaster, so it is not eaten")
+        .setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.COOKING_FOR_BLOCKHEADS)
+        .setApplyIf(() -> PatchSwitches.enabled("toasterNoEating"))
+        .addCommonMixins("cookingforblockheads.AccessorCookingRegistry", "cookingforblockheads.MixinToasterNoEating")),
+    TOASTER_SALTED_BREAD(
+        new MixinBuilder("Draw salted bread in the toaster without its salt particles").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.COOKING_FOR_BLOCKHEADS)
+            .addRequiredMod(TargetMod.SALTYMOD)
+            .setApplyIf(() -> PatchSwitches.enabled("toasterSaltedBread"))
+            .addClientMixins("cookingforblockheads.MixinToasterBreadLook", "saltymod.MixinSaltBreadToasterIcon")),
     RECIPE_LIST_SCROLL(
         new MixinBuilder("Scroll the recipe book's list only with the mouse over it").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.COOKING_FOR_BLOCKHEADS)

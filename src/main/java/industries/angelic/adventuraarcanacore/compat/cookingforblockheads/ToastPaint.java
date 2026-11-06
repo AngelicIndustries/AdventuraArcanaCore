@@ -4,12 +4,25 @@ import java.awt.Color;
 
 import industries.angelic.adventuraarcanacore.util.SpritePixels;
 
-/** Pam's toast with salt flecks or colours from the corresponding bread in the installed resource pack. */
+/**
+ * Pam's toast with salt flecks or colours from the corresponding bread in the installed resource pack, and SaltyMod's
+ * salted bread without its flecks for the toaster.
+ */
 public final class ToastPaint {
 
+    /** SaltyMod's salt particles, top left, all outside the loaf's outline. */
     private static final int[] SALT_PIXELS = { 18, 36, 37, 49, 50, 52, 82 };
 
     private ToastPaint() {}
+
+    /** The salted bread with its salt particles cleared, which hung in the air beside the toaster's slot. */
+    public static int[] saltlessBread(SpritePixels.Source source) {
+        int[] saltedBread = source.read("saltymod", "textures/items/salt_bread.png");
+        if (saltedBread == null) return null;
+        int[] out = saltedBread.clone();
+        for (int pixel : SALT_PIXELS) out[pixel] = 0;
+        return out;
+    }
 
     public static int[] paint(SpritePixels.Source source, Toasts.Kind kind) {
         int[] toast = source.read("harvestcraft", "textures/items/toastItem.png");
