@@ -115,6 +115,13 @@ mixins run after AdjaChest's (priority 1100) to reach the methods it adds to van
 chests, copies of the old vanilla chest that join every neighbor, as AdjaChest pairs vanilla's, sneaking included. The
 server picks each pair (`compat.chests.ChestPairs`) and sends it; mimics pair with nothing. Switch: `aetherChestPairs`.
 
+## Better Foliage across threads
+
+`betterfoliage.MixinBlockFilterCache` (client) gives Better Foliage's `BlockFilterSet` a `ConcurrentHashMap` for the
+answers it caches per block and metadata, in place of a `HashMap`. Angelica builds chunk meshes on several threads, each
+asking the filters about the blocks it draws; a lookup during another thread's put could see the key and then read
+null, which crashed the game with a NullPointerException in `BlockFilterSet.matches`. Switch: `betterFoliageFilterCache`.
+
 ## SaltyMod on a dedicated server
 
 Three server-only patches keep SaltyMod's client code off a dedicated server, which crashes on it otherwise:

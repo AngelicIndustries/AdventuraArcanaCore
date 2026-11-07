@@ -221,6 +221,9 @@ public final class Config {
             "aetherChestPairs",
             "The Aether's Skyroot, Elysian and breakable treasure chests pair as AdjaChest pairs vanilla ones: each with one neighbor of its kind facing the same way, so any number can stand side by side, and placing one turns no other. Needs AdjaChest; use the same setting on client and server.");
         patch(
+            "betterFoliageFilterCache",
+            "Better Foliage's block filters keep their answers in a map safe across threads. Angelica draws chunks on several threads, and the plain map Better Foliage used could find a block and then give back nothing, crashing the game (NullPointerException in BlockFilterSet.matches). Client only.");
+        patch(
             "naturaBerriesStandDown",
             "Natura's wild berry bushes are not generated in Biomic's overworld while wildFoodInBiomic is on.");
         patch(
