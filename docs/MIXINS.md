@@ -96,7 +96,10 @@ flint and steel. Switch: `realisticTorchesLighters`.
 entity, which looked for rain every tick, no longer ticks. `netherlicious.MixinTorchClock` (the soul, foxfire and shadow
 torches, whose own burnout removes them) and `netherlicious.MixinBoneTorchClock` (the bone torches, which have none) do
 the same for Netherlicious' torches, and let lighters relight them. Switch: `torchClock`, which also registers AAC's
-smoldering torches and unlit bone torch. See [TORCHES.md](TORCHES.md).
+smoldering torches and unlit bone torch. `aether.MixinAetherTorchClock` puts the Aether's ambrosium, hellfire and
+ethereal torches, which burn forever, on the clock and lets lighters relight them, and `aether.MixinAetherTorchLook`
+(client) draws them as vanilla's torch with their flame. With the Aether, `torchClock` also registers AAC's bone torches
+of its flames. See [TORCHES.md](TORCHES.md).
 
 ## Chests
 

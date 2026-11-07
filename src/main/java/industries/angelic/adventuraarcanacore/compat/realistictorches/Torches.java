@@ -18,10 +18,11 @@ import industries.angelic.adventuraarcanacore.Config;
 import industries.angelic.adventuraarcanacore.core.PatchSwitches;
 
 /**
- * The torches that burn out: Realistic Torches' torch, and Netherlicious' soul, foxfire and shadow torches and its bone
- * torches. Each kind has a lit, a smoldering and an unlit block: Realistic Torches' own for its torch, with its unlit
- * torch for every wooden kind, Netherlicious' lit torches, and AAC's smoldering torches and unlit bone torch where the
- * mods have none. AAC's blocks are registered with the torchClock patch.
+ * The torches that burn out: Realistic Torches' torch, Netherlicious' soul, foxfire and shadow torches and its bone
+ * torches, and the Aether's ambrosium, hellfire and ethereal (cold fire) torches with AAC's bone torches of those
+ * flames. Each kind has a lit, a smoldering and an unlit block: Realistic Torches' own for its torch, with its unlit
+ * torch for every wooden kind, the mods' lit torches, and AAC's lit, smoldering and unlit bone torches where the mods
+ * have none. AAC's blocks are registered with the torchClock patch.
  */
 public final class Torches {
 
@@ -34,34 +35,69 @@ public final class Torches {
         FIRE,
         SOUL,
         FOXFIRE,
-        SHADOW
+        SHADOW,
+        AMBROSIUM,
+        HELLFIRE,
+        COLD
     }
 
     /** By the IDs of Config.TORCH_KINDS. */
     public enum Kind {
 
-        TORCH(Material.WOOD, Flame.FIRE, "RealisticTorches", "TorchLit", null),
-        SOUL_TORCH(Material.WOOD, Flame.SOUL, "netherlicious", "SoulTorch", "soul_torch"),
-        FOXFIRE_TORCH(Material.WOOD, Flame.FOXFIRE, "netherlicious", "FoxfireTorch", "foxfire_torch"),
-        SHADOW_TORCH(Material.WOOD, Flame.SHADOW, "netherlicious", "ShadowTorch", "shadow_torch"),
-        BONE_TORCH(Material.BONE, Flame.FIRE, "netherlicious", "BoneTorch", "torch_bone"),
-        SOUL_BONE_TORCH(Material.BONE, Flame.SOUL, "netherlicious", "SoulBoneTorch", "soul_torch_bone"),
-        FOXFIRE_BONE_TORCH(Material.BONE, Flame.FOXFIRE, "netherlicious", "FoxfireBoneTorch", "foxfire_torch_bone"),
-        SHADOW_BONE_TORCH(Material.BONE, Flame.SHADOW, "netherlicious", "ShadowBoneTorch", "shadow_torch_bone");
+        TORCH(Material.WOOD, Flame.FIRE, "RealisticTorches", "TorchLit", null, null),
+        SOUL_TORCH(Material.WOOD, Flame.SOUL, NETHERLICIOUS, "SoulTorch", "netherlicious:soul_torch", null),
+        FOXFIRE_TORCH(Material.WOOD, Flame.FOXFIRE, NETHERLICIOUS, "FoxfireTorch", "netherlicious:foxfire_torch", null),
+        SHADOW_TORCH(Material.WOOD, Flame.SHADOW, NETHERLICIOUS, "ShadowTorch", "netherlicious:shadow_torch", null),
+        BONE_TORCH(Material.BONE, Flame.FIRE, NETHERLICIOUS, "BoneTorch", "netherlicious:torch_bone", null),
+        SOUL_BONE_TORCH(Material.BONE, Flame.SOUL, NETHERLICIOUS, "SoulBoneTorch", "netherlicious:soul_torch_bone",
+            null),
+        FOXFIRE_BONE_TORCH(Material.BONE, Flame.FOXFIRE, NETHERLICIOUS, "FoxfireBoneTorch",
+            "netherlicious:foxfire_torch_bone", null),
+        SHADOW_BONE_TORCH(Material.BONE, Flame.SHADOW, NETHERLICIOUS, "ShadowBoneTorch",
+            "netherlicious:shadow_torch_bone", null),
+        // The Aether's torches, on Skyroot sticks, are drawn as vanilla's torch with their flame's colours.
+        AMBROSIUM_TORCH(Material.WOOD, Flame.AMBROSIUM, AETHER, "ambrosium_torch", "minecraft:torch_on",
+            "aether_legacy:ambrosium_torch"),
+        HELLFIRE_TORCH(Material.WOOD, Flame.HELLFIRE, AETHER, "hellfire_torch", "minecraft:torch_on",
+            "aether_legacy:hellfire_torch"),
+        ETHEREAL_TORCH(Material.WOOD, Flame.COLD, AETHER, "ethereal_torch", "minecraft:torch_on",
+            "aether_legacy:ethereal_torch"),
+        AMBROSIUM_BONE_TORCH(Material.BONE, Flame.AMBROSIUM, AdventuraArcanaCore.MODID, "ambrosium_bone_torch",
+            "netherlicious:torch_bone", "aether_legacy:ambrosium_torch"),
+        HELLFIRE_BONE_TORCH(Material.BONE, Flame.HELLFIRE, AdventuraArcanaCore.MODID, "hellfire_bone_torch",
+            "netherlicious:torch_bone", "aether_legacy:hellfire_torch"),
+        ETHEREAL_BONE_TORCH(Material.BONE, Flame.COLD, AdventuraArcanaCore.MODID, "ethereal_bone_torch",
+            "netherlicious:torch_bone", "aether_legacy:ethereal_torch");
 
         public final Material material;
         public final Flame flame;
         private final String litMod, litName;
-        /** Netherlicious' texture of the lit torch, which AAC's smoldering torch is painted from, or null. */
-        final String texture;
+        /**
+         * The lit torch's look (domain:name of a block texture), which AAC's smoldering torch is painted from; null
+         * for Realistic Torches' torch, whose smoldering torch is its own.
+         */
+        final String look;
+        /** A torch texture whose flame colours replace the look's flame, or null. */
+        final String flameFrom;
         Block lit, smoldering;
 
-        Kind(Material material, Flame flame, String litMod, String litName, String texture) {
+        Kind(Material material, Flame flame, String litMod, String litName, String look, String flameFrom) {
             this.material = material;
             this.flame = flame;
             this.litMod = litMod;
             this.litName = litName;
-            this.texture = texture;
+            this.look = look;
+            this.flameFrom = flameFrom;
+        }
+
+        /** Whether the mods its blocks and textures come from are there. */
+        boolean available() {
+            return loaded(litMod) && loaded(domain(look)) && loaded(domain(flameFrom));
+        }
+
+        /** AAC's own lit torch, for a flame its mod has no bone torch of. */
+        boolean aacLit() {
+            return AdventuraArcanaCore.MODID.equals(litMod);
         }
 
         public String id() {
@@ -74,7 +110,7 @@ public final class Torches {
         }
 
         public boolean rain() {
-            return Config.torchRain.getOrDefault(id(), flame != Flame.SOUL);
+            return Config.torchRain.getOrDefault(id(), flame != Flame.SOUL && flame != Flame.COLD);
         }
 
         /** Whether the torch goes out at all, and so drops an unlit torch. */
@@ -104,27 +140,39 @@ public final class Torches {
         }
     }
 
+    private static final String NETHERLICIOUS = "netherlicious", AETHER = "aether_legacy";
     private static final Map<Block, Kind> LIT = new HashMap<>(), SMOLDERING = new HashMap<>();
     private static final Map<Material, Block> UNLIT = new EnumMap<>(Material.class);
     private static final Map<Block, Material> UNLIT_MATERIALS = new HashMap<>();
     private static ItemGlowstonePaste paste;
+    private static ItemZaniteAndAmbrosium ambrosiumLighter;
 
     private Torches() {}
 
     public static void preInit() {
-        boolean netherlicious = Loader.isModLoaded("netherlicious");
-        if (netherlicious && PatchSwitches.enabled("torchClock")) {
-            for (Kind kind : Kind.values()) if (kind.texture != null) {
+        if (PatchSwitches.enabled("torchClock")) {
+            for (Kind kind : Kind.values()) {
+                if (kind.look == null || !kind.available()) continue;
+                if (kind.aacLit()) {
+                    kind.lit = new BlockBoneTorch(kind);
+                    GameRegistry.registerBlock(kind.lit, kind.id());
+                }
                 kind.smoldering = new BlockSmolderingTorch(kind);
                 GameRegistry.registerBlock(kind.smoldering, null, "smoldering_" + kind.id());
             }
-            Block unlitBone = new BlockUnlitBoneTorch();
-            GameRegistry.registerBlock(unlitBone, "unlit_bone_torch");
-            UNLIT.put(Material.BONE, unlitBone);
+            if (Loader.isModLoaded(NETHERLICIOUS)) {
+                Block unlitBone = new BlockUnlitBoneTorch();
+                GameRegistry.registerBlock(unlitBone, "unlit_bone_torch");
+                UNLIT.put(Material.BONE, unlitBone);
+            }
         }
         if (Config.glowstonePaste) {
             paste = new ItemGlowstonePaste();
             GameRegistry.registerItem(paste, "glowstone_paste");
+        }
+        if (Config.ambrosiumLighter && Loader.isModLoaded(AETHER)) {
+            ambrosiumLighter = new ItemZaniteAndAmbrosium();
+            GameRegistry.registerItem(ambrosiumLighter, "zanite_and_ambrosium");
         }
     }
 
@@ -133,7 +181,7 @@ public final class Torches {
         if (woodUnlit != null) UNLIT.put(Material.WOOD, woodUnlit);
         for (Map.Entry<Material, Block> unlit : UNLIT.entrySet()) UNLIT_MATERIALS.put(unlit.getValue(), unlit.getKey());
         for (Kind kind : Kind.values()) {
-            kind.lit = GameRegistry.findBlock(kind.litMod, kind.litName);
+            if (kind.lit == null) kind.lit = GameRegistry.findBlock(kind.litMod, kind.litName);
             if (kind == Kind.TORCH) kind.smoldering = GameRegistry.findBlock("RealisticTorches", "TorchSmoldering");
             if (kind.lit != null) LIT.put(kind.lit, kind);
             if (kind.smoldering != null) SMOLDERING.put(kind.smoldering, kind);
@@ -146,6 +194,10 @@ public final class Torches {
             if (Kind.TORCH.lit != null) GameRegistry
                 .addShapelessRecipe(new ItemStack(Blocks.torch), new ItemStack(Kind.TORCH.lit), new ItemStack(paste));
         }
+        Item shard = GameRegistry.findItem(AETHER, "ambrosium_shard"),
+            zanite = GameRegistry.findItem(AETHER, "zanite_gemstone");
+        if (ambrosiumLighter != null && shard != null && zanite != null)
+            GameRegistry.addShapelessRecipe(new ItemStack(ambrosiumLighter), shard, zanite);
         AdventuraArcanaCore.LOG.info("Torches that burn out: {}", LIT.values());
     }
 
@@ -157,6 +209,22 @@ public final class Torches {
     /** The kind whose smoldering torch the block is, or null. */
     public static Kind smolderingKind(Block block) {
         return SMOLDERING.get(block);
+    }
+
+    /** The lit torch of the material and flame, or null. */
+    public static Block lit(Material material, Flame flame) {
+        for (Kind kind : Kind.values()) if (kind.material == material && kind.flame == flame) return kind.lit;
+        return null;
+    }
+
+    private static boolean loaded(String mod) {
+        return mod == null || mod.equals("minecraft")
+            || mod.equals(AdventuraArcanaCore.MODID)
+            || Loader.isModLoaded(mod);
+    }
+
+    private static String domain(String texture) {
+        return texture == null ? null : texture.substring(0, texture.indexOf(':'));
     }
 
     /** The kind a lighter of the flame makes of the torch, lit, smoldering or unlit, or null if it isn't one. */

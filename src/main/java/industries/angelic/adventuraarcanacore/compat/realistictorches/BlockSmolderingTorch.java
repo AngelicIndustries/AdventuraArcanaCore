@@ -15,8 +15,8 @@ import industries.angelic.adventuraarcanacore.AdventuraArcanaCore;
 import industries.angelic.adventuraarcanacore.util.PaintedSprite;
 
 /**
- * A Netherlicious torch smoldering out, like Realistic Torches' smoldering torch: dimmer, smoking, its flame now and
- * then. Painted from the lit torch's texture with a faded flame (TorchPaint). It drops its unlit torch.
+ * A torch smoldering out (any but Realistic Torches' own), like Realistic Torches' smoldering torch: dimmer, smoking,
+ * its flame now and then. Painted from the lit torch's look with a faded flame (TorchPaint). It drops its unlit torch.
  */
 public class BlockSmolderingTorch extends BlockTorch {
 

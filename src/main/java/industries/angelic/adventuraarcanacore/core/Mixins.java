@@ -247,6 +247,13 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.NETHERLICIOUS)
         .setApplyIf(() -> PatchSwitches.enabled("torchClock"))
         .addCommonMixins("netherlicious.MixinTorchClock", "netherlicious.MixinBoneTorchClock")),
+    AETHER_TORCH_CLOCK(
+        new MixinBuilder("Burn the Aether's torches on AAC's clock, drawn as vanilla's torch").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.REALISTIC_TORCHES)
+            .addRequiredMod(TargetMod.AETHER)
+            .setApplyIf(() -> PatchSwitches.enabled("torchClock"))
+            .addCommonMixins("aether.MixinAetherTorchClock")
+            .addClientMixins("aether.MixinAetherTorchLook")),
     CHEST_SNEAK_PLACING(new MixinBuilder("Pair chests placed while sneaking only on purpose").setPhase(Phase.EARLY)
         .addRequiredMod(TargetMod.ADJACHEST)
         .setApplyIf(() -> PatchSwitches.enabled("chestSneakPlacing"))

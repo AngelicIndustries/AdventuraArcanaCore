@@ -10,13 +10,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import industries.angelic.adventuraarcanacore.AdventuraArcanaCore;
 import industries.angelic.adventuraarcanacore.Config;
 
 /**
  * Lighting a torch that burns out, lit, smoldering or unlit, with a lighter: the vanilla flint and steel and the
- * torchLighters give it a normal flame, Netherlicious' soul, foxfire and shadow flint and steels theirs. The torch
- * keeps its material (wood or bone) and facing. Each use wears the lighter; rain that would put the torch out keeps
- * it from being lit.
+ * torchLighters give it a normal flame, Netherlicious' soul, foxfire and shadow flint and steels theirs, the Aether's
+ * Zanite and Cinerarium hellfire, its Zanite and Cyro cold fire and AAC's Zanite and Ambrosium ambrosium flame. The
+ * torch keeps its material (wood or bone) and facing. Each use wears the lighter; rain that would put the torch out
+ * keeps it from being lit.
  */
 public final class TorchLighting {
 
@@ -50,16 +52,19 @@ public final class TorchLighting {
                 Item item = (Item) Item.itemRegistry.getObject(name);
                 if (item != null) map.put(item, Torches.Flame.FIRE);
             }
-            put(map, "FlintAndSteelSoul", Torches.Flame.SOUL);
-            put(map, "FlintAndSteelFoxfire", Torches.Flame.FOXFIRE);
-            put(map, "FlintAndSteelShadow", Torches.Flame.SHADOW);
+            put(map, "netherlicious", "FlintAndSteelSoul", Torches.Flame.SOUL);
+            put(map, "netherlicious", "FlintAndSteelFoxfire", Torches.Flame.FOXFIRE);
+            put(map, "netherlicious", "FlintAndSteelShadow", Torches.Flame.SHADOW);
+            put(map, "aether_legacy", "zanite_and_cinerarium", Torches.Flame.HELLFIRE);
+            put(map, "aether_legacy", "zanite_and_cyro", Torches.Flame.COLD);
+            put(map, AdventuraArcanaCore.MODID, "zanite_and_ambrosium", Torches.Flame.AMBROSIUM);
             lighters = map;
         }
         return lighters;
     }
 
-    private static void put(Map<Item, Torches.Flame> map, String name, Torches.Flame flame) {
-        Item item = GameRegistry.findItem("netherlicious", name);
+    private static void put(Map<Item, Torches.Flame> map, String mod, String name, Torches.Flame flame) {
+        Item item = GameRegistry.findItem(mod, name);
         if (item != null) map.put(item, flame);
     }
 }

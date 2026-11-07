@@ -40,13 +40,19 @@ public final class Config {
     public static int torchRainDelay = 100;
     public static boolean torchesBurnUnloaded = true;
     public static boolean glowstonePaste = true;
+    public static boolean ambrosiumLighter = true;
     /** The torches that burn out, by the ID of their config category, with their name for its comment. */
     public static final String[][] TORCH_KINDS = { { "torch", "Realistic Torches' torch" },
         { "soul_torch", "Netherlicious' soul torch" }, { "foxfire_torch", "Netherlicious' foxfire torch" },
         { "shadow_torch", "Netherlicious' shadow torch" }, { "bone_torch", "Netherlicious' bone torch" },
         { "soul_bone_torch", "Netherlicious' soul bone torch" },
         { "foxfire_bone_torch", "Netherlicious' foxfire bone torch" },
-        { "shadow_bone_torch", "Netherlicious' shadow bone torch" } };
+        { "shadow_bone_torch", "Netherlicious' shadow bone torch" },
+        { "ambrosium_torch", "The Aether's ambrosium torch" }, { "hellfire_torch", "The Aether's hellfire torch" },
+        { "ethereal_torch", "The Aether's ethereal torch, of cold fire" },
+        { "ambrosium_bone_torch", "AAC's ambrosium bone torch" },
+        { "hellfire_bone_torch", "AAC's hellfire bone torch" },
+        { "ethereal_bone_torch", "AAC's ethereal bone torch, of cold fire" } };
     public static final Map<String, Integer> torchBurnout = new HashMap<>();
     public static final Map<String, Boolean> torchRain = new HashMap<>();
 
@@ -204,10 +210,10 @@ public final class Config {
         patch("pmpHarvestCraftBerries", "Plant Mega Pack's berry bushes give HarvestCraft's berries (with foodLinks).");
         patch(
             "realisticTorchesLighters",
-            "More items light Realistic Torches' torches, which otherwise only take the vanilla flint and steel: the torchLighters (Natura's flint and blaze) with a normal flame, Netherlicious' soul, foxfire and shadow flint and steels with theirs.");
+            "More items light Realistic Torches' torches, which otherwise only take the vanilla flint and steel: the torchLighters (Natura's flint and blaze) with a normal flame, Netherlicious' soul, foxfire and shadow flint and steels with theirs, the Aether's Zanite and Cinerarium with hellfire, its Zanite and Cyro with cold fire and AAC's Zanite and Ambrosium with ambrosium flame.");
         patch(
             "torchClock",
-            "Torches burn out on AAC's clock (torches category): Realistic Torches' torch, and Netherlicious' torches and bone torches, which otherwise burn forever or vanish. Each smolders, then becomes an unlit torch that any lighter relights. Burning torches are kept per chunk, so only loaded chunks are looked at, once a second; Realistic Torches no longer ticks every lit torch. Needs Realistic Torches.");
+            "Torches burn out on AAC's clock (torches category): Realistic Torches' torch, Netherlicious' torches and bone torches, which otherwise burn forever or vanish, and the Aether's torches, which burn forever and are drawn as vanilla's torch with their flame. Each smolders, then becomes an unlit torch that any lighter relights. AAC adds bone torches of the Aether's flames. Burning torches are kept per chunk, so only loaded chunks are looked at, once a second; Realistic Torches no longer ticks every lit torch. Needs Realistic Torches.");
         patch(
             "chestSneakPlacing",
             "A chest placed while sneaking pairs only on purpose: placed against the side of a single chest of its kind, it pairs with that one and takes its facing; placed anywhere else, it stays single. Such a chest never pairs on its own later, and no neighbor takes it. For the chests AdjaChest pairs (vanilla, Netherlicious, Twilight Forest) and, with aetherChestPairs, the Aether's. Needs AdjaChest; use the same setting on client and server.");
@@ -365,7 +371,7 @@ public final class Config {
         configuration.setCategoryLanguageKey(Categories.TORCHES, AdventuraArcanaCore.MODID + ".config.torches");
         configuration.setCategoryComment(
             Categories.TORCHES,
-            "Torches that burn out, after Realistic Torches: Realistic Torches' torch, and Netherlicious' soul, foxfire and shadow torches and bone torches. A lit torch smolders for the last tenth of its time, then becomes an unlit torch (the wooden ones Realistic Torches', the bone ones AAC's), which it also drops. Any lighter relights it, into its own flame. Each torch has its own settings below; Realistic Torches' torch.burnoutTime no longer applies. Needs Realistic Torches (Netherlicious for its torches) and the torchClock patch. Changes need a restart.");
+            "Torches that burn out, after Realistic Torches: Realistic Torches' torch, Netherlicious' soul, foxfire and shadow torches and bone torches, and the Aether's ambrosium, hellfire and ethereal (cold fire) torches with AAC's bone torches of those flames. A lit torch smolders for the last tenth of its time, then becomes an unlit torch (the wooden ones Realistic Torches', the bone ones AAC's), which it also drops. Any lighter relights it, into its own flame. Each torch has its own settings below; Realistic Torches' torch.burnoutTime no longer applies. Needs Realistic Torches (Netherlicious for its torches and every bone torch, the Aether for its flames) and the torchClock patch. Changes need a restart.");
         configuration.setCategoryRequiresMcRestart(Categories.TORCHES, true);
         torchLighters = configuration.get(
             Categories.TORCHES,
@@ -397,6 +403,13 @@ public final class Config {
             "Glowstone paste, from glowstone dust, clay and a water bucket, turns a lit Realistic Torches torch into a vanilla torch that never goes out. Needs Realistic Torches.")
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config.glowstonePaste")
             .getBoolean();
+        ambrosiumLighter = configuration.get(
+            Categories.TORCHES,
+            "ambrosiumLighter",
+            true,
+            "Zanite and Ambrosium, from an ambrosium shard and a zanite gemstone, lights torches with ambrosium flame, as the Aether's Zanite and Cinerarium lights them with hellfire and its Zanite and Cyro with cold fire. Needs the Aether and Realistic Torches.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.ambrosiumLighter")
+            .getBoolean();
         for (String[] torch : TORCH_KINDS) {
             String category = Categories.TORCHES + "." + torch[0];
             configuration.setCategoryLanguageKey(category, AdventuraArcanaCore.MODID + ".config.torches." + torch[0]);
@@ -416,7 +429,7 @@ public final class Config {
                     .get(
                         category,
                         "rain",
-                        !torch[0].startsWith("soul"),
+                        !torch[0].startsWith("soul") && !torch[0].startsWith("ethereal"),
                         "Whether rain puts it out (after rainDelay), and keeps it from being lit.")
                     .setLanguageKey(AdventuraArcanaCore.MODID + ".config.torchRain")
                     .getBoolean());
