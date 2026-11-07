@@ -86,6 +86,14 @@ Switch: `growthcraftWithoutForestry`.
 `/gamerule` change lasted only until the next one. It now adds its own gamerules, with those defaults, only to a world
 that lacks them, and leaves `keepInventory` alone. Switch: `projectZuluGamerules`.
 
+## OpenBlocks graves in tall worlds
+
+`openblocks.MixinGraveHeight` raises the top of OpenBlocks' grave search by however much the world reaches above
+Y=256. OpenBlocks clamps a grave's height to its `maximalPosY` (249 by default, just under a 256-block world's top), so
+with Hohenangst's 512 blocks a player who died above Y=249 got a grave there, often in the air far below where they
+died. The configured margin now holds below the world's real top (Y=505 with Hohenangst). Switch:
+`openBlocksGraveHeight`.
+
 ## Natura clouds
 
 `natura.MixinNaturaNoClouds` stops Natura's cloud generator in every dimension: its clouds float as flat slabs. It

@@ -55,6 +55,7 @@ adventuraarcanacore.config.reccomplexNaturalFill=Recurrent Complex natural fill
 adventuraarcanacore.config.reccomplexVillages=Recurrent Complex outside villages
 adventuraarcanacore.config.betterSleepingFixes=Better Sleeping fixes
 adventuraarcanacore.config.hangGliderNerf=Weaker hang glider
+adventuraarcanacore.config.openBlocksGraveHeight=OpenBlocks graves in tall worlds
 adventuraarcanacore.config.aetherParachuteRider=Aether parachutes stay in their world
 adventuraarcanacore.config.aetherGloveAccessories=Aether copper and netherite gloves
 adventuraarcanacore.config.aetherWingFlap=Aether wings flap per player

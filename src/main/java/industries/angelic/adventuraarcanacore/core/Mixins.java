@@ -142,6 +142,11 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.OPENBLOCKS)
         .setApplyIf(() -> PatchSwitches.enabled("hangGliderNerf"))
         .addCommonMixins("openblocks.MixinEntityHangGlider", "openblocks.MixinItemHangGlider")),
+    OPENBLOCKS_GRAVE_HEIGHT(
+        new MixinBuilder("Let OpenBlocks place graves up to a taller world's top").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.OPENBLOCKS)
+            .setApplyIf(() -> PatchSwitches.enabled("openBlocksGraveHeight"))
+            .addCommonMixins("openblocks.MixinGraveHeight")),
     AETHER_SKYROOT_DOOR_BLOCK_ICON(
         new MixinBuilder("Show the Aether's Skyroot Door with its item icon in WAILA").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.AETHER)

@@ -263,6 +263,9 @@ public final class Config {
             "hangGliderNerf",
             "OpenBlocks' hang glider glides about 2.5 blocks per block of height instead of 6, dives at a third of the speed, wears out after 4 minutes in the air and is repaired with leather.");
         patch(
+            "openBlocksGraveHeight",
+            "OpenBlocks places graves up to its maximalPosY (249 by default) below a world's top rather than below Y=256, so in a taller world (Hohenangst's 512) a player who dies high up gets a grave there, not one clamped down to Y=249.");
+        patch(
             "aetherParachuteRider",
             "The Aether's parachutes vanish when their rider changes worlds or dies, instead of following them into another dimension, which crashes servers.");
         patch(
