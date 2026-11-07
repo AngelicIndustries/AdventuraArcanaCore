@@ -185,6 +185,7 @@ tile.skyroot_door.name=Skyroot Door
 adventuraarcanacore.shadertune.title=%s's shader options for %s
 adventuraarcanacore.shadertune.apply=Apply
 adventuraarcanacore.shadertune.reset=Reset
+adventuraarcanacore.shadertune.resetall=Reset all
 adventuraarcanacore.shadertune.applied=Written to %s, shaders reloaded
 adventuraarcanacore.shadertune.failed=Couldn't apply: %s
 adventuraarcanacore.shadertune.none=No numeric options in this dimension's file
