@@ -79,6 +79,13 @@ This patch runs early on both sides because late mixins load after dependency va
 It targets Forge and checks the exact `Growthcraft` mod ID, so Growthcraft itself is optional.
 Switch: `growthcraftWithoutForestry`.
 
+## Project Zulu gamerules
+
+`projectzulu.MixinDeathGamerulesKeep` replaces Project Zulu's world load handler, which set `keepInventory` and its own
+`dropInventory`, `dropHotbar`, `dropArmor` and `dropXP` gamerules to its config defaults on every world load, so a
+`/gamerule` change lasted only until the next one. It now adds its own gamerules, with those defaults, only to a world
+that lacks them, and leaves `keepInventory` alone. Switch: `projectZuluGamerules`.
+
 ## Natura clouds
 
 `natura.MixinNaturaNoClouds` stops Natura's cloud generator in every dimension: its clouds float as flat slabs. It

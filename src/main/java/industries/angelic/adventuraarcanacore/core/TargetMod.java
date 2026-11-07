@@ -48,6 +48,8 @@ public enum TargetMod implements ITargetMod {
     PLANTMEGAPACK(new TargetModBuilder().setModId("plantmegapack")),
     REALISTIC_TORCHES(new TargetModBuilder().setModId("RealisticTorches")
         .setTargetClass("com.chaosthedude.realistictorches.handler.TorchHandler")),
+    PROJECT_ZULU(new TargetModBuilder().setModId("ProjectZulu|Core")
+        .setTargetClass("com.stek101.projectzulu.common.DeathGamerules")),
     RECURRENT_COMPLEX(new TargetModBuilder().setModId("reccomplex")
         .setTargetClass("ivorius.reccomplex.RecurrentComplex")),
     RUINS(new TargetModBuilder().setModId("AS_Ruins")

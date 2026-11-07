@@ -205,6 +205,9 @@ public final class Config {
             "The mouse wheel scrolls Cooking for Blockheads' recipe list only over the list or its scrollbar, not anywhere on the screen.");
         patch("noNaturaClouds", "Natura generates no clouds in any dimension.");
         patch(
+            "projectZuluGamerules",
+            "Project Zulu no longer sets keepInventory and its dropInventory, dropHotbar, dropArmor and dropXP gamerules back to its config defaults whenever a world loads, which undid /gamerule changes. It only adds its own gamerules, with those defaults, to a world that lacks them.");
+        patch(
             "wildCropsStay",
             "HarvestCraft's and Harvest the Nether's crops stay where they grow wild (grass, sand, netherrack); sowing still needs farmland.");
         patch("pmpHarvestCraftBerries", "Plant Mega Pack's berry bushes give HarvestCraft's berries (with foodLinks).");

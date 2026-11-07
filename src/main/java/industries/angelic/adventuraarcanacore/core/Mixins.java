@@ -51,6 +51,12 @@ public enum Mixins implements IMixins {
         new MixinBuilder("Make Growthcraft Forestry integration optional").setPhase(Phase.EARLY)
             .setApplyIf(() -> PatchSwitches.enabled("growthcraftWithoutForestry"))
             .addCommonMixins("fml.MixinFMLModContainer")),
+    PROJECT_ZULU_GAMERULES(
+        new MixinBuilder("Keep Project Zulu from resetting keepInventory and its drop gamerules on world load")
+            .setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.PROJECT_ZULU)
+            .setApplyIf(() -> PatchSwitches.enabled("projectZuluGamerules"))
+            .addCommonMixins("projectzulu.MixinDeathGamerulesKeep")),
     NATURA_NO_CLOUDS(new MixinBuilder("Generate no Natura clouds").setPhase(Phase.LATE)
         .addRequiredMod(TargetMod.NATURA)
         .setApplyIf(() -> PatchSwitches.enabled("noNaturaClouds"))

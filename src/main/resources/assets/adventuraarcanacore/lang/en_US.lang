@@ -39,6 +39,7 @@ adventuraarcanacore.config.patches=Patches
 adventuraarcanacore.config.resumePausedSounds=Resume only paused sounds
 adventuraarcanacore.config.growthcraftWithoutForestry=Growthcraft without Forestry
 adventuraarcanacore.config.noNaturaClouds=No Natura clouds
+adventuraarcanacore.config.projectZuluGamerules=Project Zulu keeps gamerules
 adventuraarcanacore.config.realisticTorchesLighters=More lighters for Realistic Torches
 adventuraarcanacore.config.torchClock=Torches burn out on AAC's clock
 adventuraarcanacore.config.chestSneakPlacing=Sneak-placed chests pair on purpose
