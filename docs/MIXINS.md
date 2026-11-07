@@ -98,6 +98,20 @@ torches, whose own burnout removes them) and `netherlicious.MixinBoneTorchClock`
 the same for Netherlicious' torches, and let lighters relight them. Switch: `torchClock`, which also registers AAC's
 smoldering torches and unlit bone torch. See [TORCHES.md](TORCHES.md).
 
+## Chests
+
+AdjaChest pairs a chest with one neighbor of its kind facing the same way, so any number of chests can stand side by
+side. `minecraft.MixinBlockChestSneakPlace` and `MixinTileEntityChestPairs` (early, with AdjaChest) make a chest placed
+while sneaking pair only on purpose: placed against the side of a single chest of its kind, it pairs with that one and
+takes its facing; placed anywhere else, it stays single. `MixinItemStackPlaceClick` notes the face it went against. Such
+a manual chest never pairs on its own later and no neighbor takes it; it keeps and sends that in its tile entity. Both
+mixins run after AdjaChest's (priority 1100) to reach the methods it adds to vanilla's chest. Switch:
+`chestSneakPlacing`.
+
+`aether.MixinAetherChestPairs` and `MixinAetherChestBlocks` pair the Aether's Skyroot, Elysian and breakable treasure
+chests, copies of the old vanilla chest that join every neighbor, as AdjaChest pairs vanilla's, sneaking included. The
+server picks each pair (`compat.chests.ChestPairs`) and sends it; mimics pair with nothing. Switch: `aetherChestPairs`.
+
 ## SaltyMod on a dedicated server
 
 Three server-only patches keep SaltyMod's client code off a dedicated server, which crashes on it otherwise:

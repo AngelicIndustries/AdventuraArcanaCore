@@ -209,6 +209,12 @@ public final class Config {
             "torchClock",
             "Torches burn out on AAC's clock (torches category): Realistic Torches' torch, and Netherlicious' torches and bone torches, which otherwise burn forever or vanish. Each smolders, then becomes an unlit torch that any lighter relights. Burning torches are kept per chunk, so only loaded chunks are looked at, once a second; Realistic Torches no longer ticks every lit torch. Needs Realistic Torches.");
         patch(
+            "chestSneakPlacing",
+            "A chest placed while sneaking pairs only on purpose: placed against the side of a single chest of its kind, it pairs with that one and takes its facing; placed anywhere else, it stays single. Such a chest never pairs on its own later, and no neighbor takes it. For the chests AdjaChest pairs (vanilla, Netherlicious, Twilight Forest) and, with aetherChestPairs, the Aether's. Needs AdjaChest; use the same setting on client and server.");
+        patch(
+            "aetherChestPairs",
+            "The Aether's Skyroot, Elysian and breakable treasure chests pair as AdjaChest pairs vanilla ones: each with one neighbor of its kind facing the same way, so any number can stand side by side, and placing one turns no other. Needs AdjaChest; use the same setting on client and server.");
+        patch(
             "naturaBerriesStandDown",
             "Natura's wild berry bushes are not generated in Biomic's overworld while wildFoodInBiomic is on.");
         patch(

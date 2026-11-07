@@ -6,6 +6,9 @@ import com.gtnewhorizon.gtnhmixins.builders.TargetModBuilder;
 /** Optional targets, identified by mod ID or coremod class without loading their classes. */
 public enum TargetMod implements ITargetMod {
 
+    /** Found by class, as its mixins change vanilla's chests before mods load. */
+    ADJACHEST(new TargetModBuilder().setModId("adjachest")
+        .setTargetClass("invalid.myask.adjachest.AdjaChest")),
     ADVENTURE_BACKPACK(new TargetModBuilder().setModId("adventurebackpack")
         .setTargetClass("com.darkona.adventurebackpack.AdventureBackpack")),
     AETHER(new TargetModBuilder().setModId("aether_legacy")
