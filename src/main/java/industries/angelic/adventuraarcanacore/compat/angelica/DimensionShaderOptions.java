@@ -30,8 +30,8 @@ import industries.angelic.adventuraarcanacore.AdventuraArcanaCore;
  * can bring option values of its own for a pack (clouds and stars off over Dimensional Doors' Limbo, a darker
  * atmosphere): its programs then come from a second copy of the pack, compiled with those values on top of the
  * player's. The values live in config/adventuraarcanacore/shader_dimensions/DIMENSION/PACK.txt, in the format of
- * shaderpacks/PACK.txt, where PACK is the start of the shader pack's name (ComplementaryReimagined, BSL). Nothing of
- * the pack itself is changed.
+ * shaderpacks/PACK.txt, where PACK is the start of the shader pack's name (ComplementaryReimagined, BSL), or that and
+ * more of it after a "+" (ComplementaryReimagined+EuphoriaPatches). Nothing of the pack itself is changed.
  */
 public final class DimensionShaderOptions {
 
@@ -105,7 +105,11 @@ public final class DimensionShaderOptions {
         }
     }
 
-    /** The dimension's file whose name the pack's name starts with (the longest such), or null. */
+    /**
+     * The dimension's file for the pack, or null: one whose name the pack's name starts with, or for a name in parts
+     * joined by "+", starts with the first part and contains the others (ComplementaryUnbound+EuphoriaPatches). The
+     * longest name wins.
+     */
     public static File optionsFile(String dimensionName, String packName) {
         if (dimensionName == null || packName == null) return null;
         File[] files = new File(
@@ -118,16 +122,24 @@ public final class DimensionShaderOptions {
         String pack = packName.toLowerCase(Locale.ROOT);
         File best = null;
         for (File file : files) {
-            String prefix = file.getName()
+            String key = file.getName()
                 .substring(
                     0,
                     file.getName()
                         .length() - 4)
                 .toLowerCase(Locale.ROOT);
-            if (pack.startsWith(prefix) && (best == null || prefix.length() > best.getName()
+            if (matches(pack, key) && (best == null || key.length() > best.getName()
                 .length() - 4)) best = file;
         }
         return best;
+    }
+
+    /** Whether a lower-case pack name starts with the key's first "+" part and contains the others. */
+    private static boolean matches(String pack, String key) {
+        String[] parts = key.split("\\+");
+        if (!pack.startsWith(parts[0])) return false;
+        for (int i = 1; i < parts.length; i++) if (!pack.contains(parts[i])) return false;
+        return true;
     }
 
     private static Map<String, String> optionsFor(String dimensionName, String packName) {
