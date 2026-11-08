@@ -154,7 +154,7 @@ the curve in the general option `coloredLightStrength`: `supernova` (unchanged),
 (its square root) or `full`. The option is read per call, so a change shows once chunks rebuild. Switch:
 `supernovaColorStrength`.
 
-## Colored dynamic lights
+## Colored dynamic lights and /lightcolor
 
 `minecraft.MixinEntityLightColor` (early, client, with Angelica) gives `Entity` an `angelica$getLuminanceRGB`, which
 Angelica's dynamic lights otherwise leave white (the interface's default). `compat.angelica.DynamicLightColor` works it
@@ -162,6 +162,13 @@ out: held, worn and Backhand off-hand block items, and dropped ones, take the co
 (`compat.supernova.SupernovaColors`, by reflection); other items the general option `itemLightColors`
 (`compat.ItemLightColors`); lava buckets lava's; burning entities fire's. Several lit items mix by their brightest
 channels. Switch: `coloredDynamicLights`.
+
+`/lightcolor [hand]` (`compat.supernova.GuiLightColor`) has red, green and blue sliders for the block under the crosshair,
+or the held item. A block's Apply writes `config/supernova-colors.cfg`, registers the color with Supernova and relights
+the chunks within two of the player (the client's copy and the integrated server's), so placed and held ones change
+together; on a multiplayer server its own file decides. An item that isn't a block goes to `itemLightColors`. Reset
+takes the entry out and puts back the color the block had when first opened that game (Supernova's reload only adds
+entries, so a removed line's built-in color comes back otherwise only on restart).
 
 ## Colored light debugging
 

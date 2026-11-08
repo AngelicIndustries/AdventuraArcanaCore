@@ -21,6 +21,7 @@ import industries.angelic.adventuraarcanacore.compat.angelica.AngelicaDSWeather;
 import industries.angelic.adventuraarcanacore.compat.angelica.ColoredLightDebug;
 import industries.angelic.adventuraarcanacore.compat.angelica.ShaderTuning;
 import industries.angelic.adventuraarcanacore.compat.cookingforblockheads.ToasterBreadLook;
+import industries.angelic.adventuraarcanacore.compat.supernova.LightColorCommand;
 import industries.angelic.adventuraarcanacore.core.PatchSwitches;
 import industries.angelic.adventuraarcanacore.sounds.CaveMoodFilter;
 import industries.angelic.adventuraarcanacore.worktable.TileWorktable;
@@ -54,6 +55,7 @@ public class ClientProxy extends CommonProxy {
         if (Loader.isModLoaded("angelica") && PatchSwitches.enabled("angelicaDimensionShaderOptions"))
             ShaderTuning.register();
         if (Loader.isModLoaded("angelica") && PatchSwitches.enabled("coloredLightDebug")) ColoredLightDebug.register();
+        if (Loader.isModLoaded("supernova") || Loader.isModLoaded("angelica")) LightColorCommand.register();
     }
 
     @Override
