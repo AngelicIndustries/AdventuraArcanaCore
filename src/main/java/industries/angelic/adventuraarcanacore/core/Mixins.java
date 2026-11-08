@@ -98,6 +98,11 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.ANGELICA)
             .setApplyIf(() -> PatchSwitches.enabled("angelicaDimensionShaderOptions"))
             .addClientMixins("angelica.MixinShaderPackDimensionOptions")),
+    COLORED_DYNAMIC_LIGHTS(
+        new MixinBuilder("Color Angelica's dynamic lights as their items' light").setPhase(Phase.EARLY)
+            .addRequiredMod(TargetMod.ANGELICA)
+            .setApplyIf(() -> PatchSwitches.enabled("coloredDynamicLights"))
+            .addClientMixins("minecraft.MixinEntityLightColor")),
     SUPERNOVA_COLOR_STRENGTH(
         new MixinBuilder("Keep as much of Supernova's light colors as coloredLightStrength says").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.SUPERNOVA)

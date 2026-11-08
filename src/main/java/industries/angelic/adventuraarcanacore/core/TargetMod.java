@@ -13,7 +13,9 @@ public enum TargetMod implements ITargetMod {
         .setTargetClass("com.darkona.adventurebackpack.AdventureBackpack")),
     AETHER(new TargetModBuilder().setModId("aether_legacy")
         .setTargetClass("com.gildedgames.the_aether.Aether")),
-    ANGELICA(new TargetModBuilder().setModId("angelica")),
+    /** Found by its coremod too, for early patches to the classes it changes. */
+    ANGELICA(new TargetModBuilder().setModId("angelica")
+        .setCoreModClass("com.gtnewhorizons.angelica.loading.AngelicaTweaker")),
     BATTLE_TOWERS(new TargetModBuilder().setModId("AS_BattleTowers")
         .setTargetClass("atomicstryker.battletowers.common.WorldGenHandler")),
     /** The Better Sleeping build the patches are written against. */

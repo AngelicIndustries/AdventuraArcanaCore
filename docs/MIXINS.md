@@ -154,6 +154,15 @@ the curve in the general option `coloredLightStrength`: `supernova` (unchanged),
 (its square root) or `full`. The option is read per call, so a change shows once chunks rebuild. Switch:
 `supernovaColorStrength`.
 
+## Colored dynamic lights
+
+`minecraft.MixinEntityLightColor` (early, client, with Angelica) gives `Entity` an `angelica$getLuminanceRGB`, which
+Angelica's dynamic lights otherwise leave white (the interface's default). `compat.angelica.DynamicLightColor` works it
+out: held, worn and Backhand off-hand block items, and dropped ones, take the color Supernova gives their block
+(`compat.supernova.SupernovaColors`, by reflection); other items the general option `itemLightColors`
+(`compat.ItemLightColors`); lava buckets lava's; burning entities fire's. Several lit items mix by their brightest
+channels. Switch: `coloredDynamicLights`.
+
 ## Colored light debugging
 
 `/lightdebug [x y z]` (client, `compat.angelica.ColoredLightDebug`) traces the block under the crosshair. It prints the

@@ -40,6 +40,7 @@ public final class Config {
     private static final String[] COLOR_STRENGTHS = { "supernova", "linear", "strong", "full" };
     /** One of the COLOR_STRENGTH_ curves, from coloredLightStrength; read while chunks are built. */
     public static volatile int coloredLightStrengthCurve = COLOR_STRENGTH_STRONG;
+    public static String[] itemLightColors = {};
     public static String[] shaderBlockAliases = { "dimdoors:fadebloom=minecraft:red_flower" };
     public static String[] torchLighters = { "Natura:natura.flintandblaze" };
     public static int torchRainDelay = 100;
@@ -190,6 +191,8 @@ public final class Config {
         int curve = java.util.Arrays.asList(COLOR_STRENGTHS)
             .indexOf(strength);
         coloredLightStrengthCurve = curve < 0 ? COLOR_STRENGTH_STRONG : curve;
+        itemLightColors = itemLightColorsProperty().getStringList();
+        industries.angelic.adventuraarcanacore.compat.ItemLightColors.load(itemLightColors);
         configuration.setCategoryLanguageKey(Categories.PATCHES, AdventuraArcanaCore.MODID + ".config.patches");
         configuration.setCategoryComment(
             Categories.PATCHES,
@@ -332,6 +335,9 @@ public final class Config {
         patch(
             "supernovaColorStrength",
             "Supernova's colored light keeps as much color at each brightness as coloredLightStrength says, instead of fading dim light toward white. Client only.");
+        patch(
+            "coloredDynamicLights",
+            "Angelica's dynamic lights (held, worn, dropped and burning) take colors: a block item the one Supernova gives the block, other items the one in itemLightColors, fire Supernova's fire color. Angelica keeps them white otherwise. Client only.");
         patch(
             "coloredLightDebug",
             "The /lightdebug client command: traces the colored light of the block you look at from the light engine to the colors Angelica draws it with, in chat and the log. Does nothing until used. Client only.");
@@ -479,6 +485,23 @@ public final class Config {
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config." + key)
             .setRequiresMcRestart(true)
             .getBoolean();
+    }
+
+    private static net.minecraftforge.common.config.Property itemLightColorsProperty() {
+        return configuration.get(
+            Categories.GENERAL,
+            "itemLightColors",
+            new String[0],
+            "Colors of the dynamic light of items that aren't blocks, held, worn or dropped, as modid:item=r,g,b for every metadata or modid:item:meta=r,g,b for one (0 to 15 each). Block items take the color Supernova gives their block (supernova-colors.cfg). /lightcolor sets both. Needs the coloredDynamicLights patch. Client only.")
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.itemLightColors");
+    }
+
+    /** Stores itemLightColors (from /lightcolor) and saves the file. */
+    public static void setItemLightColors(String[] entries) {
+        itemLightColorsProperty().set(entries);
+        configuration.save();
+        itemLightColors = entries;
+        industries.angelic.adventuraarcanacore.compat.ItemLightColors.load(entries);
     }
 
     private static void patch(String key, String comment) {
