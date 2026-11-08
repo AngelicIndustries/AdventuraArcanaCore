@@ -172,14 +172,22 @@ entries, so a removed line's built-in color comes back otherwise only on restart
 
 ## Colored light debugging
 
-`/lightdebug [x y z]` (client, `compat.angelica.ColoredLightDebug`) traces the block under the crosshair. It prints the
-vanilla, R/G/B block and R/G/B sky light at the block and in front of the face looked at, on the client and the
-integrated server, as Angelica's `BlockLightProvider` reports them, with the tint mode and the time-of-day sky
-reduction; then it rebuilds the block's section. `angelica.MixinChunkBuildTintDebug` hooks
-`AngelicaChunkBuildContext.applyBlockLightTint` for that block: per face, whether colored light is on, whether the quad's
-R/G/B and sky light are valid (the tint is skipped when neither is), the light it tints with, the tint, and the vertex
-colors before and after. Chat gets a line per face; the log (`[lightdebug]`) gets every corner. Switch:
-`coloredLightDebug`.
+Two client commands (`compat.angelica.BlockLightDebug`, `HandLightDebug`, sharing `ColoredLightDebug`) trace colored
+light from the light engine to the vertex colors. `/lightdebugblock [x y z]` traces the block under the crosshair: the
+vanilla, R/G/B block and R/G/B sky light at it and in front of the face looked at, on the client and the integrated
+server, as Angelica's `BlockLightProvider` reports them, with the tint mode and the time-of-day sky reduction; then it
+rebuilds the block's section. `/lightdebughand` reports the held item's dynamic light (Angelica's luminance, its color,
+the player's light) and why Angelica's dynamic lights are on or off (mode, forced with shaders, shader pack in use), then
+traces the block under the player. `angelica.MixinChunkBuildTintDebug` hooks
+`AngelicaChunkBuildContext.applyBlockLightTint` for the traced block: per face, whether colored light is on, whether the
+quad's R/G/B and sky light are valid (the tint is skipped when neither is), the light it tints with, the tint, and the
+vertex colors before and after. Chat gets a line per face; the log (`[lightdebug]`) gets every corner.
+
+Either takes `emit [0-15]` (`compat.angelica.EmissionOverrides`), for the game only: `/lightdebugblock emit` sets the
+block type's light value, so every block of it emits, re-registers its Supernova color at that level and relights nearby
+chunks; `/lightdebughand emit` replaces the luminance Angelica's dynamic lights give the held item (by item and damage),
+held or dropped (`angelica.MixinDynamicLightsEmission`, early). Without a level, emit toggles between full and the
+subject's own. Switch: `coloredLightDebug`.
 
 ## SaltyMod on a dedicated server
 

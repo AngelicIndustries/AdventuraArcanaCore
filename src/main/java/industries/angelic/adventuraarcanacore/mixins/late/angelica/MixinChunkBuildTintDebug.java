@@ -20,9 +20,10 @@ import com.gtnewhorizons.angelica.rendering.celeritas.AngelicaChunkBuildContext;
 import industries.angelic.adventuraarcanacore.compat.angelica.ColoredLightDebug;
 
 /**
- * Reports what Angelica's colored tint does to the quads of the block /lightdebug traces: whether it has colored light,
- * the per-corner block and sky light it tints with (sky after the time of day), the tint, and the vertex colors before
- * and after. One build context per chunk build thread, so the captured colors need no locking.
+ * Reports what Angelica's colored tint does to the quads of the block /lightdebugblock or /lightdebughand traces:
+ * whether it has colored light, the per-corner block and sky light it tints with (sky after the time of day), the tint,
+ * and the vertex colors before and after. One build context per chunk build thread, so the captured colors need no
+ * locking.
  */
 @Mixin(value = AngelicaChunkBuildContext.class, remap = false)
 public abstract class MixinChunkBuildTintDebug {

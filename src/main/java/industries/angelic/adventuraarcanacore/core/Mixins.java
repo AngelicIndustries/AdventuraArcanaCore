@@ -109,11 +109,16 @@ public enum Mixins implements IMixins {
             .setApplyIf(() -> PatchSwitches.enabled("supernovaColorStrength"))
             .addClientMixins("supernova.MixinSupernovaColorStrength")),
     ANGELICA_COLORED_LIGHT_DEBUG(
-        new MixinBuilder("Trace colored light from the light engine to the vertex colors (/lightdebug)")
+        new MixinBuilder("Trace colored light from the light engine to the vertex colors (/lightdebugblock)")
             .setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.ANGELICA)
             .setApplyIf(() -> PatchSwitches.enabled("coloredLightDebug"))
             .addClientMixins("angelica.MixinChunkBuildTintDebug")),
+    ANGELICA_LIGHT_DEBUG_EMISSION(
+        new MixinBuilder("Give a held or dropped item the dynamic light /lightdebughand sets").setPhase(Phase.EARLY)
+            .addRequiredMod(TargetMod.ANGELICA)
+            .setApplyIf(() -> PatchSwitches.enabled("coloredLightDebug"))
+            .addClientMixins("angelica.MixinDynamicLightsEmission")),
     ANGELICA_SHADER_BLOCK_ALIASES(
         new MixinBuilder("Give aliased modded blocks the shader IDs of vanilla ones").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.ANGELICA)

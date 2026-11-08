@@ -8,12 +8,10 @@ import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.Facing;
-import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
 import net.minecraftforge.client.ClientCommandHandler;
@@ -25,19 +23,21 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import industries.angelic.adventuraarcanacore.AdventuraArcanaCore;
+import industries.angelic.adventuraarcanacore.compat.supernova.LightColorCommand;
+import industries.angelic.adventuraarcanacore.compat.supernova.SupernovaColors;
 
 /**
- * /lightdebug: traces the colored light of the block under the crosshair (or at x y z) from the light engine to the
- * vertex colors. Prints the light at the block and in front of the face looked at, on the client and the integrated
- * server, then rebuilds the block's chunk section; MixinChunkBuildTintDebug reports every face Angelica tints there:
- * the per-corner block and sky light it tints with, the tint, and the vertex colors before and after. Chat gets a line
- * per face, the log every corner.
+ * What /lightdebugblock and /lightdebughand share: tracing a block's colored light from the light engine to the vertex
+ * colors. The command prints the light around the block on the client and the integrated server, then rebuilds its
+ * chunk section; MixinChunkBuildTintDebug reports every face Angelica tints there: the per-corner block and sky light
+ * it tints with, the tint, and the vertex colors before and after. Chat gets a line per face, the log every corner.
  */
-public final class ColoredLightDebug extends CommandBase {
+public final class ColoredLightDebug {
 
     private static final long NONE = Long.MIN_VALUE;
     private static final int MAX_QUADS = 12;
-    private static final int WAIT_TICKS = 60;
+    private static final int WAIT_TICKS = 100;
+    private static final int RELIGHT_RADIUS = 2;
 
     /** The traced block, packed; read on Angelica's chunk build threads. */
     private static volatile long watched = NONE;
@@ -48,7 +48,8 @@ public final class ColoredLightDebug extends CommandBase {
     private ColoredLightDebug() {}
 
     public static void register() {
-        ClientCommandHandler.instance.registerCommand(new ColoredLightDebug());
+        ClientCommandHandler.instance.registerCommand(new BlockLightDebug());
+        ClientCommandHandler.instance.registerCommand(new HandLightDebug());
         FMLCommonHandler.instance()
             .bus()
             .register(new Drain());
@@ -74,51 +75,13 @@ public final class ColoredLightDebug extends CommandBase {
         return ((long) x & 0x3FFFFFF) << 38 | ((long) z & 0x3FFFFFF) << 12 | (y & 0xFFF);
     }
 
-    @Override
-    public String getCommandName() {
-        return "lightdebug";
-    }
-
-    @Override
-    public String getCommandUsage(ICommandSender sender) {
-        return "/lightdebug [x y z]";
-    }
-
-    @Override
-    public int getRequiredPermissionLevel() {
-        return 0;
-    }
-
-    @Override
-    public boolean canCommandSenderUseCommand(ICommandSender sender) {
-        return true;
-    }
-
-    @Override
-    public void processCommand(ICommandSender sender, String[] args) {
-        Minecraft mc = Minecraft.getMinecraft();
-        World world = mc.theWorld;
-        int x, y, z, side = -1;
-        if (args.length == 3) {
-            x = parseInt(sender, args[0]);
-            y = parseInt(sender, args[1]);
-            z = parseInt(sender, args[2]);
-        } else if (mc.objectMouseOver != null
-            && mc.objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK) {
-                x = mc.objectMouseOver.blockX;
-                y = mc.objectMouseOver.blockY;
-                z = mc.objectMouseOver.blockZ;
-                side = mc.objectMouseOver.sideHit;
-            } else {
-                sender.addChatMessage(new ChatComponentText("Look at a block, or give x y z."));
-                return;
-            }
-        Block block = world.getBlock(x, y, z);
+    /** The tint setup, then the light at the block and in front of the face (or above, with no face). */
+    static void describe(World world, int x, int y, int z, int side) {
         say(
             String.format(
                 Locale.ROOT,
                 "%s at %d %d %d, face %s; tint mode %s; provider %s, colored light %s; skylightSubtracted %d",
-                Block.blockRegistry.getNameForObject(block),
+                Block.blockRegistry.getNameForObject(world.getBlock(x, y, z)),
                 x,
                 y,
                 z,
@@ -129,27 +92,31 @@ public final class ColoredLightDebug extends CommandBase {
                 world.skylightSubtracted));
         World server = serverWorld(world.provider.dimensionId);
         describe("block", world, server, x, y, z);
-        if (side >= 0) describe(
-            "front",
-            world,
-            server,
-            x + Facing.offsetsXForSide[side],
-            y + Facing.offsetsYForSide[side],
-            z + Facing.offsetsZForSide[side]);
-        ItemStack held = mc.thePlayer.getHeldItem();
-        if (held != null && held.getItem() instanceof ItemBlock) {
-            int light = Block.getBlockFromItem(held.getItem())
-                .getLightValue();
-            if (light > 0) say(
-                "Holding " + held.getDisplayName()
-                    + " (light "
-                    + light
-                    + "): its dynamic light adds to the faces traced");
-        }
+        int[] front = side < 0 ? new int[] { 0, 1, 0 }
+            : new int[] { Facing.offsetsXForSide[side], Facing.offsetsYForSide[side], Facing.offsetsZForSide[side] };
+        describe(side < 0 ? "above" : "front", world, server, x + front[0], y + front[1], z + front[2]);
+    }
+
+    /** Rebuilds the block's section and reports the faces Angelica tints there over the next ticks. */
+    static void watch(int x, int y, int z) {
         quads.set(0);
         ticksLeft = WAIT_TICKS;
         watched = pack(x, y, z);
-        mc.renderGlobal.markBlockForUpdate(x, y, z);
+        Minecraft.getMinecraft().renderGlobal.markBlockForUpdate(x, y, z);
+    }
+
+    /** Relights the chunks around the player, so placed lights show a changed level: client now, server on its tick. */
+    static void relightAround() {
+        Minecraft mc = Minecraft.getMinecraft();
+        int x = MathHelper.floor_double(mc.thePlayer.posX), z = MathHelper.floor_double(mc.thePlayer.posZ);
+        SupernovaColors.relight(mc.theWorld, x, z, RELIGHT_RADIUS);
+        World server = serverWorld(mc.theWorld.provider.dimensionId);
+        if (server != null) LightColorCommand.onServer(() -> SupernovaColors.relight(server, x, z, RELIGHT_RADIUS));
+    }
+
+    /** "emit" with an optional level: the level (0 to 15), or null to toggle. */
+    static Integer emitLevel(ICommandSender sender, String[] args, int at) {
+        return args.length > at ? CommandBase.parseIntBounded(sender, args[at], 0, 15) : null;
     }
 
     private static World serverWorld(int dimension) {
@@ -186,9 +153,23 @@ public final class ColoredLightDebug extends CommandBase {
         return out.toString();
     }
 
-    private static String rgb(int packed) {
+    static String rgb(int packed) {
         return "(" + BlockLightProvider.unpackR(
             packed) + "," + BlockLightProvider.unpackG(packed) + "," + BlockLightProvider.unpackB(packed) + ")";
+    }
+
+    /** Client command basics both share. */
+    abstract static class Command extends CommandBase {
+
+        @Override
+        public int getRequiredPermissionLevel() {
+            return 0;
+        }
+
+        @Override
+        public boolean canCommandSenderUseCommand(ICommandSender sender) {
+            return true;
+        }
     }
 
     public static final class Drain {

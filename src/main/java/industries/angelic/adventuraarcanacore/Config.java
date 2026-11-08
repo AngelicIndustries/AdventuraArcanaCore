@@ -340,7 +340,7 @@ public final class Config {
             "Angelica's dynamic lights (held, worn, dropped and burning) take colors: a block item the one Supernova gives the block, other items the one in itemLightColors, fire Supernova's fire color. Angelica keeps them white otherwise. Client only.");
         patch(
             "coloredLightDebug",
-            "The /lightdebug client command: traces the colored light of the block you look at from the light engine to the colors Angelica draws it with, in chat and the log. Does nothing until used. Client only.");
+            "The /lightdebugblock and /lightdebughand client commands: trace the colored light of the block you look at, or of the held item's dynamic light, from the light engine to the colors Angelica draws, in chat and the log; with emit, give that block type or item a light level for the game. Does nothing until used. Client only.");
         patch(
             "aetherSkyrootDoorIcon",
             "The Aether's Skyroot Door item draws its icon instead of the missing texture (it asked for the file with the wrong case), and WAILA shows the door with that icon and its name.");

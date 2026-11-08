@@ -35,7 +35,7 @@ public final class LightColorCommand extends CommandBase {
     }
 
     /** Runs on the integrated server's thread at its next tick. */
-    static void onServer(Runnable task) {
+    public static void onServer(Runnable task) {
         serverTasks.add(task);
     }
 
