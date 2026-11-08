@@ -54,6 +54,9 @@ public enum TargetMod implements ITargetMod {
         .setTargetClass("ivorius.reccomplex.RecurrentComplex")),
     RUINS(new TargetModBuilder().setModId("AS_Ruins")
         .setTargetClass("atomicstryker.ruins.common.RuinsMod")),
+    /** Found by its coremod, as its mixins change vanilla's worlds before mods load. */
+    SUPERNOVA(new TargetModBuilder().setModId("supernova")
+        .setCoreModClass("com.mitchej123.supernova.core.SupernovaCore")),
     VILLAGE_NAMES(new TargetModBuilder().setModId("VillageNames")
         .setTargetClass("astrotibs.villagenames.village.StructureVillageVN")),
     WILD_MOBS(new TargetModBuilder().setModId("wildmobsmod")

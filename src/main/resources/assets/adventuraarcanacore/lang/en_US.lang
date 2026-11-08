@@ -45,6 +45,7 @@ adventuraarcanacore.config.torchClock=Torches burn out on AAC's clock
 adventuraarcanacore.config.chestSneakPlacing=Sneak-placed chests pair on purpose
 adventuraarcanacore.config.aetherChestPairs=Aether chests pair like AdjaChest's
 adventuraarcanacore.config.betterFoliageFilterCache=Better Foliage filters across threads
+adventuraarcanacore.config.supernovaServerLight=Supernova light on the server
 adventuraarcanacore.config.saltyModDedicatedServer=SaltyMod on a dedicated server
 adventuraarcanacore.config.angelicaDsWeather=Dynamic Surroundings weather with Angelica
 adventuraarcanacore.config.ruinsEndlessIdsStats=Ruins with EndlessIDs biomes

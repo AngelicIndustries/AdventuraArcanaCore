@@ -258,6 +258,10 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.NETHERLICIOUS)
         .setApplyIf(() -> PatchSwitches.enabled("torchClock"))
         .addCommonMixins("netherlicious.MixinTorchClock", "netherlicious.MixinBoneTorchClock")),
+    SUPERNOVA_SERVER_LIGHT(new MixinBuilder("Let Supernova light the server's worlds").setPhase(Phase.EARLY)
+        .addRequiredMod(TargetMod.SUPERNOVA)
+        .setApplyIf(() -> PatchSwitches.enabled("supernovaServerLight"))
+        .addCommonMixins("minecraft.MixinWorldSupernovaReady")),
     BETTER_FOLIAGE_FILTER_CACHE(
         new MixinBuilder("Keep Better Foliage's block filter cache safe across Angelica's chunk threads")
             .setPhase(Phase.LATE)

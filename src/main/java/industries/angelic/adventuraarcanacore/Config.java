@@ -227,6 +227,9 @@ public final class Config {
             "betterFoliageFilterCache",
             "Better Foliage's block filters keep their answers in a map safe across threads. Angelica draws chunks on several threads, and the plain map Better Foliage used could find a block and then give back nothing, crashing the game (NullPointerException in BlockFilterSet.matches). Client only.");
         patch(
+            "supernovaServerLight",
+            "Supernova lights the server's worlds. Supernova 0.1.2 takes light updates only in worlds built with the client's constructor, so on the server lights are never lit, mobs spawn beside torches, and clients see only the light they work out themselves. Can go once a Supernova release fixes this.");
+        patch(
             "naturaBerriesStandDown",
             "Natura's wild berry bushes are not generated in Biomic's overworld while wildFoodInBiomic is on.");
         patch(

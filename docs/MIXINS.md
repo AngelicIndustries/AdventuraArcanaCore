@@ -137,6 +137,15 @@ answers it caches per block and metadata, in place of a `HashMap`. Angelica buil
 asking the filters about the blocks it draws; a lookup during another thread's put could see the key and then read
 null, which crashed the game with a NullPointerException in `BlockFilterSet.matches`. Switch: `betterFoliageFilterCache`.
 
+## Supernova on the server
+
+`minecraft.MixinWorldSupernovaReady` (early, common, only with Supernova) marks worlds built with World's server
+constructor as ready for Supernova's light engine. Supernova sets `supernova$ready` with an `<init>*` hook, but its
+0.1.2 refmap maps that to the client constructor only, so a `WorldServer` never takes a light update: placed lights
+stay unlit on the server, mobs spawn beside torches, and clients see only light they compute for single block changes.
+Runs after Supernova (priority 1100) to shadow the field it adds. Drop it once Supernova targets both constructors.
+Switch: `supernovaServerLight`.
+
 ## SaltyMod on a dedicated server
 
 Three server-only patches keep SaltyMod's client code off a dedicated server, which crashes on it otherwise:
