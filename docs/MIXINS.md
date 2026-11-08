@@ -146,6 +146,14 @@ stay unlit on the server, mobs spawn beside torches, and clients see only light 
 Runs after Supernova (priority 1100) to shadow the field it adds. Drop it once Supernova targets both constructors.
 Switch: `supernovaServerLight`.
 
+## Supernova color strength
+
+`supernova.MixinSupernovaColorStrength` (client) replaces Supernova's `TintBlendMode.hueConfidence`, which fades a
+light's color toward white the dimmer it is (level / (60 - 3 level): 18% at level 7, half at 12, all only at 15), with
+the curve in the general option `coloredLightStrength`: `supernova` (unchanged), `linear` (level / 15), `strong`
+(its square root) or `full`. The option is read per call, so a change shows once chunks rebuild. Switch:
+`supernovaColorStrength`.
+
 ## Colored light debugging
 
 `/lightdebug [x y z]` (client, `compat.angelica.ColoredLightDebug`) traces the block under the crosshair. It prints the

@@ -98,6 +98,11 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.ANGELICA)
             .setApplyIf(() -> PatchSwitches.enabled("angelicaDimensionShaderOptions"))
             .addClientMixins("angelica.MixinShaderPackDimensionOptions")),
+    SUPERNOVA_COLOR_STRENGTH(
+        new MixinBuilder("Keep as much of Supernova's light colors as coloredLightStrength says").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.SUPERNOVA)
+            .setApplyIf(() -> PatchSwitches.enabled("supernovaColorStrength"))
+            .addClientMixins("supernova.MixinSupernovaColorStrength")),
     ANGELICA_COLORED_LIGHT_DEBUG(
         new MixinBuilder("Trace colored light from the light engine to the vertex colors (/lightdebug)")
             .setPhase(Phase.LATE)

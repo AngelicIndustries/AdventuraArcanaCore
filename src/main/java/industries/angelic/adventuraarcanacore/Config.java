@@ -35,6 +35,11 @@ public final class Config {
     public static boolean netherliciousDuplicates = true;
     public static boolean dropBrokenRecipes = true;
     public static double battleTowerChance = 1;
+    public static final int COLOR_STRENGTH_SUPERNOVA = 0, COLOR_STRENGTH_LINEAR = 1, COLOR_STRENGTH_STRONG = 2,
+        COLOR_STRENGTH_FULL = 3;
+    private static final String[] COLOR_STRENGTHS = { "supernova", "linear", "strong", "full" };
+    /** One of the COLOR_STRENGTH_ curves, from coloredLightStrength; read while chunks are built. */
+    public static volatile int coloredLightStrengthCurve = COLOR_STRENGTH_STRONG;
     public static String[] shaderBlockAliases = { "dimdoors:fadebloom=minecraft:red_flower" };
     public static String[] torchLighters = { "Natura:natura.flintandblaze" };
     public static int torchRainDelay = 100;
@@ -174,6 +179,17 @@ public final class Config {
             1.0)
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config.battleTowerChance")
             .getDouble();
+        String strength = configuration.get(
+            Categories.GENERAL,
+            "coloredLightStrength",
+            "strong",
+            "How much of a colored light's color shows at each brightness. supernova: Supernova's own fade toward white, which leaves a redstone torch (level 7) 18% of its red and any light half its color at level 12. linear: in step with brightness (47% at level 7). strong: more at low brightness (68% at level 7). full: full color at any brightness. Needs the supernovaColorStrength patch; shows once chunks rebuild (F3+A). Client only.",
+            COLOR_STRENGTHS)
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.coloredLightStrength")
+            .getString();
+        int curve = java.util.Arrays.asList(COLOR_STRENGTHS)
+            .indexOf(strength);
+        coloredLightStrengthCurve = curve < 0 ? COLOR_STRENGTH_STRONG : curve;
         configuration.setCategoryLanguageKey(Categories.PATCHES, AdventuraArcanaCore.MODID + ".config.patches");
         configuration.setCategoryComment(
             Categories.PATCHES,
@@ -313,6 +329,9 @@ public final class Config {
         patch(
             "angelicaShaderBlockAliases",
             "Shader packs treat the modded blocks in shaderBlockAliases like the vanilla blocks they name (Dimensional Doors' Fadebloom waves like a flower).");
+        patch(
+            "supernovaColorStrength",
+            "Supernova's colored light keeps as much color at each brightness as coloredLightStrength says, instead of fading dim light toward white. Client only.");
         patch(
             "coloredLightDebug",
             "The /lightdebug client command: traces the colored light of the block you look at from the light engine to the colors Angelica draws it with, in chat and the log. Does nothing until used. Client only.");
