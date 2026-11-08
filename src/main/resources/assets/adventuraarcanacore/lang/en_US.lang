@@ -72,6 +72,7 @@ adventuraarcanacore.config.arrowsCatchFire=Arrows catch fire
 adventuraarcanacore.config.villageNamesFlatLookup=One name per village
 adventuraarcanacore.config.angelicaDimensionShaderOptions=Shader options per dimension
 adventuraarcanacore.config.angelicaShaderBlockAliases=Shader IDs for modded blocks
+adventuraarcanacore.config.coloredLightDebug=Colored light debugging (/lightdebug)
 adventuraarcanacore.config.aetherSkyrootDoorIcon=Aether Skyroot Door icon
 adventuraarcanacore.config.biblioCraftEasterEggDrops=BiblioCraft easter egg drops
 adventuraarcanacore.config.wildMobsSeaScorpionSpawnCap=Sea scorpion spawn cap

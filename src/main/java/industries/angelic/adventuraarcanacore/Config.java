@@ -314,6 +314,9 @@ public final class Config {
             "angelicaShaderBlockAliases",
             "Shader packs treat the modded blocks in shaderBlockAliases like the vanilla blocks they name (Dimensional Doors' Fadebloom waves like a flower).");
         patch(
+            "coloredLightDebug",
+            "The /lightdebug client command: traces the colored light of the block you look at from the light engine to the colors Angelica draws it with, in chat and the log. Does nothing until used. Client only.");
+        patch(
             "aetherSkyrootDoorIcon",
             "The Aether's Skyroot Door item draws its icon instead of the missing texture (it asked for the file with the wrong case), and WAILA shows the door with that icon and its name.");
         patch(

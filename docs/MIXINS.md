@@ -146,6 +146,17 @@ stay unlit on the server, mobs spawn beside torches, and clients see only light 
 Runs after Supernova (priority 1100) to shadow the field it adds. Drop it once Supernova targets both constructors.
 Switch: `supernovaServerLight`.
 
+## Colored light debugging
+
+`/lightdebug [x y z]` (client, `compat.angelica.ColoredLightDebug`) traces the block under the crosshair. It prints the
+vanilla, R/G/B block and R/G/B sky light at the block and in front of the face looked at, on the client and the
+integrated server, as Angelica's `BlockLightProvider` reports them, with the tint mode and the time-of-day sky
+reduction; then it rebuilds the block's section. `angelica.MixinChunkBuildTintDebug` hooks
+`AngelicaChunkBuildContext.applyBlockLightTint` for that block: per face, whether colored light is on, whether the quad's
+R/G/B and sky light are valid (the tint is skipped when neither is), the light it tints with, the tint, and the vertex
+colors before and after. Chat gets a line per face; the log (`[lightdebug]`) gets every corner. Switch:
+`coloredLightDebug`.
+
 ## SaltyMod on a dedicated server
 
 Three server-only patches keep SaltyMod's client code off a dedicated server, which crashes on it otherwise:

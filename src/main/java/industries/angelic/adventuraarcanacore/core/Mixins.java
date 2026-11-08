@@ -98,6 +98,12 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.ANGELICA)
             .setApplyIf(() -> PatchSwitches.enabled("angelicaDimensionShaderOptions"))
             .addClientMixins("angelica.MixinShaderPackDimensionOptions")),
+    ANGELICA_COLORED_LIGHT_DEBUG(
+        new MixinBuilder("Trace colored light from the light engine to the vertex colors (/lightdebug)")
+            .setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.ANGELICA)
+            .setApplyIf(() -> PatchSwitches.enabled("coloredLightDebug"))
+            .addClientMixins("angelica.MixinChunkBuildTintDebug")),
     ANGELICA_SHADER_BLOCK_ALIASES(
         new MixinBuilder("Give aliased modded blocks the shader IDs of vanilla ones").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.ANGELICA)

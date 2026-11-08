@@ -18,6 +18,7 @@ import industries.angelic.adventuraarcanacore.compartment.client.CompartmentRend
 import industries.angelic.adventuraarcanacore.compartment.client.GuiCompartment;
 import industries.angelic.adventuraarcanacore.compat.aether.AetherSkyrootDoor;
 import industries.angelic.adventuraarcanacore.compat.angelica.AngelicaDSWeather;
+import industries.angelic.adventuraarcanacore.compat.angelica.ColoredLightDebug;
 import industries.angelic.adventuraarcanacore.compat.angelica.ShaderTuning;
 import industries.angelic.adventuraarcanacore.compat.cookingforblockheads.ToasterBreadLook;
 import industries.angelic.adventuraarcanacore.core.PatchSwitches;
@@ -52,6 +53,7 @@ public class ClientProxy extends CommonProxy {
             AetherSkyrootDoor.fixIcon();
         if (Loader.isModLoaded("angelica") && PatchSwitches.enabled("angelicaDimensionShaderOptions"))
             ShaderTuning.register();
+        if (Loader.isModLoaded("angelica") && PatchSwitches.enabled("coloredLightDebug")) ColoredLightDebug.register();
     }
 
     @Override
