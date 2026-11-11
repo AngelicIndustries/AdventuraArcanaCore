@@ -197,6 +197,15 @@ screens, and `MixinServerRenderType` answers the render type of four blocks with
 the pack's SaltyMod build only (`TargetMod.SALTYMOD`, runtime version `2.0.0-master.150+9a0954aa6f`). Switch:
 `saltyModDedicatedServer`.
 
+## SaltyMod egg feathers
+
+`saltymod.MixinChickenEggFeathers` (common) fixes SaltyMod's feathers with eggs (`chickensShedFeathersWithEggs`): it
+sheds them when a chicken's egg timer is higher than on the tick before, which it takes for an egg having been laid.
+Hunger Overhaul slows egg laying (`eggTimeoutMultiplier`) by adding one to the timer on most ticks; an adult's timer
+still counts down, but a baby's never does, so it rose nearly every tick and baby chickens shed a feather on most
+ticks. The redirect adds 100 to the timer SaltyMod remembered, so only a laid egg's reset (6000 to 12000 ticks) counts.
+Switch: `saltyModEggFeathers`.
+
 ## Wild food
 
 `minecraft.MixinBlockBushWildCrops` (early) lets HarvestCraft's and Harvest the Nether's crops stay where they grow

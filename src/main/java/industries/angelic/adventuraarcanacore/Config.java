@@ -255,6 +255,9 @@ public final class Config {
             "saltyModBeeNests",
             "SaltyMod's bee nests are seeded per chunk, so a seed gives the same nests; none in Biomic's overworld while beeNestsInBiomic is on.");
         patch(
+            "saltyModEggFeathers",
+            "SaltyMod's chickens shed feathers with an egg only when they lay one. It took any rise of the egg timer for an egg, and Hunger Overhaul raises baby chickens' timers on most ticks, so babies shed feathers without end.");
+        patch(
             "saltyModDedicatedServer",
             "SaltyMod's client code stays off a dedicated server, which crashes on it otherwise.");
         patch(

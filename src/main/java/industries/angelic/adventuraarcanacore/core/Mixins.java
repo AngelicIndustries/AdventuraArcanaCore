@@ -81,6 +81,12 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.SALTYMOD)
         .setApplyIf(() -> PatchSwitches.enabled("saltyModBeeNests"))
         .addCommonMixins("saltymod.MixinSaltyBeeNestSeed")),
+    SALTYMOD_EGG_FEATHERS(
+        new MixinBuilder("Shed SaltyMod's egg feathers only for laid eggs, not Hunger Overhaul's slower timers")
+            .setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.SALTYMOD)
+            .setApplyIf(() -> PatchSwitches.enabled("saltyModEggFeathers"))
+            .addCommonMixins("saltymod.MixinChickenEggFeathers")),
     NATURA_BERRIES_STAND_DOWN(
         new MixinBuilder("Keep Natura's wild berries out of Biomic's overworld").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.NATURA)
