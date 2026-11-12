@@ -303,6 +303,9 @@ public final class Config {
             "aetherWingFlap",
             "Each player's Aether wings flap with their own beat, slowly while they stand. The Aether flapped them with the beat of whoever was drawn before, and took other players for always flying.");
         patch(
+            "aetherJumpingField",
+            "The Aether finds the field telling whether a player is jumping once, instead of every tick for every player, when it first tried a name that only exists in development and so created an exception each time.");
+        patch(
             "bopNoWorldTypeScreen",
             "Biomes O' Plenty doesn't show its world type screen before Create World; the pack picks the world type.");
         patch(
