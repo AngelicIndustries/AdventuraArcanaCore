@@ -227,6 +227,9 @@ public final class Config {
             "projectZuluGamerules",
             "Project Zulu no longer sets keepInventory and its dropInventory, dropHotbar, dropArmor and dropXP gamerules back to its config defaults whenever a world loads, which undid /gamerule changes. It only adds its own gamerules, with those defaults, to a world that lacks them.");
         patch(
+            "projectZuluPlaySound",
+            "Project Zulu's /playsound, which replaced vanilla's with the player before the sound and a range instead of volume and pitch, is /zuluplaysound, and /playsound is vanilla's again.");
+        patch(
             "wildCropsStay",
             "HarvestCraft's and Harvest the Nether's crops stay where they grow wild (grass, sand, netherrack); sowing still needs farmland.");
         patch("pmpHarvestCraftBerries", "Plant Mega Pack's berry bushes give HarvestCraft's berries (with foodLinks).");

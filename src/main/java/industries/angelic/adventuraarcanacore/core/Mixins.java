@@ -57,6 +57,10 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.PROJECT_ZULU)
             .setApplyIf(() -> PatchSwitches.enabled("projectZuluGamerules"))
             .addCommonMixins("projectzulu.MixinDeathGamerulesKeep")),
+    PROJECT_ZULU_PLAYSOUND(new MixinBuilder("Rename Project Zulu's /playsound to /zuluplaysound").setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.PROJECT_ZULU)
+        .setApplyIf(() -> PatchSwitches.enabled("projectZuluPlaySound"))
+        .addCommonMixins("projectzulu.MixinZuluPlaySoundName")),
     NATURA_NO_CLOUDS(new MixinBuilder("Generate no Natura clouds").setPhase(Phase.LATE)
         .addRequiredMod(TargetMod.NATURA)
         .setApplyIf(() -> PatchSwitches.enabled("noNaturaClouds"))
