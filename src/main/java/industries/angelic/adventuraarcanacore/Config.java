@@ -330,6 +330,9 @@ public final class Config {
             "battleTowersBiomes",
             "Battle Towers checks its biome list at the spot where a tower would stand. It read the biome 16 times closer to the world's origin than the chunk, so a biome switched off in its config lost its towers somewhere else.");
         patch(
+            "battleTowersUndergroundCollapse",
+            "An underground Battle Tower stays standing when its golem dies, as at vanilla depths. Battle Towers only spared towers whose golem stood at y=50 or below; in tall worlds an underground tower's golem stands far above that, on the bottom floor, and the collapse's six explosions went off where the player stood and in the rock below.");
+        patch(
             "etFuturumConcreteTracking",
             "Falling concrete powder turns into concrete in the first water it reaches from the falling block itself, instead of from Et Futurum's per-tick tracking, which crashed the server (ConcurrentModificationException in doConcreteTracking), made two concrete from one powder falling fast into deep water, and kept powder whose chunk had unloaded.");
         patch(

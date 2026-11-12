@@ -41,4 +41,13 @@ public final class BattleTowers {
     public static int towerTop(World world, int surface) {
         return Math.max(world.provider.getAverageGroundLevel() + 56, surface - 6 + 3 * 7);
     }
+
+    /**
+     * Whether a golem that stood at x, y, z had its tower's floors above it, as an underground tower's golem on the
+     * bottom floor does, with the next floor 6 above its feet; a surface tower's golem stands on the top. In an
+     * unloaded column nothing is above it.
+     */
+    public static boolean buried(World world, int x, int y, int z) {
+        return surface(world, x, z) >= y + 6;
+    }
 }
