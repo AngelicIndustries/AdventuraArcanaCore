@@ -87,6 +87,16 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.SALTYMOD)
             .setApplyIf(() -> PatchSwitches.enabled("saltyModEggFeathers"))
             .addCommonMixins("saltymod.MixinChickenEggFeathers")),
+    TWILIGHT_FOREST_FIREFLY_GLOW(
+        new MixinBuilder("Draw Twilight Forest's firefly glows after water, without cutting holes in it")
+            .setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.TWILIGHT_FOREST)
+            .setApplyIf(() -> PatchSwitches.enabled("twilightForestFireflyGlow"))
+            .addClientMixins(
+                "twilightforest.MixinFireflyRenderPasses",
+                "twilightforest.MixinFireflyRendererGlow",
+                "twilightforest.MixinTinyFireflyPass",
+                "twilightforest.MixinTinyFireflyDepth")),
     NATURA_BERRIES_STAND_DOWN(
         new MixinBuilder("Keep Natura's wild berries out of Biomic's overworld").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.NATURA)

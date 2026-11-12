@@ -255,6 +255,9 @@ public final class Config {
             "saltyModBeeNests",
             "SaltyMod's bee nests are seeded per chunk, so a seed gives the same nests; none in Biomic's overworld while beeNestsInBiomic is on.");
         patch(
+            "twilightForestFireflyGlow",
+            "Twilight Forest's fireflies glow over water: the glow of firefly blocks and of the tiny and ambient fireflies is drawn after water, without depth. Drawn before it, the glow cut a dark hole into the water behind it. Client only.");
+        patch(
             "saltyModEggFeathers",
             "SaltyMod's chickens shed feathers with an egg only when they lay one. It took any rise of the egg timer for an egg, and Hunger Overhaul raises baby chickens' timers on most ticks, so babies shed feathers without end.");
         patch(

@@ -206,6 +206,17 @@ still counts down, but a baby's never does, so it rose nearly every tick and bab
 ticks. The redirect adds 100 to the timer SaltyMod remembered, so only a laid egg's reset (6000 to 12000 ticks) counts.
 Switch: `saltyModEggFeathers`.
 
+## Twilight Forest firefly glow
+
+Twilight Forest draws its fireflies' glow in the solid pass, before water: the firefly blocks (`TileEntityTFFireflyRenderer`,
+an additive glow over the body) and the glowing tiny and ambient fireflies (`RenderTFTinyFirefly`, for
+`EntityTFTinyFirefly` and `EntityTFMobileFirefly`). The glow wrote depth, so the water behind it was skipped and the
+glow showed over the bare background: a dark halo cut into the water, with and without shaders. The blocks now render
+in both passes (`twilightforest.MixinFireflyRenderPasses`), the body in the solid pass and the glow in the translucent
+pass after water without depth and with full block light and no sky light, so shaders don't tint it the sky's blue
+(`MixinFireflyRendererGlow`); the fireflies render in the translucent pass only
+(`MixinTinyFireflyPass`), without depth (`MixinTinyFireflyDepth`). Switch: `twilightForestFireflyGlow`.
+
 ## Wild food
 
 `minecraft.MixinBlockBushWildCrops` (early) lets HarvestCraft's and Harvest the Nether's crops stay where they grow

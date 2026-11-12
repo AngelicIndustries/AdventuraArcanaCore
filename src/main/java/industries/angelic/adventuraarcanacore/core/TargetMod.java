@@ -59,6 +59,8 @@ public enum TargetMod implements ITargetMod {
     /** Found by its coremod, as its mixins change vanilla's worlds before mods load. */
     SUPERNOVA(new TargetModBuilder().setModId("supernova")
         .setCoreModClass("com.mitchej123.supernova.core.SupernovaCore")),
+    TWILIGHT_FOREST(new TargetModBuilder().setModId("TwilightForest")
+        .setTargetClass("twilightforest.TwilightForestMod")),
     VILLAGE_NAMES(new TargetModBuilder().setModId("VillageNames")
         .setTargetClass("astrotibs.villagenames.village.StructureVillageVN")),
     WILD_MOBS(new TargetModBuilder().setModId("wildmobsmod")

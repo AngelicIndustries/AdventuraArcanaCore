@@ -23,4 +23,5 @@ dependencies {
     // Dimensional Doors 2.2.6 and Hodgepodge's chunk generation guard for the DIMDOORS_ENTITY_CHUNK_GEN mixin.
     compileOnly(deobfCurse("dimensional-doors-legacy-404239:4967772"))
     compileOnly("com.github.GTNewHorizons:Hodgepodge:2.7.219:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:twilightforest:2.8.0:dev") { transitive = false }
 }
