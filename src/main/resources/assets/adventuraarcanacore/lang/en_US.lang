@@ -68,6 +68,7 @@ adventuraarcanacore.config.dimDoorsEntityChunkGen=Mobs through Dimensional Doors
 adventuraarcanacore.config.structureMemoryPerSave=Structure Memory per save
 adventuraarcanacore.config.battleTowersTallWorlds=Battle Towers in tall worlds
 adventuraarcanacore.config.battleTowersSites=Battle Tower sites
+adventuraarcanacore.config.battleTowersBiomes=Battle Tower biomes
 adventuraarcanacore.config.etFuturumConcreteTracking=Et Futurum falling concrete fix
 adventuraarcanacore.config.arrowsCatchFire=Arrows catch fire
 adventuraarcanacore.config.villageNamesFlatLookup=One name per village

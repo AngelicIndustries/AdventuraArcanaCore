@@ -245,6 +245,11 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.BATTLE_TOWERS)
             .setApplyIf(() -> PatchSwitches.enabled("battleTowersSites"))
             .addCommonMixins("battletowers.MixinBattleTowersSites")),
+    BATTLE_TOWERS_BIOMES(
+        new MixinBuilder("Check Battle Towers' biome list where the tower would stand").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.BATTLE_TOWERS)
+            .setApplyIf(() -> PatchSwitches.enabled("battleTowersBiomes"))
+            .addCommonMixins("battletowers.MixinBattleTowersBiome")),
     ET_FUTURUM_CONCRETE_IN_WATER(
         new MixinBuilder("Turn falling concrete powder into concrete from the falling block").setPhase(Phase.EARLY)
             .setApplyIf(() -> PatchSwitches.enabled("etFuturumConcreteTracking"))

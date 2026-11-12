@@ -327,6 +327,9 @@ public final class Config {
             "battleTowersSites",
             "Battle Towers no longer forgets its towers when another world loads or saves, which put new towers next to old ones, and skips sites where Recurrent Complex or Ruins already built.");
         patch(
+            "battleTowersBiomes",
+            "Battle Towers checks its biome list at the spot where a tower would stand. It read the biome 16 times closer to the world's origin than the chunk, so a biome switched off in its config lost its towers somewhere else.");
+        patch(
             "etFuturumConcreteTracking",
             "Falling concrete powder turns into concrete in the first water it reaches from the falling block itself, instead of from Et Futurum's per-tick tracking, which crashed the server (ConcurrentModificationException in doConcreteTracking), made two concrete from one powder falling fast into deep water, and kept powder whose chunk had unloaded.");
         patch(
