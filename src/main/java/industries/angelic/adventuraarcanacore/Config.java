@@ -202,6 +202,9 @@ public final class Config {
             "resumePausedSounds",
             "Resume only paused sounds, preventing menu clicks from replaying on Return to Game.");
         patch(
+            "creativeClearInventory",
+            "The creative inventory's Destroy Item slot reads Clear Inventory while shift is held, as shift-clicking it clears the whole inventory. Client only.");
+        patch(
             "growthcraftWithoutForestry",
             "Growthcraft loads without Forestry: its Forestry integration becomes optional.");
         patch(

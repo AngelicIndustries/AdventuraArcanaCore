@@ -47,6 +47,10 @@ public enum Mixins implements IMixins {
         new MixinBuilder("Resume only paused sounds, without replaying menu clicks").setPhase(Phase.EARLY)
             .setApplyIf(() -> PatchSwitches.enabled("resumePausedSounds"))
             .addClientMixins("minecraft.MixinSoundManagerPause")),
+    CREATIVE_CLEAR_INVENTORY(
+        new MixinBuilder("Label the creative Destroy Item slot Clear Inventory with shift held").setPhase(Phase.EARLY)
+            .setApplyIf(() -> PatchSwitches.enabled("creativeClearInventory"))
+            .addClientMixins("minecraft.MixinCreativeClearInventory")),
     GROWTHCRAFT_OPTIONAL_FORESTRY(
         new MixinBuilder("Make Growthcraft Forestry integration optional").setPhase(Phase.EARLY)
             .setApplyIf(() -> PatchSwitches.enabled("growthcraftWithoutForestry"))
