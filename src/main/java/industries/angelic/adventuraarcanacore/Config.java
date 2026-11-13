@@ -35,6 +35,7 @@ public final class Config {
     public static boolean netherliciousDuplicates = true;
     public static boolean dropBrokenRecipes = true;
     public static double battleTowerChance = 1;
+    public static double beeHoneyDrips = 1.0 / 12;
     public static final int COLOR_STRENGTH_SUPERNOVA = 0, COLOR_STRENGTH_LINEAR = 1, COLOR_STRENGTH_STRONG = 2,
         COLOR_STRENGTH_FULL = 3;
     private static final String[] COLOR_STRENGTHS = { "supernova", "linear", "strong", "full" };
@@ -179,6 +180,15 @@ public final class Config {
             0.0,
             1.0)
             .setLanguageKey(AdventuraArcanaCore.MODID + ".config.battleTowerChance")
+            .getDouble();
+        beeHoneyDrips = configuration.get(
+            Categories.GENERAL,
+            "beeHoneyDrips",
+            1.0 / 12,
+            "The share of Et Futurum's honey drips that a full bee nest or beehive still lets fall. 1 keeps them all, modern Minecraft's rate: about three a second right next to a nest. 0 drips none. Needs the etFuturumHoneyDrips patch. Client only.",
+            0.0,
+            1.0)
+            .setLanguageKey(AdventuraArcanaCore.MODID + ".config.beeHoneyDrips")
             .getDouble();
         String strength = configuration.get(
             Categories.GENERAL,
@@ -338,6 +348,9 @@ public final class Config {
         patch(
             "battleTowersUndergroundCollapse",
             "An underground Battle Tower stays standing when its golem dies, as at vanilla depths. Battle Towers only spared towers whose golem stood at y=50 or below; in tall worlds an underground tower's golem stands far above that, on the bottom floor, and the collapse's six explosions went off where the player stood and in the rock below.");
+        patch(
+            "etFuturumHoneyDrips",
+            "Full Et Futurum bee nests and beehives let fall only the share of their honey drips set by beeHoneyDrips. Client only.");
         patch(
             "etFuturumConcreteTracking",
             "Falling concrete powder turns into concrete in the first water it reaches from the falling block itself, instead of from Et Futurum's per-tick tracking, which crashed the server (ConcurrentModificationException in doConcreteTracking), made two concrete from one powder falling fast into deep water, and kept powder whose chunk had unloaded.");

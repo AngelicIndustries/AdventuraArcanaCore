@@ -232,6 +232,10 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.ET_FUTURUM)
             .setApplyIf(() -> PatchSwitches.enabled("etFuturumNoExperimentalMessage"))
             .addClientMixins("etfuturum.MixinExperimentalWarning")),
+    ET_FUTURUM_HONEY_DRIPS(new MixinBuilder("Let full Et Futurum bee nests drip honey less often").setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.ET_FUTURUM)
+        .setApplyIf(() -> PatchSwitches.enabled("etFuturumHoneyDrips"))
+        .addClientMixins("etfuturum.MixinBeeHiveHoneyDrips")),
     DIMDOORS_ENTITY_CHUNK_GEN(
         new MixinBuilder("Let mobs going through Dimensional Doors generate the pocket they enter").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.DIMENSIONAL_DOORS)
