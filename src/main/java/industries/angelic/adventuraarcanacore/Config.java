@@ -388,6 +388,12 @@ public final class Config {
             "wildMobsSeaScorpionSpawnCap",
             "Wild Mobs' sea scorpions count against the water creature cap they spawn under, instead of against none of it (they spawned without end, tens of thousands in Biomic's deep oceans, bringing the server to a crawl) and against the monster cap.");
         patch(
+            "wildMobsCreatureBucketAim",
+            "Wild Mobs' jellyfish and sea scorpion buckets do nothing when used with no block in reach, instead of crashing the game.");
+        patch(
+            "wildMobsNetherJellyfishBucketList",
+            "Wild Mobs' lava jellyfish bucket lists only the Nether Medusa Bucket in the creative tabs and NEI, instead of six copies of the water jellyfish buckets that release only into lava. Client only.");
+        patch(
             "adventureBackpackWornTankLight",
             "Adventure Backpack lights the fluid in a worn backpack's, copter pack's or coal jetpack's tanks where the wearer is, as it does for a placed backpack; it used to take the light of whatever CodeChickenLib drew last, often dark or black.");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");

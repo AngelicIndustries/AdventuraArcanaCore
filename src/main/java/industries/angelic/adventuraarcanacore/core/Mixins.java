@@ -302,6 +302,16 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.WILD_MOBS)
             .setApplyIf(() -> PatchSwitches.enabled("wildMobsSeaScorpionSpawnCap"))
             .addCommonMixins("wildmobs.MixinSeaScorpionSpawnCap")),
+    WILD_MOBS_CREATURE_BUCKET_AIM(
+        new MixinBuilder("Keep Wild Mobs' creature buckets from crashing when used at nothing").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.WILD_MOBS)
+            .setApplyIf(() -> PatchSwitches.enabled("wildMobsCreatureBucketAim"))
+            .addCommonMixins("wildmobs.MixinCreatureBucketAim")),
+    WILD_MOBS_NETHER_JELLYFISH_BUCKET_LIST(
+        new MixinBuilder("List only the Nether Medusa Bucket for Wild Mobs' lava jellyfish bucket").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.WILD_MOBS)
+            .setApplyIf(() -> PatchSwitches.enabled("wildMobsNetherJellyfishBucketList"))
+            .addClientMixins("wildmobs.MixinNetherJellyfishBucketList")),
     ADVENTURE_BACKPACK_WORN_TANK_LIGHT(
         new MixinBuilder("Light the fluid in Adventure Backpack's worn tanks where the wearer is").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.ADVENTURE_BACKPACK)
