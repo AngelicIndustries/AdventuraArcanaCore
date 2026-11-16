@@ -22,7 +22,7 @@ import industries.angelic.adventuraarcanacore.core.PatchSwitches;
     name = "Adventura Arcana Core",
     version = Tags.VERSION,
     acceptedMinecraftVersions = "[1.7.10]",
-    dependencies = "required-after:unimixins@[0.3.1,);after:biomic;after:etfuturum;after:netherlicious;after:cookingforblockheads;after:harvestcraft;after:plantmegapack;after:saltymod",
+    dependencies = "required-after:unimixins@[0.3.1,);after:biomic;after:etfuturum;after:netherlicious;after:cookingforblockheads;after:harvestcraft;after:plantmegapack;after:saltymod;after:dashboard@[1.0.2,)",
     guiFactory = "industries.angelic.adventuraarcanacore.gui.GuiFactory",
     customProperties = { @Mod.CustomProperty(k = "license", v = "LGPLv3"),
         @Mod.CustomProperty(

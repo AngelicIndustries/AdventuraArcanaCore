@@ -20,6 +20,7 @@ import industries.angelic.adventuraarcanacore.compat.aether.AetherSkyrootDoor;
 import industries.angelic.adventuraarcanacore.compat.angelica.AngelicaDSWeather;
 import industries.angelic.adventuraarcanacore.compat.angelica.ColoredLightDebug;
 import industries.angelic.adventuraarcanacore.compat.angelica.ShaderTuning;
+import industries.angelic.adventuraarcanacore.compat.bettersleeping.BetterSleepingDashboard;
 import industries.angelic.adventuraarcanacore.compat.cookingforblockheads.ToasterBreadLook;
 import industries.angelic.adventuraarcanacore.compat.supernova.LightColorCommand;
 import industries.angelic.adventuraarcanacore.core.PatchSwitches;
@@ -40,6 +41,9 @@ public class ClientProxy extends CommonProxy {
         MinecraftForge.EVENT_BUS.register(new CaveMoodFilter());
         if (Loader.isModLoaded("cookingforblockheads") && Loader.isModLoaded("saltymod")
             && PatchSwitches.enabled("toasterSaltedBread")) MinecraftForge.EVENT_BUS.register(new ToasterBreadLook());
+        // Before Dashboard's postInit, as its API asks
+        if (Loader.isModLoaded("dashboard") && Loader.isModLoaded("bettersleeping")
+            && PatchSwitches.enabled("betterSleepingDashboard")) BetterSleepingDashboard.register();
         FMLCommonHandler.instance()
             .bus()
             .register(this);

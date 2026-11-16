@@ -183,6 +183,13 @@ public enum Mixins implements IMixins {
         .setApplyIf(() -> PatchSwitches.enabled("betterSleepingFixes"))
         .addCommonMixins("bettersleeping.MixinBetterSleepingEvents", "bettersleeping.MixinAlternateSleep")
         .addClientMixins("bettersleeping.MixinSleepOverlay")),
+    BETTER_SLEEPING_DASHBOARD(
+        new MixinBuilder("Make Better Sleeping's sleep bar and Ring Watch time movable in Dashboard's HUD editor")
+            .setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.BETTER_SLEEPING)
+            .addRequiredMod(TargetMod.DASHBOARD)
+            .setApplyIf(() -> PatchSwitches.enabled("betterSleepingDashboard"))
+            .addClientMixins("bettersleeping.MixinSleepOverlayDashboard")),
     HANG_GLIDER_NERF(new MixinBuilder("Make OpenBlocks' hang glider glide worse and wear out").setPhase(Phase.LATE)
         .addRequiredMod(TargetMod.OPENBLOCKS)
         .setApplyIf(() -> PatchSwitches.enabled("hangGliderNerf"))
