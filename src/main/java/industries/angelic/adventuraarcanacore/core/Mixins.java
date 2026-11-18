@@ -69,14 +69,6 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.NATURA)
         .setApplyIf(() -> PatchSwitches.enabled("noNaturaClouds"))
         .addCommonMixins("natura.MixinNaturaNoClouds")),
-    SALTYMOD_DEDICATED_SERVER(
-        new MixinBuilder("Keep SaltyMod's client code off a dedicated server").setPhase(Phase.LATE)
-            .addRequiredMod(TargetMod.SALTYMOD)
-            .setApplyIf(() -> PatchSwitches.enabled("saltyModDedicatedServer"))
-            .addServerMixins(
-                "saltymod.MixinBeeNestServerIcons",
-                "saltymod.MixinNeiServerRegistration",
-                "saltymod.MixinServerRenderType")),
     WILD_CROPS_STAY(new MixinBuilder("Keep HarvestCraft's crops where they grow wild").setPhase(Phase.EARLY)
         .setApplyIf(() -> PatchSwitches.enabled("wildCropsStay"))
         .addCommonMixins("minecraft.MixinBlockBushWildCrops")),
@@ -89,12 +81,6 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.SALTYMOD)
         .setApplyIf(() -> PatchSwitches.enabled("saltyModBeeNests"))
         .addCommonMixins("saltymod.MixinSaltyBeeNestSeed")),
-    SALTYMOD_EGG_FEATHERS(
-        new MixinBuilder("Shed SaltyMod's egg feathers only for laid eggs, not Hunger Overhaul's slower timers")
-            .setPhase(Phase.LATE)
-            .addRequiredMod(TargetMod.SALTYMOD)
-            .setApplyIf(() -> PatchSwitches.enabled("saltyModEggFeathers"))
-            .addCommonMixins("saltymod.MixinChickenEggFeathers")),
     TWILIGHT_FOREST_FIREFLY_GLOW(
         new MixinBuilder("Draw Twilight Forest's firefly glows after water, without cutting holes in it")
             .setPhase(Phase.LATE)

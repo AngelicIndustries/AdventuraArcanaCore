@@ -72,7 +72,7 @@ public enum TargetMod implements ITargetMod {
     /** The SaltyMod build the patches are written against (its runtime version string). */
     SALTYMOD(new TargetModBuilder().setModId("saltymod")
         .setTargetClass("darkbum.saltymod.SaltyMod")
-        .testModVersion("saltymod", "2.0.0-master.150+9a0954aa6f"));
+        .testModVersion("saltymod", "2.0.0-master.162+2a8955c302-dirty"));
 
     private final TargetModBuilder builder;
 

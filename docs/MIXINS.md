@@ -189,23 +189,6 @@ chunks; `/lightdebughand emit` replaces the luminance Angelica's dynamic lights 
 held or dropped (`angelica.MixinDynamicLightsEmission`, early). Without a level, emit toggles between full and the
 subject's own. Switch: `coloredLightDebug`.
 
-## SaltyMod on a dedicated server
-
-Three server-only patches keep SaltyMod's client code off a dedicated server, which crashes on it otherwise:
-`MixinBeeNestServerIcons` skips the bee nest's client-only icon fields, `MixinNeiServerRegistration` skips its NEI
-screens, and `MixinServerRenderType` answers the render type of four blocks without the client proxy. They load for
-the pack's SaltyMod build only (`TargetMod.SALTYMOD`, runtime version `2.0.0-master.150+9a0954aa6f`). Switch:
-`saltyModDedicatedServer`.
-
-## SaltyMod egg feathers
-
-`saltymod.MixinChickenEggFeathers` (common) fixes SaltyMod's feathers with eggs (`chickensShedFeathersWithEggs`): it
-sheds them when a chicken's egg timer is higher than on the tick before, which it takes for an egg having been laid.
-Hunger Overhaul slows egg laying (`eggTimeoutMultiplier`) by adding one to the timer on most ticks; an adult's timer
-still counts down, but a baby's never does, so it rose nearly every tick and baby chickens shed a feather on most
-ticks. The redirect adds 100 to the timer SaltyMod remembered, so only a laid egg's reset (6000 to 12000 ticks) counts.
-Switch: `saltyModEggFeathers`.
-
 ## Twilight Forest firefly glow
 
 Twilight Forest draws its fireflies' glow in the solid pass, before water: the firefly blocks (`TileEntityTFFireflyRenderer`,
