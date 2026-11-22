@@ -391,6 +391,12 @@ public final class Config {
             "wildMobsNetherJellyfishBucketList",
             "Wild Mobs' lava jellyfish bucket lists only the Nether Medusa Bucket in the creative tabs and NEI, instead of six copies of the water jellyfish buckets that release only into lava. Client only.");
         patch(
+            "mowziesMobsFoliaathSoil",
+            "Mowzie's Mobs' Foliaath seeds take on any grass or dirt, such as Biomes O' Plenty's, the Aether's or coarse dirt, not only vanilla grass and dirt. Farmland still doesn't.");
+        patch(
+            "mowziesMobsBlowgunAim",
+            "In first person, Mowzie's Mobs' blowgun is held level from the mouth toward the crosshair while it is blown, instead of in the bow's drawing pose. Client only.");
+        patch(
             "adventureBackpackWornTankLight",
             "Adventure Backpack lights the fluid in a worn backpack's, copter pack's or coal jetpack's tanks where the wearer is, as it does for a placed backpack; it used to take the light of whatever CodeChickenLib drew last, often dark or black.");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");

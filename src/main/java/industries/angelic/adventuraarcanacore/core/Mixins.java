@@ -305,6 +305,16 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.WILD_MOBS)
             .setApplyIf(() -> PatchSwitches.enabled("wildMobsNetherJellyfishBucketList"))
             .addClientMixins("wildmobs.MixinNetherJellyfishBucketList")),
+    MOWZIES_MOBS_FOLIAATH_SOIL(
+        new MixinBuilder("Plant Mowzie's Mobs' Foliaath seeds on any grass or dirt").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.MOWZIES_MOBS)
+            .setApplyIf(() -> PatchSwitches.enabled("mowziesMobsFoliaathSoil"))
+            .addCommonMixins("mowziesmobs.MixinFoliaathSoil")),
+    MOWZIES_MOBS_BLOWGUN_AIM(
+        // Mods are not on the classpath yet in the early phase; without Mowzie's Mobs the blowgun is never found.
+        new MixinBuilder("Hold Mowzie's Mobs' blowgun level from the mouth while it is blown").setPhase(Phase.EARLY)
+            .setApplyIf(() -> PatchSwitches.enabled("mowziesMobsBlowgunAim"))
+            .addClientMixins("minecraft.MixinBlowgunAim")),
     ADVENTURE_BACKPACK_WORN_TANK_LIGHT(
         new MixinBuilder("Light the fluid in Adventure Backpack's worn tanks where the wearer is").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.ADVENTURE_BACKPACK)
