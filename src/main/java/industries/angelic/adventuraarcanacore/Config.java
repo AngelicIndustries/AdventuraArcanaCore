@@ -243,6 +243,9 @@ public final class Config {
             "fireflyJarRelease",
             "Sneak-using Twilight Forest's firefly jar uncorks it and lets the firefly out, giving back the glass bottle, instead of setting the jar down. As an item the jar shows its fireflies glowing, as a set-down jar does. Use the same setting on client and server.");
         patch(
+            "projectZuluBossBarConfig",
+            "Project Zulu's boss health bar reads its setting from ProjectZuluConfig.cfg once, instead of loading the file and writing it back twice every frame. Changing that setting then needs a restart. Client only.");
+        patch(
             "projectZuluGamerules",
             "Project Zulu no longer sets keepInventory and its dropInventory, dropHotbar, dropArmor and dropXP gamerules back to its config defaults whenever a world loads, which undid /gamerule changes. It only adds its own gamerules, with those defaults, to a world that lacks them.");
         patch(
@@ -390,6 +393,9 @@ public final class Config {
         patch(
             "wildMobsSeaScorpionSpawnCap",
             "Wild Mobs' sea scorpions count against the water creature cap they spawn under, instead of against none of it (they spawned without end, tens of thousands in Biomic's deep oceans, bringing the server to a crawl) and against the monster cap.");
+        patch(
+            "wildMobsSkeletonWolfGhosts",
+            "Only the server gives Wild Mobs skeletons their skeleton wolves. Clients spawned wolves of their own for skeletons the server sent them, which nothing ever removed: thousands piled up over a session, ticking and drawn, until frame rates fell.");
         patch(
             "wildMobsCreatureBucketAim",
             "Wild Mobs' jellyfish and sea scorpion buckets do nothing when used with no block in reach, instead of crashing the game.");

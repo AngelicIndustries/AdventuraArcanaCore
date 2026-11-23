@@ -65,6 +65,11 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.PROJECT_ZULU)
         .setApplyIf(() -> PatchSwitches.enabled("projectZuluPlaySound"))
         .addCommonMixins("projectzulu.MixinZuluPlaySoundName")),
+    PROJECT_ZULU_BOSS_BAR_CONFIG(
+        new MixinBuilder("Read Project Zulu's boss health bar setting once").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.PROJECT_ZULU)
+            .setApplyIf(() -> PatchSwitches.enabled("projectZuluBossBarConfig"))
+            .addClientMixins("projectzulu.MixinBossHealthConfigOnce")),
     NATURA_NO_CLOUDS(new MixinBuilder("Generate no Natura clouds").setPhase(Phase.LATE)
         .addRequiredMod(TargetMod.NATURA)
         .setApplyIf(() -> PatchSwitches.enabled("noNaturaClouds"))
@@ -295,6 +300,11 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.WILD_MOBS)
             .setApplyIf(() -> PatchSwitches.enabled("wildMobsSeaScorpionSpawnCap"))
             .addCommonMixins("wildmobs.MixinSeaScorpionSpawnCap")),
+    WILD_MOBS_SKELETON_WOLF_CLIENT_SPAWN(
+        new MixinBuilder("Keep clients from spawning Wild Mobs skeleton wolves of their own").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.WILD_MOBS)
+            .setApplyIf(() -> PatchSwitches.enabled("wildMobsSkeletonWolfGhosts"))
+            .addCommonMixins("wildmobs.MixinSkeletonWolfClientSpawn")),
     WILD_MOBS_CREATURE_BUCKET_AIM(
         new MixinBuilder("Keep Wild Mobs' creature buckets from crashing when used at nothing").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.WILD_MOBS)
