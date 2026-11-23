@@ -269,7 +269,7 @@ public final class Config {
             "The Aether's Skyroot, Elysian and breakable treasure chests pair as AdjaChest pairs vanilla ones: each with one neighbor of its kind facing the same way, so any number can stand side by side, and placing one turns no other. Needs AdjaChest; use the same setting on client and server.");
         patch(
             "betterFoliageFilterCache",
-            "Better Foliage's block filters keep their answers in a map safe across threads. Angelica draws chunks on several threads, and the plain map Better Foliage used could find a block and then give back nothing, crashing the game (NullPointerException in BlockFilterSet.matches). Client only.");
+            "Better Foliage's block filters keep their answers in a bit mask per block, safe across threads and read without making garbage. Angelica draws chunks on several threads, and the plain map Better Foliage used could find a block and then give back nothing, crashing the game (NullPointerException in BlockFilterSet.matches); its lookups also made half the garbage of drawing chunks. Client only.");
         patch(
             "supernovaServerLight",
             "Supernova lights the server's worlds. Supernova 0.1.2 takes light updates only in worlds built with the client's constructor, so on the server lights are never lit, mobs spawn beside torches, and clients see only the light they work out themselves. Can go once a Supernova release fixes this.");

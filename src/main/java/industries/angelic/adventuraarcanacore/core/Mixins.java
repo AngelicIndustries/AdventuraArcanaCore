@@ -349,12 +349,12 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.SUPERNOVA)
         .setApplyIf(() -> PatchSwitches.enabled("supernovaServerLight"))
         .addCommonMixins("minecraft.MixinWorldSupernovaReady")),
-    BETTER_FOLIAGE_FILTER_CACHE(
-        new MixinBuilder("Keep Better Foliage's block filter cache safe across Angelica's chunk threads")
+    BETTER_FOLIAGE_FILTER_CACHE(new MixinBuilder(
+        "Keep Better Foliage's block filter cache safe across Angelica's chunk threads, without garbage")
             .setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.BETTER_FOLIAGE)
             .setApplyIf(() -> PatchSwitches.enabled("betterFoliageFilterCache"))
-            .addClientMixins("betterfoliage.MixinBlockFilterCache")),
+            .addClientMixins("betterfoliage.MixinBlockFilterCache", "betterfoliage.AccessorBlockFilterRule")),
     AETHER_TORCH_CLOCK(
         new MixinBuilder("Burn the Aether's torches on AAC's clock, drawn as vanilla's torch").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.REALISTIC_TORCHES)
