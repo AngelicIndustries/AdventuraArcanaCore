@@ -3,27 +3,27 @@ dependencies {
     // usesMixins supplies UniMixins, including the GTNHMixins builders and annotation processor.
     // Add optional mixin targets with compileOnly; guard them in core.TargetMod and core.Mixins.
     // Optional worktable recipe transfer; NEI is only installed automatically in the dev runtime.
-    compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.8.167-GTNH:dev")
-    runtimeOnlyNonPublishable("com.github.GTNewHorizons:NotEnoughItems:2.8.167-GTNH:dev")
+    compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.9.13-GTNH:dev")
+    runtimeOnlyNonPublishable("com.github.GTNewHorizons:NotEnoughItems:2.9.13-GTNH:dev")
     // Optional Biomic integration (compat/biomic).
-    compileOnly("industries.angelic.biomic:Biomic:f552eb8-snapshot:dev")
+    compileOnly("industries.angelic.biomic:Biomic:8784052-snapahot:dev")
     // Angelica's WeatherRenderer for the ANGELICA_DS_WEATHER mixin, which can't be @Pseudo.
-    compileOnly("com.github.GTNewHorizons:Angelica:2.2.37:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Angelica:2.2.46:dev") { transitive = false }
     // Distant Horizons' internal-server generator for the DISTANT_HORIZONS_CHUNK_TASKS mixin (a GitHub release).
     compileOnly("GTNewHorizons:DistantHorizons:${distantHorizonsVersion}:dev") { transitive = false }
     // Et Futurum's bee nests in Biomic's worlds (compat/biomic/BeeNests) and its AssetDirector (compat/etfuturum).
-    compileOnly("ganymedes01.etfuturum:Et-Futurum-Requiem:2.6.62-GTNH:dev")
+    compileOnly("ganymedes01.etfuturum:Et-Futurum-Requiem:2.7.4-GTNH:dev")
     // Better Sleeping 1.2.27 for the BETTER_SLEEPING_FIXES mixins.
     compileOnly(deobfCurse("better-sleeping-227114:2266519"))
     // Dashboard's HUD API for BETTER_SLEEPING_DASHBOARD (compat/bettersleeping); 1.0.2 is its usual minimum.
-    compileOnly("com.github.GTNewHorizons:Dashboard:1.0.2:api") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Dashboard:1.0.24:api") { transitive = false }
     // Baubles Expanded's slot API (compat/baubles).
-    compileOnly("com.github.GTNewHorizons:Baubles-Expanded:2.2.26-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Baubles-Expanded:2.3.0-GTNH:dev") { transitive = false }
     // OpenBlocks for the HANG_GLIDER_NERF mixins.
-    compileOnly("com.github.GTNewHorizons:OpenBlocks:1.12.22-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:OpenBlocks:1.13.4-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:OpenModsLib:0.10.15:dev") { transitive = false }
     // Dimensional Doors 2.2.6 and Hodgepodge's chunk generation guard for the DIMDOORS_ENTITY_CHUNK_GEN mixin.
     compileOnly(deobfCurse("dimensional-doors-legacy-404239:4967772"))
-    compileOnly("com.github.GTNewHorizons:Hodgepodge:2.7.219:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:twilightforest:2.8.0:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Hodgepodge:2.8.6:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:twilightforest:2.8.3:dev") { transitive = false }
 }
