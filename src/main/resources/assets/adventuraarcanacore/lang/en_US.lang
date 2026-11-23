@@ -251,3 +251,6 @@ adventuraarcanacore.lightcolor.nolight=This block gives no light, so its color s
 adventuraarcanacore.lightcolor.nosupernova=Block light colors need Supernova.
 adventuraarcanacore.lightcolor.noangelica=Item light colors need Angelica's dynamic lights.
 adventuraarcanacore.lightcolor.nothing=Look at a block or hold an item.
+adventuraarcanacore.config.pixieJarPlacing=Placeable pixie jars
+adventuraarcanacore.config.fireflyJarRelease=Let fireflies out of jars
+tile.adventuraarcanacore.pixie_jar.name=Pixie in a Jar

@@ -7,6 +7,7 @@ import net.minecraftforge.common.MinecraftForge;
 
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.client.registry.ClientRegistry;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -22,13 +23,21 @@ import industries.angelic.adventuraarcanacore.compat.angelica.ColoredLightDebug;
 import industries.angelic.adventuraarcanacore.compat.angelica.ShaderTuning;
 import industries.angelic.adventuraarcanacore.compat.bettersleeping.BetterSleepingDashboard;
 import industries.angelic.adventuraarcanacore.compat.cookingforblockheads.ToasterBreadLook;
+import industries.angelic.adventuraarcanacore.compat.jars.BlockPixieJar;
+import industries.angelic.adventuraarcanacore.compat.jars.FireflyJarItemRenderer;
+import industries.angelic.adventuraarcanacore.compat.jars.PixieJarRenderer;
+import industries.angelic.adventuraarcanacore.compat.jars.PixieJars;
+import industries.angelic.adventuraarcanacore.compat.jars.TilePixieJar;
 import industries.angelic.adventuraarcanacore.compat.supernova.LightColorCommand;
 import industries.angelic.adventuraarcanacore.core.PatchSwitches;
 import industries.angelic.adventuraarcanacore.sounds.CaveMoodFilter;
 import industries.angelic.adventuraarcanacore.worktable.TileWorktable;
 import industries.angelic.adventuraarcanacore.worktable.client.GuiWorktable;
+import twilightforest.block.TFBlocks;
 
 public class ClientProxy extends CommonProxy {
+
+    private PixieJarRenderer pixieJars;
 
     @Override
     public void preInit(FMLPreInitializationEvent event) {
@@ -37,6 +46,12 @@ public class ClientProxy extends CommonProxy {
             CompartmentRenderer renderer = new CompartmentRenderer();
             ClientRegistry.bindTileEntitySpecialRenderer(TileCompartment.class, renderer);
             MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Compartments.BLOCK), renderer);
+        }
+        if (PixieJars.pixieJar != null) {
+            pixieJars = new PixieJarRenderer();
+            BlockPixieJar.renderId = RenderingRegistry.getNextAvailableRenderId();
+            RenderingRegistry.registerBlockHandler(BlockPixieJar.renderId, pixieJars);
+            ClientRegistry.bindTileEntitySpecialRenderer(TilePixieJar.class, pixieJars);
         }
         MinecraftForge.EVENT_BUS.register(new CaveMoodFilter());
         if (Loader.isModLoaded("cookingforblockheads") && Loader.isModLoaded("saltymod")
@@ -60,6 +75,12 @@ public class ClientProxy extends CommonProxy {
             ShaderTuning.register();
         if (Loader.isModLoaded("angelica") && PatchSwitches.enabled("coloredLightDebug")) ColoredLightDebug.register();
         if (Loader.isModLoaded("supernova") || Loader.isModLoaded("angelica")) LightColorCommand.register();
+        // The critter jars' items, once their mods have made them
+        if (PixieJars.pixieJar != null && PixieJars.bopJarFilled() != null)
+            MinecraftForgeClient.registerItemRenderer(PixieJars.bopJarFilled(), pixieJars);
+        if (PixieJars.pixieJar != null && Loader.isModLoaded("soundphysics")) PixieJars.muffleSound();
+        if (Loader.isModLoaded("TwilightForest") && PatchSwitches.enabled("fireflyJarRelease")) MinecraftForgeClient
+            .registerItemRenderer(Item.getItemFromBlock(TFBlocks.fireflyJar), new FireflyJarItemRenderer());
     }
 
     @Override

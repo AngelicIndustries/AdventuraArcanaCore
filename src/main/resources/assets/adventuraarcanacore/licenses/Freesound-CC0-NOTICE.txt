@@ -1,4 +1,4 @@
-Toaster sounds from Freesound, dedicated to the public domain under
+Sounds from Freesound, dedicated to the public domain under
 Creative Commons 0 (https://creativecommons.org/publicdomain/zero/1.0/).
 
 sounds/block/toaster/pop.ogg
@@ -11,3 +11,8 @@ sounds/block/toaster/lower.ogg
 
 The files were trimmed around the sound, mixed down to mono and raised
 to a -1 dB peak. Changes made for Adventura Arcana Core, 2026.
+
+sounds/block/jar/uncork.ogg
+  An excerpt from "uncorking a wine" by Luisa_Sanchez
+  https://freesound.org/people/Luisa_Sanchez/sounds/816976/
+  As An Extra Touch made it for Wild Mobs' mired bottle: trimmed and raised into a limiter.

@@ -237,6 +237,12 @@ public final class Config {
             "The mouse wheel scrolls Cooking for Blockheads' recipe list only over the list or its scrollbar, not anywhere on the screen.");
         patch("noNaturaClouds", "Natura generates no clouds in any dimension.");
         patch(
+            "pixieJarPlacing",
+            "Biomes O' Plenty's pixie jar is set down when used, as Twilight Forest's firefly jar with the pixie flying inside, and shows as that jar in slots and hands; sneak-using it still lets the pixie out, now uncorked. Use the same setting on client and server.");
+        patch(
+            "fireflyJarRelease",
+            "Sneak-using Twilight Forest's firefly jar uncorks it and lets the firefly out, giving back the glass bottle, instead of setting the jar down. As an item the jar shows its fireflies glowing, as a set-down jar does. Use the same setting on client and server.");
+        patch(
             "projectZuluGamerules",
             "Project Zulu no longer sets keepInventory and its dropInventory, dropHotbar, dropArmor and dropXP gamerules back to its config defaults whenever a world loads, which undid /gamerule changes. It only adds its own gamerules, with those defaults, to a world that lacks them.");
         patch(

@@ -36,6 +36,7 @@ VERSION=version ./gradlew build
 * [Binnie](https://github.com/GTNewHorizons/Binnie), for the compartments.
 * [Forestry](https://github.com/GTNewHorizons/ForestryMC), for the worktable.
 * [Rhapsodia](https://github.com/makamys/rhapsodia) by Sarys, for the wolf howls.
+* [Twilight Forest](https://github.com/GTNewHorizons/twilightforest), whose firefly jar the placed pixie jars are.
 
 * [GTNH buildscript and ExampleMod](https://github.com/GTNewHorizons/ExampleMod1.7.10).
 

@@ -19,5 +19,17 @@
     "sounds": [
       "block/toaster/lower"
     ]
+  },
+  "block.jar.uncork": {
+    "category": "player",
+    "sounds": [
+      "block/jar/uncork"
+    ]
+  },
+  "block.jar.pixie": {
+    "category": "neutral",
+    "sounds": [
+      "biomesoplenty:mob/pixie/say"
+    ]
   }
 }

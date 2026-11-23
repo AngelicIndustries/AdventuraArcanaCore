@@ -14,6 +14,7 @@ import industries.angelic.adventuraarcanacore.compartment.TileCompartment;
 import industries.angelic.adventuraarcanacore.compat.baubles.BaubleSlots;
 import industries.angelic.adventuraarcanacore.compat.biomic.BiomicIntegration;
 import industries.angelic.adventuraarcanacore.compat.cookingforblockheads.Toasts;
+import industries.angelic.adventuraarcanacore.compat.jars.PixieJars;
 import industries.angelic.adventuraarcanacore.compat.netherlicious.NetherliciousDuplicates;
 import industries.angelic.adventuraarcanacore.compat.realistictorches.TorchClock;
 import industries.angelic.adventuraarcanacore.compat.realistictorches.Torches;
@@ -39,12 +40,15 @@ public class CommonProxy {
         if (Config.enableBambooShoots) BambooShoots.register();
         if (Loader.isModLoaded("biomic")) BiomicIntegration.preInit();
         if (Loader.isModLoaded("RealisticTorches")) Torches.preInit();
+        PixieJars.preInit();
         if (Config.extraBaubleSlots && Loader.isModLoaded("Baubles|Expanded")) BaubleSlots.requestShared();
         NetworkRegistry.INSTANCE.registerGuiHandler(AdventuraArcanaCore.instance, new GuiHandler());
         MinecraftForge.EVENT_BUS.register(new WolfHowls());
     }
 
-    public void init(FMLInitializationEvent event) {}
+    public void init(FMLInitializationEvent event) {
+        PixieJars.init();
+    }
 
     public void postInit(FMLPostInitializationEvent event) {
         Toasts.configure();
