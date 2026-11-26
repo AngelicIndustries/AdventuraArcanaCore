@@ -137,6 +137,17 @@ answers it caches per block and metadata, in place of a `HashMap`. Angelica buil
 asking the filters about the blocks it draws; a lookup during another thread's put could see the key and then read
 null, which crashed the game with a NullPointerException in `BlockFilterSet.matches`. Switch: `betterFoliageFilterCache`.
 
+## Structure Memory scans
+
+`structurememory.MixinStructureKindTracked` (client) overwrites `StructureKind.isTracked`, which Structure Memory asks
+about every block of the two chunks it scans each tick. It walked every rule of every structure kind and copied the
+kinds' array (`values()`) on each call, a fifth of the client thread's time in the pack. The rules are fixed and name
+vanilla blocks only, so the blocks they name and their metadata are gathered once, through the `AccessorStructure*`
+accessors, into an identity map of metadata bits. Switch: `structureMemoryTrackedBlocks`.
+
+`structurememory.MixinMemoryStoreWorldKey` (client) adds the save folder, or the server address, to the key Structure
+Memory files a world's memory under, which was the seed or the spawn point alone. Switch: `structureMemoryPerSave`.
+
 ## Supernova on the server
 
 `minecraft.MixinWorldSupernovaReady` (early, common, only with Supernova) marks worlds built with World's server

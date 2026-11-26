@@ -245,6 +245,15 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.STRUCTURE_MEMORY)
             .setApplyIf(() -> PatchSwitches.enabled("structureMemoryPerSave"))
             .addClientMixins("structurememory.MixinMemoryStoreWorldKey")),
+    STRUCTURE_MEMORY_TRACKED_BLOCKS(
+        new MixinBuilder("Look up the blocks Structure Memory's rules name in a table built once").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.STRUCTURE_MEMORY)
+            .setApplyIf(() -> PatchSwitches.enabled("structureMemoryTrackedBlocks"))
+            .addClientMixins(
+                "structurememory.MixinStructureKindTracked",
+                "structurememory.AccessorStructureKind",
+                "structurememory.AccessorStructureRule",
+                "structurememory.AccessorStructureRequirement")),
     BATTLE_TOWERS_TALL_WORLDS(
         new MixinBuilder("Let Battle Towers spawn in tall worlds, at a chance").setPhase(Phase.LATE)
             .addRequiredMod(TargetMod.BATTLE_TOWERS)
