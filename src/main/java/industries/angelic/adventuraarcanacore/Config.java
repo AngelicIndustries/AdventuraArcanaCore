@@ -280,6 +280,9 @@ public final class Config {
             "saltyModBeeNests",
             "SaltyMod's bee nests are seeded per chunk, so a seed gives the same nests; none in Biomic's overworld while beeNestsInBiomic is on.");
         patch(
+            "saltyModEtFuturumSounds",
+            "Flattening SaltyMod's Salt Grass with a shovel and stripping its Bee Burrows play Et Futurum's sounds. SaltyMod 2.1.3 names them in a sound domain nothing registers, so they were silent. Needs Et Futurum.");
+        patch(
             "twilightForestFireflyGlow",
             "Twilight Forest's fireflies glow over water: the glow of firefly blocks and of the tiny and ambient fireflies is drawn after water, without depth. Drawn before it, the glow cut a dark hole into the water behind it. Client only.");
         patch(

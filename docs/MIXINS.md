@@ -224,6 +224,11 @@ wild: natural ground for HarvestCraft's, nether ground for Harvest the Nether's.
 nests (they came from one clock-seeded random). In Biomic's overworld it places none while `beeNestsInBiomic` is on.
 Switch: `saltyModBeeNests`.
 
+`saltymod.MixinSaltyEtFuturumSounds` (with Et Futurum) swaps the sound domain in SaltyMod's Salt Grass flattening and
+Bee Burrow stripping sounds. SaltyMod 2.1.3 names them `minecraft_1.21:item.shovel.flatten` and
+`minecraft_1.21:item.axe.strip`, a domain no Asset Director config registers; Et Futurum registers both under its
+`Reference.MCAssetVer`, read at run time. Switch: `saltyModEtFuturumSounds`.
+
 `natura.MixinNaturaBerryOwnership` keeps Natura's wild berry bushes out of Biomic's overworld while `wildFoodInBiomic`
 is on, so HarvestCraft's berries are the only wild ones there. Switch: `naturaBerriesStandDown`.
 

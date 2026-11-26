@@ -71,10 +71,13 @@ public enum TargetMod implements ITargetMod {
         .setTargetClass("com.bobmowzie.mowziesmobs.MowziesMobs")),
     STRUCTURE_MEMORY(new TargetModBuilder().setModId("structurememory")
         .setTargetClass("xsoras.structurememory.memory.MemoryStore")),
-    /** The SaltyMod build the patches are written against (its runtime version string). */
+    /** The SaltyMod builds the patches are written against, 2.1.2 and 2.1.3 (their runtime version strings). */
     SALTYMOD(new TargetModBuilder().setModId("saltymod")
         .setTargetClass("darkbum.saltymod.SaltyMod")
-        .testModVersion("saltymod", "2.0.0-master.162+2a8955c302-dirty"));
+        .testModVersion(
+            "saltymod",
+            version -> "2.0.0-master.162+2a8955c302-dirty".equals(version)
+                || "2.0.0-master.164+575583cf7f".equals(version)));
 
     private final TargetModBuilder builder;
 

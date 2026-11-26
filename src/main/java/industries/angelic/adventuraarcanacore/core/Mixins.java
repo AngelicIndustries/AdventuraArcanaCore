@@ -86,6 +86,12 @@ public enum Mixins implements IMixins {
         .addRequiredMod(TargetMod.SALTYMOD)
         .setApplyIf(() -> PatchSwitches.enabled("saltyModBeeNests"))
         .addCommonMixins("saltymod.MixinSaltyBeeNestSeed")),
+    SALTYMOD_ET_FUTURUM_SOUNDS(
+        new MixinBuilder("Play SaltyMod's flattening and stripping sounds from Et Futurum").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.SALTYMOD)
+            .addRequiredMod(TargetMod.ET_FUTURUM)
+            .setApplyIf(() -> PatchSwitches.enabled("saltyModEtFuturumSounds"))
+            .addCommonMixins("saltymod.MixinSaltyEtFuturumSounds")),
     TWILIGHT_FOREST_FIREFLY_GLOW(
         new MixinBuilder("Draw Twilight Forest's firefly glows after water, without cutting holes in it")
             .setPhase(Phase.LATE)
