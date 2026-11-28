@@ -218,6 +218,9 @@ public final class Config {
             "growthcraftWithoutForestry",
             "Growthcraft loads without Forestry: its Forestry integration becomes optional.");
         patch(
+            "keepForgeSplash",
+            "Forge no longer turns its splash screen off in config/splash.properties when the game crashes while loading. The crash is still reported, and the splash can still be turned off by hand. Client only.");
+        patch(
             "toasterBread",
             "Cooking for Blockheads' toaster makes Pam's toast and corn bread, salted and abyssal toast. Hides the duplicate toast and removes other recipes that produce toast. Needs Cooking for Blockheads and HarvestCraft; use the same setting on client and server.");
         patch(

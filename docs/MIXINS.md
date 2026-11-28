@@ -79,6 +79,13 @@ This patch runs early on both sides because late mixins load after dependency va
 It targets Forge and checks the exact `Growthcraft` mod ID, so Growthcraft itself is optional.
 Switch: `growthcraftWithoutForestry`.
 
+## Forge splash screen
+
+`fml.MixinSplashProgressKeepEnabled` cancels `SplashProgress.disableSplash`, which `SplashProgress.finish` calls when
+it fails during a loading crash, writing `enabled=false` to `config/splash.properties`. With the write skipped,
+`finish` throws the same loading error with Forge's "try disabling the splash screen" message. Turning the splash off
+by hand still works. Client only, early. Switch: `keepForgeSplash`.
+
 ## Project Zulu gamerules
 
 `projectzulu.MixinDeathGamerulesKeep` replaces Project Zulu's world load handler, which set `keepInventory` and its own

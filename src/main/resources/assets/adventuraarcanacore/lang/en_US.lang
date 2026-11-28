@@ -40,6 +40,7 @@ adventuraarcanacore.config.patches=Patches
 adventuraarcanacore.config.resumePausedSounds=Resume only paused sounds
 adventuraarcanacore.config.creativeClearInventory=Clear Inventory label in creative
 adventuraarcanacore.config.growthcraftWithoutForestry=Growthcraft without Forestry
+adventuraarcanacore.config.keepForgeSplash=Keep Forge's splash screen after crashes
 adventuraarcanacore.config.noNaturaClouds=No Natura clouds
 adventuraarcanacore.config.projectZuluGamerules=Project Zulu keeps gamerules
 adventuraarcanacore.config.projectZuluPlaySound=Project Zulu's /zuluplaysound

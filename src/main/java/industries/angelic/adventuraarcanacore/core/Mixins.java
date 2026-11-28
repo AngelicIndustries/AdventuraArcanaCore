@@ -55,6 +55,10 @@ public enum Mixins implements IMixins {
         new MixinBuilder("Make Growthcraft Forestry integration optional").setPhase(Phase.EARLY)
             .setApplyIf(() -> PatchSwitches.enabled("growthcraftWithoutForestry"))
             .addCommonMixins("fml.MixinFMLModContainer")),
+    KEEP_FORGE_SPLASH(
+        new MixinBuilder("Keep Forge from turning its splash screen off after a loading crash").setPhase(Phase.EARLY)
+            .setApplyIf(() -> PatchSwitches.enabled("keepForgeSplash"))
+            .addClientMixins("fml.MixinSplashProgressKeepEnabled")),
     PROJECT_ZULU_GAMERULES(
         new MixinBuilder("Keep Project Zulu from resetting keepInventory and its drop gamerules on world load")
             .setPhase(Phase.LATE)
