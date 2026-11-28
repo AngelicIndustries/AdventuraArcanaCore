@@ -7,6 +7,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -15,6 +16,7 @@ import com.gtnewhorizons.angelica.compat.ModStatus;
 import com.gtnewhorizons.angelica.compat.backhand.BackhandReflectionCompat;
 import com.gtnewhorizons.angelica.dynamiclights.DynamicLights;
 
+import baubles.api.BaublesApi;
 import industries.angelic.adventuraarcanacore.compat.ItemLightColors;
 import industries.angelic.adventuraarcanacore.compat.supernova.SupernovaColors;
 
@@ -38,6 +40,12 @@ public final class DynamicLightColor {
             for (int slot = 0; slot < 5; slot++) mixed = add(mixed, living.getEquipmentInSlot(slot));
             if (ModStatus.isBackhandLoaded && entity instanceof EntityPlayer)
                 mixed = add(mixed, BackhandReflectionCompat.getOffhandItem((EntityPlayer) entity));
+            // Angelica lights worn baubles too
+            if (ModStatus.isBaublesLoaded && entity instanceof EntityPlayer) {
+                IInventory baubles = BaublesApi.getBaubles((EntityPlayer) entity);
+                if (baubles != null) for (int slot = 0; slot < baubles.getSizeInventory(); slot++)
+                    mixed = add(mixed, baubles.getStackInSlot(slot));
+            }
         }
         if (mixed == null) return BlockLightProvider.packRGB(luminance, luminance, luminance);
         return BlockLightProvider.packRGB(mixed[0], mixed[1], mixed[2]);

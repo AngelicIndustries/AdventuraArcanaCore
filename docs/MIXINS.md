@@ -169,10 +169,10 @@ the curve in the general option `coloredLightStrength`: `supernova` (unchanged),
 
 `minecraft.MixinEntityLightColor` (early, client, with Angelica) gives `Entity` an `angelica$getLuminanceRGB`, which
 Angelica's dynamic lights otherwise leave white (the interface's default). `compat.angelica.DynamicLightColor` works it
-out: held, worn and Backhand off-hand block items, and dropped ones, take the color Supernova gives their block
-(`compat.supernova.SupernovaColors`, by reflection); other items the general option `itemLightColors`
-(`compat.ItemLightColors`); lava buckets lava's; burning entities fire's. Several lit items mix by their brightest
-channels. Switch: `coloredDynamicLights`.
+out: held, worn (armor and bauble slots) and Backhand off-hand block items, and dropped ones, take the color
+Supernova gives their block (`compat.supernova.SupernovaColors`, by reflection); other items the general option
+`itemLightColors` (`compat.ItemLightColors`); lava buckets lava's; burning entities fire's. Several lit items mix by
+their brightest channels. Switch: `coloredDynamicLights`.
 
 `/lightcolor [hand]` (`compat.supernova.GuiLightColor`) has red, green and blue sliders for the block under the crosshair,
 or the held item. A block's Apply writes `config/supernova-colors.cfg`, registers the color with Supernova and relights
@@ -199,6 +199,21 @@ block type's light value, so every block of it emits, re-registers its Supernova
 chunks; `/lightdebughand emit` replaces the luminance Angelica's dynamic lights give the held item (by item and damage),
 held or dropped (`angelica.MixinDynamicLightsEmission`, early). Without a level, emit toggles between full and the
 subject's own. Switch: `coloredLightDebug`.
+
+## Netherlicious lanterns
+
+Netherlicious registers most of its lanterns with a plain ItemBlock. `netherlicious.MixinLanternBaubleItems` (common,
+with Baubles Expanded) redirects `ModBlocks.registerBlock(Block)` so every `LanternBase` gets
+`compat.netherlicious.LanternBaubleItem` instead, under the same name: the same item, worn in a belt slot like Et
+Futurum's lanterns. Redstone lanterns are left out: a lit one drops as the unlit block, so worn it would never light. `netherlicious.MixinEfrineLanternBauble` makes the shared `ItemBlockEfrine` a belt bauble that only
+its lanterns can be equipped as. `compat.netherlicious.NetherliciousLanterns` registers `LanternBase`, hanging at
+metadata 1, with Even Mo' Bends' `net.gobbob.mobends.api.WornLanterns` by reflection, so worn ones hang from the belt.
+Switch: `netherliciousLanternBaubles`, the same on client and server.
+
+`supernova.MixinNetherliciousLanternColors` (common, with Supernova) sets lantern colors at the end of Supernova's
+`NetherliciousColors.register`, before `supernova-colors.cfg` is read, so the file still overrides them: the fire
+lanterns (plain, gold and Efrine) 15, 12, 5 like Et Futurum's lantern instead of white, and the lit redstone lanterns
+15, 3, 3, the hue of Supernova's redstone torch, instead of none (white). Switch: `netherliciousLanternColors`.
 
 ## Twilight Forest firefly glow
 

@@ -417,6 +417,12 @@ public final class Config {
         patch(
             "adventureBackpackWornTankLight",
             "Adventure Backpack lights the fluid in a worn backpack's, copter pack's or coal jetpack's tanks where the wearer is, as it does for a placed backpack; it used to take the light of whatever CodeChickenLib drew last, often dark or black.");
+        patch(
+            "netherliciousLanternBaubles",
+            "Netherlicious' lanterns, except the redstone ones, are worn in a Baubles Expanded belt slot, like Et Futurum's, and Even Mo' Bends hangs them from the belt. Needs Netherlicious and Baubles Expanded; use the same setting on client and server.");
+        patch(
+            "netherliciousLanternColors",
+            "Supernova lights Netherlicious' fire lanterns warm, like Et Futurum's lantern, and its lit redstone lanterns red, like a redstone torch, instead of both white. supernova-colors.cfg still overrides them. Needs Netherlicious and Supernova.");
         configuration.setCategoryLanguageKey(Categories.BIOMIC, AdventuraArcanaCore.MODID + ".config.biomic");
         configuration.setCategoryComment(
             Categories.BIOMIC,

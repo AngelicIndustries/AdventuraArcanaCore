@@ -16,6 +16,7 @@ import industries.angelic.adventuraarcanacore.compat.biomic.BiomicIntegration;
 import industries.angelic.adventuraarcanacore.compat.cookingforblockheads.Toasts;
 import industries.angelic.adventuraarcanacore.compat.jars.PixieJars;
 import industries.angelic.adventuraarcanacore.compat.netherlicious.NetherliciousDuplicates;
+import industries.angelic.adventuraarcanacore.compat.netherlicious.NetherliciousLanterns;
 import industries.angelic.adventuraarcanacore.compat.realistictorches.TorchClock;
 import industries.angelic.adventuraarcanacore.compat.realistictorches.Torches;
 import industries.angelic.adventuraarcanacore.core.PatchSwitches;
@@ -48,6 +49,8 @@ public class CommonProxy {
 
     public void init(FMLInitializationEvent event) {
         PixieJars.init();
+        if (Loader.isModLoaded("netherlicious") && Loader.isModLoaded("Baubles|Expanded")
+            && PatchSwitches.enabled("netherliciousLanternBaubles")) NetherliciousLanterns.registerWithMoBends();
     }
 
     public void postInit(FMLPostInitializationEvent event) {

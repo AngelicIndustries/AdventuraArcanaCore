@@ -345,6 +345,17 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetMod.ADVENTURE_BACKPACK)
             .setApplyIf(() -> PatchSwitches.enabled("adventureBackpackWornTankLight"))
             .addClientMixins("adventurebackpack.MixinWornTankLight")),
+    NETHERLICIOUS_LANTERN_BAUBLES(new MixinBuilder("Wear Netherlicious' lanterns in a belt slot").setPhase(Phase.LATE)
+        .addRequiredMod(TargetMod.NETHERLICIOUS)
+        .addRequiredMod(TargetMod.BAUBLES_EXPANDED)
+        .setApplyIf(() -> PatchSwitches.enabled("netherliciousLanternBaubles"))
+        .addCommonMixins("netherlicious.MixinLanternBaubleItems", "netherlicious.MixinEfrineLanternBauble")),
+    NETHERLICIOUS_LANTERN_COLORS(
+        new MixinBuilder("Light Netherlicious' fire and redstone lanterns in their color").setPhase(Phase.LATE)
+            .addRequiredMod(TargetMod.SUPERNOVA)
+            .addRequiredMod(TargetMod.NETHERLICIOUS)
+            .setApplyIf(() -> PatchSwitches.enabled("netherliciousLanternColors"))
+            .addCommonMixins("supernova.MixinNetherliciousLanternColors")),
     REALISTIC_TORCHES_LIGHTERS(
         new MixinBuilder("Light Realistic Torches' torches with more lighters, each into its own torch")
             .setPhase(Phase.LATE)

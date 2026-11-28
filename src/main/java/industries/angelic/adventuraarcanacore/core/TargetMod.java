@@ -18,6 +18,7 @@ public enum TargetMod implements ITargetMod {
         .setCoreModClass("com.gtnewhorizons.angelica.loading.AngelicaTweaker")),
     BATTLE_TOWERS(new TargetModBuilder().setModId("AS_BattleTowers")
         .setTargetClass("atomicstryker.battletowers.common.WorldGenHandler")),
+    BAUBLES_EXPANDED(new TargetModBuilder().setModId("Baubles|Expanded")),
     /** The Better Sleeping build the patches are written against. */
     BETTER_SLEEPING(new TargetModBuilder().setModId("bettersleeping")
         .setTargetClass("cz.ondraster.bettersleeping.BetterSleeping")
