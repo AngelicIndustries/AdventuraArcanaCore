@@ -72,9 +72,14 @@ public enum TargetMod implements ITargetMod {
         .setTargetClass("com.bobmowzie.mowziesmobs.MowziesMobs")),
     STRUCTURE_MEMORY(new TargetModBuilder().setModId("structurememory")
         .setTargetClass("xsoras.structurememory.memory.MemoryStore")),
+    /**
+     * SaltyMod 2.1.3, the first build with the Salt Grass flattening and Bee Burrow stripping sounds. No mod ID: with
+     * one, the late loader counts the mod as present and never runs the version test.
+     */
+    SALTYMOD_2_1_3(new TargetModBuilder().setTargetClass("darkbum.saltymod.SaltyMod")
+        .testModVersion("saltymod", "2.0.0-master.164+575583cf7f")),
     /** The SaltyMod builds the patches are written against, 2.1.2 and 2.1.3 (their runtime version strings). */
-    SALTYMOD(new TargetModBuilder().setModId("saltymod")
-        .setTargetClass("darkbum.saltymod.SaltyMod")
+    SALTYMOD(new TargetModBuilder().setTargetClass("darkbum.saltymod.SaltyMod")
         .testModVersion(
             "saltymod",
             version -> "2.0.0-master.162+2a8955c302-dirty".equals(version)

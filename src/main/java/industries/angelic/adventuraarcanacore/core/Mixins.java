@@ -92,7 +92,7 @@ public enum Mixins implements IMixins {
         .addCommonMixins("saltymod.MixinSaltyBeeNestSeed")),
     SALTYMOD_ET_FUTURUM_SOUNDS(
         new MixinBuilder("Play SaltyMod's flattening and stripping sounds from Et Futurum").setPhase(Phase.LATE)
-            .addRequiredMod(TargetMod.SALTYMOD)
+            .addRequiredMod(TargetMod.SALTYMOD_2_1_3)
             .addRequiredMod(TargetMod.ET_FUTURUM)
             .setApplyIf(() -> PatchSwitches.enabled("saltyModEtFuturumSounds"))
             .addCommonMixins("saltymod.MixinSaltyEtFuturumSounds")),
